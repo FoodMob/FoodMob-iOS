@@ -1,0 +1,297 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		ABFCB69B1C038F3300ED33BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABFCB69A1C038F3300ED33BE /* AppDelegate.swift */; };
+		ABFCB69D1C038F3300ED33BE /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABFCB69C1C038F3300ED33BE /* FirstViewController.swift */; };
+		ABFCB69F1C038F3300ED33BE /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABFCB69E1C038F3300ED33BE /* SecondViewController.swift */; };
+		ABFCB6A21C038F3300ED33BE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABFCB6A01C038F3300ED33BE /* Main.storyboard */; };
+		ABFCB6A41C038F3300ED33BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ABFCB6A31C038F3300ED33BE /* Assets.xcassets */; };
+		ABFCB6A71C038F3300ED33BE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABFCB6A51C038F3300ED33BE /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		ABFCB6971C038F3300ED33BE /* FoodMob-mockup.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FoodMob-mockup.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		ABFCB69A1C038F3300ED33BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		ABFCB69C1C038F3300ED33BE /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
+		ABFCB69E1C038F3300ED33BE /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		ABFCB6A11C038F3300ED33BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		ABFCB6A31C038F3300ED33BE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		ABFCB6A61C038F3300ED33BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		ABFCB6A81C038F3300ED33BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		ABFCB6941C038F3300ED33BE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		ABFCB68E1C038F3300ED33BE = {
+			isa = PBXGroup;
+			children = (
+				ABFCB6991C038F3300ED33BE /* FoodMob-mockup */,
+				ABFCB6981C038F3300ED33BE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		ABFCB6981C038F3300ED33BE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				ABFCB6971C038F3300ED33BE /* FoodMob-mockup.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		ABFCB6991C038F3300ED33BE /* FoodMob-mockup */ = {
+			isa = PBXGroup;
+			children = (
+				ABFCB69A1C038F3300ED33BE /* AppDelegate.swift */,
+				ABFCB69C1C038F3300ED33BE /* FirstViewController.swift */,
+				ABFCB69E1C038F3300ED33BE /* SecondViewController.swift */,
+				ABFCB6A01C038F3300ED33BE /* Main.storyboard */,
+				ABFCB6A31C038F3300ED33BE /* Assets.xcassets */,
+				ABFCB6A51C038F3300ED33BE /* LaunchScreen.storyboard */,
+				ABFCB6A81C038F3300ED33BE /* Info.plist */,
+			);
+			path = "FoodMob-mockup";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		ABFCB6961C038F3300ED33BE /* FoodMob-mockup */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ABFCB6AB1C038F3300ED33BE /* Build configuration list for PBXNativeTarget "FoodMob-mockup" */;
+			buildPhases = (
+				ABFCB6931C038F3300ED33BE /* Sources */,
+				ABFCB6941C038F3300ED33BE /* Frameworks */,
+				ABFCB6951C038F3300ED33BE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "FoodMob-mockup";
+			productName = "FoodMob-mockup";
+			productReference = ABFCB6971C038F3300ED33BE /* FoodMob-mockup.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		ABFCB68F1C038F3300ED33BE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0710;
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = "Jonathan Jemson";
+				TargetAttributes = {
+					ABFCB6961C038F3300ED33BE = {
+						CreatedOnToolsVersion = 7.1.1;
+					};
+				};
+			};
+			buildConfigurationList = ABFCB6921C038F3300ED33BE /* Build configuration list for PBXProject "FoodMob-mockup" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = ABFCB68E1C038F3300ED33BE;
+			productRefGroup = ABFCB6981C038F3300ED33BE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				ABFCB6961C038F3300ED33BE /* FoodMob-mockup */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		ABFCB6951C038F3300ED33BE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ABFCB6A71C038F3300ED33BE /* LaunchScreen.storyboard in Resources */,
+				ABFCB6A41C038F3300ED33BE /* Assets.xcassets in Resources */,
+				ABFCB6A21C038F3300ED33BE /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		ABFCB6931C038F3300ED33BE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ABFCB69F1C038F3300ED33BE /* SecondViewController.swift in Sources */,
+				ABFCB69B1C038F3300ED33BE /* AppDelegate.swift in Sources */,
+				ABFCB69D1C038F3300ED33BE /* FirstViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		ABFCB6A01C038F3300ED33BE /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ABFCB6A11C038F3300ED33BE /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		ABFCB6A51C038F3300ED33BE /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ABFCB6A61C038F3300ED33BE /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		ABFCB6A91C038F3300ED33BE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		ABFCB6AA1C038F3300ED33BE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		ABFCB6AC1C038F3300ED33BE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "FoodMob-mockup/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.cixocommunications.FoodMob-mockup";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		ABFCB6AD1C038F3300ED33BE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "FoodMob-mockup/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.cixocommunications.FoodMob-mockup";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		ABFCB6921C038F3300ED33BE /* Build configuration list for PBXProject "FoodMob-mockup" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ABFCB6A91C038F3300ED33BE /* Debug */,
+				ABFCB6AA1C038F3300ED33BE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ABFCB6AB1C038F3300ED33BE /* Build configuration list for PBXNativeTarget "FoodMob-mockup" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ABFCB6AC1C038F3300ED33BE /* Debug */,
+				ABFCB6AD1C038F3300ED33BE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = ABFCB68F1C038F3300ED33BE /* Project object */;
+}
