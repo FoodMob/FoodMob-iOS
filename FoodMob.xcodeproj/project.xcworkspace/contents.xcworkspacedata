@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:FoodMob-mockup.xcodeproj">
+      location = "self:/Users/jonathan/Xcode Projects/FoodMob/FoodMob.xcodeproj">
    </FileRef>
 </Workspace>
