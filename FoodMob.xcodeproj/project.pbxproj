@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		AB87B9A21C1358E900CFC95F /* AppearanceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB87B9A11C1358E900CFC95F /* AppearanceManager.swift */; };
+		ABF3F5641C651DBE000AB856 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABF3F5601C651D84000AB856 /* Alamofire.framework */; };
+		ABF3F5651C651DBE000AB856 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = ABF3F5601C651D84000AB856 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		ABFCB69B1C038F3300ED33BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABFCB69A1C038F3300ED33BE /* AppDelegate.swift */; };
 		ABFCB69D1C038F3300ED33BE /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABFCB69C1C038F3300ED33BE /* FirstViewController.swift */; };
 		ABFCB69F1C038F3300ED33BE /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABFCB69E1C038F3300ED33BE /* SecondViewController.swift */; };
@@ -16,8 +18,23 @@
 		ABFCB6A71C038F3300ED33BE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABFCB6A51C038F3300ED33BE /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		ABF3F5661C651DBE000AB856 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				ABF3F5651C651DBE000AB856 /* Alamofire.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		AB87B9A11C1358E900CFC95F /* AppearanceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppearanceManager.swift; sourceTree = "<group>"; };
+		ABF3F5601C651D84000AB856 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = ../Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		ABFCB6971C038F3300ED33BE /* FoodMob.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodMob.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABFCB69A1C038F3300ED33BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ABFCB69C1C038F3300ED33BE /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -33,17 +50,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ABF3F5641C651DBE000AB856 /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		ABF3F5671C651E19000AB856 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				ABF3F5601C651D84000AB856 /* Alamofire.framework */,
+			);
+			name = Frameworks;
+			path = FoodMob;
+			sourceTree = "<group>";
+		};
 		ABFCB68E1C038F3300ED33BE = {
 			isa = PBXGroup;
 			children = (
-				ABFCB6991C038F3300ED33BE /* FoodMob-mockup */,
+				ABFCB6991C038F3300ED33BE /* FoodMob */,
 				ABFCB6981C038F3300ED33BE /* Products */,
+				ABF3F5671C651E19000AB856 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -55,7 +83,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		ABFCB6991C038F3300ED33BE /* FoodMob-mockup */ = {
+		ABFCB6991C038F3300ED33BE /* FoodMob */ = {
 			isa = PBXGroup;
 			children = (
 				ABFCB69A1C038F3300ED33BE /* AppDelegate.swift */,
@@ -67,7 +95,7 @@
 				ABFCB6A51C038F3300ED33BE /* LaunchScreen.storyboard */,
 				ABFCB6A81C038F3300ED33BE /* Info.plist */,
 			);
-			path = "FoodMob-mockup";
+			path = FoodMob;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -80,6 +108,7 @@
 				ABFCB6931C038F3300ED33BE /* Sources */,
 				ABFCB6941C038F3300ED33BE /* Frameworks */,
 				ABFCB6951C038F3300ED33BE /* Resources */,
+				ABF3F5661C651DBE000AB856 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -257,6 +286,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "FoodMob-mockup/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cixocommunications.FoodMob;
@@ -268,6 +301,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "FoodMob-mockup/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cixocommunications.FoodMob;
