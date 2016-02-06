@@ -10,6 +10,8 @@
 		AB87B9A21C1358E900CFC95F /* AppearanceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB87B9A11C1358E900CFC95F /* AppearanceManager.swift */; };
 		ABF3F5641C651DBE000AB856 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABF3F5601C651D84000AB856 /* Alamofire.framework */; };
 		ABF3F5651C651DBE000AB856 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = ABF3F5601C651D84000AB856 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		ABF3F56F1C6523F2000AB856 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABF3F56E1C6523F2000AB856 /* SwiftyJSON.framework */; };
+		ABF3F5711C6523FB000AB856 /* SwiftyJSON.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = ABF3F56E1C6523F2000AB856 /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		ABFCB69B1C038F3300ED33BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABFCB69A1C038F3300ED33BE /* AppDelegate.swift */; };
 		ABFCB69D1C038F3300ED33BE /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABFCB69C1C038F3300ED33BE /* FirstViewController.swift */; };
 		ABFCB69F1C038F3300ED33BE /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABFCB69E1C038F3300ED33BE /* SecondViewController.swift */; };
@@ -25,6 +27,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				ABF3F5711C6523FB000AB856 /* SwiftyJSON.framework in Embed Frameworks */,
 				ABF3F5651C651DBE000AB856 /* Alamofire.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -35,6 +38,7 @@
 /* Begin PBXFileReference section */
 		AB87B9A11C1358E900CFC95F /* AppearanceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppearanceManager.swift; sourceTree = "<group>"; };
 		ABF3F5601C651D84000AB856 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = ../Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		ABF3F56E1C6523F2000AB856 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = SOURCE_ROOT; };
 		ABFCB6971C038F3300ED33BE /* FoodMob.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodMob.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABFCB69A1C038F3300ED33BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ABFCB69C1C038F3300ED33BE /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -50,6 +54,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ABF3F56F1C6523F2000AB856 /* SwiftyJSON.framework in Frameworks */,
 				ABF3F5641C651DBE000AB856 /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -61,6 +66,7 @@
 			isa = PBXGroup;
 			children = (
 				ABF3F5601C651D84000AB856 /* Alamofire.framework */,
+				ABF3F56E1C6523F2000AB856 /* SwiftyJSON.framework */,
 			);
 			name = Frameworks;
 			path = FoodMob;
@@ -290,7 +296,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
-				INFOPLIST_FILE = "FoodMob-mockup/Info.plist";
+				INFOPLIST_FILE = FoodMob/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cixocommunications.FoodMob;
 				PRODUCT_NAME = FoodMob;
@@ -305,7 +311,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
-				INFOPLIST_FILE = "FoodMob-mockup/Info.plist";
+				INFOPLIST_FILE = FoodMob/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cixocommunications.FoodMob;
 				PRODUCT_NAME = FoodMob;
