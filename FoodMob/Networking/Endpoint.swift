@@ -21,10 +21,10 @@ public protocol Endpoint {
 
 
 public extension Endpoint {
-    static var login: String {
+    public static var login: String {
         return "\(self.root)/login"
     }
-    static var register: String {
+    public static var register: String {
         return "\(self.root)/register"
     }
 }

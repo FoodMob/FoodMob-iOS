@@ -17,8 +17,7 @@ public struct FoodMobService: FoodMobDataSource {
             return "https://fluf.me/foodmob"
         }
     }
-    
-    @warn_unused_result
+
     public func login(emailAddress: String, password: String) -> User? {
         // TODO
         Alamofire.request(.POST, ServiceEndpoint.login, parameters: ["emailAddress": emailAddress, "password": password], encoding: .JSON).responseData {
@@ -28,7 +27,7 @@ public struct FoodMobService: FoodMobDataSource {
         }
         return nil
     }
-    
+
     @warn_unused_result
     public func register(firstName: String, lastName: String, emailAddress: String, password: String) -> User? {
         // TODO

@@ -9,8 +9,7 @@
 import Foundation
 
 public struct MockDataSource : FoodMobDataSource {
-    
-    @warn_unused_result
+
     public func login(emailAddress: String, password: String) -> User? {
         if emailAddress.lowercaseString.containsString("foodmob.me") && password.lowercaseString.containsString("pass") {
             let user = User(firstName: "Jonathan", lastName: "Jemson", emailAddress: emailAddress, authToken: "0123456789abcdef")
@@ -19,8 +18,7 @@ public struct MockDataSource : FoodMobDataSource {
         return nil
         
     }
-    
-    @warn_unused_result
+
     public func register(firstName: String, lastName: String, emailAddress: String, password: String) -> User? {
         return nil
     }

@@ -19,7 +19,6 @@ public protocol FoodMobDataSource {
      
      - returns: A User object for the currently logged in user. `nil` is returned if the login failed.
      */
-    @warn_unused_result
     func login(emailAddress: String, password: String) -> User?
     
     /**
@@ -33,7 +32,6 @@ public protocol FoodMobDataSource {
      
      - returns: The user object for the new user that is created.
      */
-    @warn_unused_result
     func register(firstName: String, lastName: String, emailAddress: String, password: String) -> User?
 }
 

@@ -1,9 +1,9 @@
 //
 //  AppDelegate.swift
-//  FoodMob-mockup
+//  FoodMob
 //
 //  Created by Jonathan Jemson on 11/23/15.
-//  Copyright © 2015 Jonathan Jemson. All rights reserved.
+//  Copyright © 2016 FoodMob. All rights reserved.
 //
 
 import UIKit
