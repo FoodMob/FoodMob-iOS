@@ -1171,70 +1171,85 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="First Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qrT-MJ-TfD" customClass="SimpleTextField" customModule="FoodMob" customModuleProvider="target">
-                                <rect key="frame" x="175" y="103" width="250" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="250" id="Auf-8b-YB9"/>
-                                </constraints>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6LQ-oZ-gAf">
+                                <rect key="frame" x="20" y="40" width="53" height="33"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" returnKeyType="next"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Last Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="agt-2f-WOH" customClass="SimpleTextField" customModule="FoodMob" customModuleProvider="target">
-                                <rect key="frame" x="175" y="144" width="250" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="250" id="k4D-Ph-68R"/>
-                                </constraints>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" returnKeyType="next"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jOG-dw-00O" customClass="SimpleTextField" customModule="FoodMob" customModuleProvider="target">
-                                <rect key="frame" x="175" y="185" width="250" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="250" id="dbj-q2-5oy"/>
-                                </constraints>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" returnKeyType="next"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Verify Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="O7L-Ca-QoR" customClass="SimpleTextField" customModule="FoodMob" customModuleProvider="target">
-                                <rect key="frame" x="175" y="267" width="250" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="250" id="tzE-MQ-9lu"/>
-                                </constraints>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done" secureTextEntry="YES"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Uam-Ci-CP7" customClass="SimpleTextField" customModule="FoodMob" customModuleProvider="target">
-                                <rect key="frame" x="175" y="226" width="250" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="250" id="rot-Sf-Rw9"/>
-                                </constraints>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next" secureTextEntry="YES"/>
-                            </textField>
+                                <state key="normal" title="Cancel">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="qUD-OQ-aWp" kind="unwind" identifier="registrationToLoginSegue" unwindAction="unwindToLoginViewController:" id="r1Q-dO-S5r"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="Ctk-0K-z5W">
+                                <rect key="frame" x="175" y="198" width="250" height="205"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="First Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qrT-MJ-TfD" customClass="SimpleTextField" customModule="FoodMob" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="250" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="250" id="Auf-8b-YB9"/>
+                                            <constraint firstAttribute="height" constant="21" id="cqI-W6-d22"/>
+                                        </constraints>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" returnKeyType="next"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Last Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="agt-2f-WOH" customClass="SimpleTextField" customModule="FoodMob" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="46" width="250" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="bs1-2g-JMd"/>
+                                            <constraint firstAttribute="width" constant="250" id="k4D-Ph-68R"/>
+                                        </constraints>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" returnKeyType="next"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jOG-dw-00O" customClass="SimpleTextField" customModule="FoodMob" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="92" width="250" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="FaQ-kN-lJV"/>
+                                            <constraint firstAttribute="width" constant="250" id="dbj-q2-5oy"/>
+                                        </constraints>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" returnKeyType="next"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Uam-Ci-CP7" customClass="SimpleTextField" customModule="FoodMob" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="138" width="250" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="dtG-9k-fZq"/>
+                                            <constraint firstAttribute="width" constant="250" id="rot-Sf-Rw9"/>
+                                        </constraints>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next" secureTextEntry="YES"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Verify Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="O7L-Ca-QoR" customClass="SimpleTextField" customModule="FoodMob" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="184" width="250" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="nOE-Oc-RAN"/>
+                                            <constraint firstAttribute="width" constant="250" id="tzE-MQ-9lu"/>
+                                        </constraints>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done" secureTextEntry="YES"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.93725490199999995" green="0.42352941179999998" blue="0.1215686275" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="Uam-Ci-CP7" firstAttribute="leading" secondItem="jOG-dw-00O" secondAttribute="leading" id="1zs-V2-dFd"/>
-                            <constraint firstItem="agt-2f-WOH" firstAttribute="top" secondItem="qrT-MJ-TfD" secondAttribute="bottom" constant="20" id="2Rh-9l-7bU"/>
-                            <constraint firstItem="ljF-yH-sff" firstAttribute="top" secondItem="AqD-Jb-sCr" secondAttribute="bottom" constant="20" id="5UK-dl-TjD"/>
+                            <constraint firstItem="ljF-yH-sff" firstAttribute="top" secondItem="AqD-Jb-sCr" secondAttribute="bottom" priority="999" constant="20" id="5UK-dl-TjD"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="6LQ-oZ-gAf" secondAttribute="leading" id="7Pl-b0-Pby"/>
                             <constraint firstItem="rrA-s6-fGh" firstAttribute="centerY" secondItem="ljF-yH-sff" secondAttribute="centerY" id="AeA-G6-exX"/>
-                            <constraint firstItem="jOG-dw-00O" firstAttribute="leading" secondItem="agt-2f-WOH" secondAttribute="leading" id="J4e-Jk-7Xb"/>
-                            <constraint firstItem="jOG-dw-00O" firstAttribute="centerX" secondItem="rBR-Wv-lYD" secondAttribute="centerX" id="MVl-eH-0yd"/>
+                            <constraint firstItem="dJC-C4-5ay" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Ctk-0K-z5W" secondAttribute="bottom" id="JPN-au-vS6"/>
+                            <constraint firstItem="Ctk-0K-z5W" firstAttribute="centerY" secondItem="rBR-Wv-lYD" secondAttribute="centerY" priority="999" id="O9J-27-4me"/>
                             <constraint firstItem="ljF-yH-sff" firstAttribute="centerX" secondItem="rBR-Wv-lYD" secondAttribute="centerX" id="QzP-wn-Ef5"/>
-                            <constraint firstItem="O7L-Ca-QoR" firstAttribute="leading" secondItem="Uam-Ci-CP7" secondAttribute="leading" id="SMx-X5-bZW"/>
-                            <constraint firstItem="qrT-MJ-TfD" firstAttribute="top" secondItem="ljF-yH-sff" secondAttribute="bottom" constant="30" id="ZV9-g0-gB8"/>
-                            <constraint firstItem="O7L-Ca-QoR" firstAttribute="top" secondItem="Uam-Ci-CP7" secondAttribute="bottom" constant="20" id="ZyO-Jc-sft"/>
+                            <constraint firstItem="Ctk-0K-z5W" firstAttribute="top" relation="greaterThanOrEqual" secondItem="ljF-yH-sff" secondAttribute="bottom" constant="40" id="UM8-YX-xcG"/>
                             <constraint firstAttribute="trailingMargin" secondItem="rrA-s6-fGh" secondAttribute="trailing" id="fCe-76-K5Y"/>
-                            <constraint firstItem="jOG-dw-00O" firstAttribute="top" secondItem="agt-2f-WOH" secondAttribute="bottom" constant="20" id="gl7-K8-MdY"/>
-                            <constraint firstItem="agt-2f-WOH" firstAttribute="leading" secondItem="qrT-MJ-TfD" secondAttribute="leading" id="i8U-Wu-O0H"/>
-                            <constraint firstItem="Uam-Ci-CP7" firstAttribute="top" secondItem="jOG-dw-00O" secondAttribute="bottom" constant="20" id="lWI-B0-2y7"/>
-                            <constraint firstItem="rrA-s6-fGh" firstAttribute="top" secondItem="ljF-yH-sff" secondAttribute="top" id="r3i-ne-f9O"/>
-                            <constraint firstItem="qrT-MJ-TfD" firstAttribute="centerX" secondItem="rBR-Wv-lYD" secondAttribute="centerX" id="xIv-B0-aHv"/>
+                            <constraint firstItem="6LQ-oZ-gAf" firstAttribute="top" secondItem="AqD-Jb-sCr" secondAttribute="bottom" constant="20" id="j1f-8C-yMH"/>
+                            <constraint firstItem="Ctk-0K-z5W" firstAttribute="centerX" secondItem="rBR-Wv-lYD" secondAttribute="centerX" id="kGF-gn-iAI"/>
+                            <constraint firstItem="6LQ-oZ-gAf" firstAttribute="top" secondItem="rrA-s6-fGh" secondAttribute="top" id="zBe-oj-eDW"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
@@ -1247,15 +1262,18 @@
                         <outlet property="firstNameField" destination="qrT-MJ-TfD" id="MCu-lM-YPq"/>
                         <outlet property="lastNameField" destination="agt-2f-WOH" id="ivU-Jj-QZa"/>
                         <outlet property="passwordField" destination="Uam-Ci-CP7" id="i7F-RI-3vx"/>
+                        <outlet property="stackViewToBottomConstraint" destination="JPN-au-vS6" id="2qZ-4c-5jO"/>
+                        <outlet property="textFieldStack" destination="Ctk-0K-z5W" id="DO6-5T-Rqk"/>
                         <outlet property="verifyPasswordField" destination="O7L-Ca-QoR" id="b1s-Yn-UwA"/>
-                        <outletCollection property="fields" destination="O7L-Ca-QoR" collectionClass="NSMutableArray" id="mip-O7-fiD"/>
-                        <outletCollection property="fields" destination="Uam-Ci-CP7" collectionClass="NSMutableArray" id="DqO-8u-3CL"/>
-                        <outletCollection property="fields" destination="jOG-dw-00O" collectionClass="NSMutableArray" id="nNj-vN-nec"/>
-                        <outletCollection property="fields" destination="agt-2f-WOH" collectionClass="NSMutableArray" id="nUS-TW-tAZ"/>
                         <outletCollection property="fields" destination="qrT-MJ-TfD" collectionClass="NSMutableArray" id="frq-DV-WtM"/>
+                        <outletCollection property="fields" destination="agt-2f-WOH" collectionClass="NSMutableArray" id="nUS-TW-tAZ"/>
+                        <outletCollection property="fields" destination="jOG-dw-00O" collectionClass="NSMutableArray" id="nNj-vN-nec"/>
+                        <outletCollection property="fields" destination="Uam-Ci-CP7" collectionClass="NSMutableArray" id="DqO-8u-3CL"/>
+                        <outletCollection property="fields" destination="O7L-Ca-QoR" collectionClass="NSMutableArray" id="mip-O7-fiD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kLE-bg-QCN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="qUD-OQ-aWp" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-1009" y="921"/>
         </scene>

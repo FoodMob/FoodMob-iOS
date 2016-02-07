@@ -8,6 +8,10 @@
 
 import UIKit
 
+enum RegistrationViewControllerSegue: String {
+    case ToLoginSegue = "registrationToLoginSegue"
+}
+
 class RegistrationViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var firstNameField: UITextField!
@@ -19,6 +23,10 @@ class RegistrationViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var fields: [UITextField]!
     
     private var keyboardHeight: CGFloat = 0.0
+    @IBOutlet weak var textFieldStack: UIStackView!
+    private var activeTextField: UITextField?
+
+    @IBOutlet weak var stackViewToBottomConstraint: NSLayoutConstraint!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,6 +44,11 @@ class RegistrationViewController: UIViewController, UITextFieldDelegate {
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
         NSNotificationCenter.defaultCenter().removeObserver(self)
+    }
+    
+    func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
+        self.activeTextField = textField
+        return true
     }
 
     func textFieldShouldReturn(textField: UITextField) -> Bool {
@@ -55,36 +68,33 @@ class RegistrationViewController: UIViewController, UITextFieldDelegate {
     func keyboardWillShow(notification: NSNotification) {
         if let userInfo = notification.userInfo, keyboardSize = (userInfo[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue() {
             keyboardHeight = keyboardSize.height
-            self.animateTextField(true)
+            if (activeTextField?.tag ?? 0 >= 2) {
+                stackViewToBottomConstraint.constant = keyboardSize.height + CGFloat(20)
+            }
+            self.view.layoutIfNeeded()
         }
+        print(self.passwordField.frame)
     }
     
     func keyboardWillHide(notification: NSNotification) {
-        self.animateTextField(false)
+        stackViewToBottomConstraint.constant = 0
+        self.view.layoutIfNeeded()
+        print(self.passwordField.frame)
     }
-    
-    func animateTextField(up: Bool) {
-        let delta = (up ? -keyboardHeight : keyboardHeight)
-        UIView.animateWithDuration(0.3) { () -> Void in
-            self.view.frame = CGRectOffset(self.view.frame, 0, delta)
-        }
-        
-    }
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
 
-    /*
     // MARK: - Navigation
-
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        super.prepareForSegue(segue, sender: sender)
     }
-    */
+    
     
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
         return .LightContent

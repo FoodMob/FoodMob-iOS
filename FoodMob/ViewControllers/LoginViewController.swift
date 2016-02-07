@@ -64,5 +64,9 @@ class LoginViewController: UIViewController {
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
         return .LightContent
     }
+    
+    @IBAction func unwindToLoginViewController(segue: UIStoryboardSegue) {
+        
+    }
 
 }
