@@ -41,22 +41,21 @@ class LoginViewController: UIViewController {
     
     override func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject?) -> Bool {
         if let segue = LoginViewControllerSegue(rawValue: identifier) {
-            if segue == .ToSearchSegue {
+            if segue == .ToSearchSegue && self.currentUser == nil {
                 self.currentUser = FoodMob.currentDataProvider.login(emailAddressField.safeText, password: passwordField.safeText)
                 if self.currentUser == nil {
-                    let alert = UIAlertController(title: "Login Failed", message: "Check your email address and password, and try again.", preferredStyle: .Alert)
-                    alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
-                    self.presentViewController(alert, animated: true, completion: nil)
+                    self.alert("Login Failed", message: "Check your email address and password, and try again.")
                     return false;
                 }
             }
         }
+        print(identifier)
         return true
     }
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         super.prepareForSegue(segue, sender: sender)
-        
+        print(segue.identifier)
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }
@@ -65,8 +64,17 @@ class LoginViewController: UIViewController {
         return .LightContent
     }
     
-    @IBAction func unwindToLoginViewController(segue: UIStoryboardSegue) {
-        
+    @IBAction func unwindToLoginViewControllerCancelled(segue: UIStoryboardSegue) {
     }
+    
+    @IBAction func unwindToLoginViewControllerSignedUp(segue: UIStoryboardSegue) {
+        if let registrationController = segue.sourceViewController as? RegistrationViewController {
+            self.emailAddressField.text = registrationController.emailAddressField.text
+            self.passwordField.text = registrationController.passwordField.text
+            self.currentUser = registrationController.registeredUser
+            self.performSegueWithIdentifier(LoginViewControllerSegue.ToSearchSegue.rawValue, sender: nil)
+        }
+    }
+    
 
 }

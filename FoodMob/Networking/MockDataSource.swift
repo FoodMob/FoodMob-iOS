@@ -8,6 +8,9 @@
 
 import Foundation
 
+/**
+ A mock data source, useful for testing and verification of in-application functionality.
+*/
 public struct MockDataSource : FoodMobDataSource {
 
     public func login(emailAddress: String, password: String) -> User? {
@@ -19,7 +22,12 @@ public struct MockDataSource : FoodMobDataSource {
         
     }
 
-    public func register(firstName: String, lastName: String, emailAddress: String, password: String) -> User? {
-        return nil
+    public func register(firstName firstName: String, lastName: String, emailAddress: String, password: String) -> User? {
+        guard validateName(firstName) &&
+            validateName(lastName) &&
+            validateEmailAddress(emailAddress) &&
+            validatePassword(password)
+            else { return nil }
+        return User(firstName: firstName, lastName: lastName, emailAddress: emailAddress, authToken: "9876543210fedcba")
     }
 }

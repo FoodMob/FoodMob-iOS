@@ -9,7 +9,8 @@
 import UIKit
 
 enum RegistrationViewControllerSegue: String {
-    case ToLoginSegue = "registrationToLoginSegue"
+    case ToLoginSegueCancelled = "registrationToLoginSegueCancelled"
+    case ToLoginSegueSignedUp = "registrationToLoginSegueSignedUp"
 }
 
 class RegistrationViewController: UIViewController, UITextFieldDelegate {
@@ -25,15 +26,22 @@ class RegistrationViewController: UIViewController, UITextFieldDelegate {
     private var keyboardHeight: CGFloat = 0.0
     @IBOutlet weak var textFieldStack: UIStackView!
     private var activeTextField: UITextField?
+    
+    internal var registeredUser: User?
 
     @IBOutlet weak var stackViewToBottomConstraint: NSLayoutConstraint!
 
+    // MARK: - View Controller Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         fields.forEach { (field) -> () in
             field.delegate = self
         }
         verifyPasswordField.removeFromSuperview()
+    }
+    
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return .LightContent
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -46,6 +54,12 @@ class RegistrationViewController: UIViewController, UITextFieldDelegate {
         NSNotificationCenter.defaultCenter().removeObserver(self)
     }
     
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    // MARK: - Text Field and Keyboard Management
     func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
         self.activeTextField = textField
         return true
@@ -73,31 +87,43 @@ class RegistrationViewController: UIViewController, UITextFieldDelegate {
             }
             self.view.layoutIfNeeded()
         }
-        print(self.passwordField.frame)
     }
     
     func keyboardWillHide(notification: NSNotification) {
         stackViewToBottomConstraint.constant = 0
         self.view.layoutIfNeeded()
-        print(self.passwordField.frame)
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
 
     // MARK: - Navigation
+    
+    @IBAction func cancelButtonPressed(sender: UIButton) {
+        fields.forEach { (field) -> () in
+            field.text = ""
+        }
+    }
+    
+    override func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject?) -> Bool {
+        if let segue = RegistrationViewControllerSegue(rawValue: identifier) where segue == .ToLoginSegueSignedUp {
+            
+            registeredUser = FoodMob.currentDataProvider.register(
+                firstName: firstNameField.safeText,
+                lastName: lastNameField.safeText,
+                emailAddress: emailAddressField.safeText,
+                password: passwordField.safeText
+            )
+            if (registeredUser == nil) {
+                self.alert("Sign Up Error", message: "Make sure you entered a valid email address and password, and try again.")
+            }
+            return registeredUser != nil
+        }
+        return true
+    }
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         super.prepareForSegue(segue, sender: sender)
-    }
-    
-    
-    override func preferredStatusBarStyle() -> UIStatusBarStyle {
-        return .LightContent
+        if let segueID = segue.identifier, segueName = RegistrationViewControllerSegue(rawValue: segueID) where segueName == .ToLoginSegueSignedUp {
+        }
     }
 
 }
