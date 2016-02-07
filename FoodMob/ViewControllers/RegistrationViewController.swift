@@ -26,8 +26,7 @@ class RegistrationViewController: UIViewController, UITextFieldDelegate {
     private var keyboardHeight: CGFloat = 0.0
     @IBOutlet weak var textFieldStack: UIStackView!
     private var activeTextField: UITextField?
-    
-    internal var registeredUser: User?
+
 
     @IBOutlet weak var stackViewToBottomConstraint: NSLayoutConstraint!
 
@@ -105,16 +104,12 @@ class RegistrationViewController: UIViewController, UITextFieldDelegate {
     override func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject?) -> Bool {
         if let segue = RegistrationViewControllerSegue(rawValue: identifier) where segue == .ToLoginSegueSignedUp {
             
-            registeredUser = FoodMob.currentDataProvider.register(
+            FoodMob.currentDataProvider.register(
                 firstName: firstNameField.safeText,
                 lastName: lastNameField.safeText,
                 emailAddress: emailAddressField.safeText,
-                password: passwordField.safeText
+                password: passwordField.safeText,
             )
-            if (registeredUser == nil) {
-                self.alert("Sign Up Error", message: "Make sure you entered a valid email address and password, and try again.")
-            }
-            return registeredUser != nil
         }
         return true
     }
@@ -122,8 +117,8 @@ class RegistrationViewController: UIViewController, UITextFieldDelegate {
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         super.prepareForSegue(segue, sender: sender)
-        if let segueID = segue.identifier, segueName = RegistrationViewControllerSegue(rawValue: segueID) where segueName == .ToLoginSegueSignedUp {
-        }
+//        if let segueID = segue.identifier, segueName = RegistrationViewControllerSegue(rawValue: segueID) where segueName == .ToLoginSegueSignedUp {
+//        }
     }
 
 }

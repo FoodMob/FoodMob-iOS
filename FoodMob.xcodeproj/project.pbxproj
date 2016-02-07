@@ -510,6 +510,7 @@
 				ABD291511C67995500C31501 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		ABFCB6921C038F3300ED33BE /* Build configuration list for PBXProject "FoodMob" */ = {
 			isa = XCConfigurationList;

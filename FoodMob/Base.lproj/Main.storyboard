@@ -1171,7 +1171,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="qUD-OQ-aWp" kind="unwind" identifier="registrationToLoginSegueSignedUp" unwindAction="unwindToLoginViewControllerSignedUp:" id="Kg9-mH-L6e"/>
+                                    <segue destination="qUD-OQ-aWp" kind="unwind" identifier="registrationToLoginSegueSignedUp" unwindAction="unwindToLoginViewController:" id="eMr-c9-GKh"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6LQ-oZ-gAf">
@@ -1182,7 +1182,7 @@
                                 </state>
                                 <connections>
                                     <action selector="cancelButtonPressed:" destination="cph-OR-Wbo" eventType="touchUpInside" id="mSd-6V-Ato"/>
-                                    <segue destination="qUD-OQ-aWp" kind="unwind" identifier="registrationToLoginSegueCancelled" unwindAction="unwindToLoginViewControllerCancelled:" id="o2h-gz-4Ev"/>
+                                    <segue destination="qUD-OQ-aWp" kind="unwind" identifier="registrationToLoginSegueCancelled" unwindAction="unwindToLoginViewController:" id="ixW-Qo-saC"/>
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="Ctk-0K-z5W">

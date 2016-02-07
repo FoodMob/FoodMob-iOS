@@ -63,16 +63,11 @@ class LoginViewController: UIViewController {
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
         return .LightContent
     }
-    
-    @IBAction func unwindToLoginViewControllerCancelled(segue: UIStoryboardSegue) {
-    }
-    
-    @IBAction func unwindToLoginViewControllerSignedUp(segue: UIStoryboardSegue) {
+
+    @IBAction func unwindToLoginViewController(segue: UIStoryboardSegue) {
         if let registrationController = segue.sourceViewController as? RegistrationViewController {
             self.emailAddressField.text = registrationController.emailAddressField.text
             self.passwordField.text = registrationController.passwordField.text
-            self.currentUser = registrationController.registeredUser
-            self.performSegueWithIdentifier(LoginViewControllerSegue.ToSearchSegue.rawValue, sender: nil)
         }
     }
     

@@ -13,11 +13,12 @@ import SwiftyJSON
 /**
  The actual FoodMob service data source.   Requires network access in order to function properly.
 */
+
 public struct FoodMobService: FoodMobDataSource {
     
     private struct ServiceEndpoint : Endpoint {
         static var root: String {
-            return "https://fluf.me/foodmob"
+            return "http://localhost:8080"
         }
     }
 
@@ -35,5 +36,17 @@ public struct FoodMobService: FoodMobDataSource {
     public func register(firstName firstName: String, lastName: String, emailAddress: String, password: String) -> User? {
         // TODO
         return nil
+        let parameters = [
+            UserField.emailAddress : emailAddress,
+            UserField.password : password,
+            UserField.firstName : firstName,
+            UserField.lastName : lastName
+        ]
     }
+
+private struct UserField {
+    static let emailAddress = "email"
+    static let password = "password"
+    static let firstName = "first_name"
+    static let lastName = "last_name"
 }

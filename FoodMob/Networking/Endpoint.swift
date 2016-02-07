@@ -6,6 +6,7 @@
 //  Copyright © 2016 Jonathan Jemson. All rights reserved.
 //
 
+import Alamofire
 import Foundation
 
 /**
@@ -25,6 +26,9 @@ public extension Endpoint {
         return "\(self.root)/login"
     }
     public static var register: String {
-        return "\(self.root)/register"
+        return "\(self.root)/user"
+    }
+    public static var registerMethod: Alamofire.Method {
+        return .POST
     }
 }
