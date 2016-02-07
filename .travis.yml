@@ -1,11 +1,11 @@
 language: objective-c
 osx_image: xcode7.2
 xcode_project: FoodMob.xcodeproj
-xcode_scheme: FoodMobTests
+xcode_scheme: FoodMob
 xcode_sdk: iphonesimulator9.2
 
 before_install:
     - brew update
     - brew outdated xctool || brew upgrade xctool
     - brew outdated carthage || brew upgrade carthage
-    - carthage bootstrap --verbose
+    - carthage bootstrap --verbose --platform iOS
