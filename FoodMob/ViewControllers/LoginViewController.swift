@@ -12,7 +12,7 @@ import UIKit
  Segues from Login View Controller to other controllers
  */
 enum LoginViewControllerSegue: String {
-    case ToSearchSegue = "loginToSearchSegue"
+    case ToMainSegue = "loginToMainSegue"
     case ToRegisterSegue = "loginToRegisterSegue"
 }
 
@@ -40,22 +40,22 @@ class LoginViewController: UIViewController {
     // MARK: - Navigation
     
     override func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject?) -> Bool {
-        if let segue = LoginViewControllerSegue(rawValue: identifier) {
-            if segue == .ToSearchSegue && self.currentUser == nil {
-                self.currentUser = FoodMob.currentDataProvider.login(emailAddressField.safeText, password: passwordField.safeText)
-                if self.currentUser == nil {
-                    self.alert("Login Failed", message: "Check your email address and password, and try again.")
-                    return false;
-                }
+        return true
+    }
+    
+    @IBAction func loginButtonPressed(sender: UIButton) {
+        FoodMob.currentDataProvider.login(emailAddressField.safeText, password: passwordField.safeText) { [unowned self] (user) -> () in
+            if let user = user {
+                self.currentUser = user
+                self.performSegueWithIdentifier(LoginViewControllerSegue.ToMainSegue.rawValue, sender: nil)
+            } else {
+                self.alert("Log In Failed", message: "Check your email address and password, and try again.")
             }
         }
-        print(identifier)
-        return true
     }
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         super.prepareForSegue(segue, sender: sender)
-        print(segue.identifier)
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }

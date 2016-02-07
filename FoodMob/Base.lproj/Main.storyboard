@@ -1101,7 +1101,7 @@
                                     <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="49e-Tb-3d3" kind="show" identifier="loginToSearchSegue" id="Qsx-JY-Rbz"/>
+                                    <action selector="loginButtonPressed:" destination="4MX-mg-wgs" eventType="touchUpInside" id="MG5-gb-6DK"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ce5-eA-a1s">
@@ -1139,11 +1139,12 @@
                     <connections>
                         <outlet property="emailAddressField" destination="sWi-Hs-ll5" id="Kas-h7-6Er"/>
                         <outlet property="passwordField" destination="Dkg-Ap-GFT" id="rQj-tI-ecg"/>
+                        <segue destination="49e-Tb-3d3" kind="show" identifier="loginToMainSegue" id="mSw-Ld-UUb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DaA-WJ-FPT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1009" y="167"/>
+            <point key="canvasLocation" x="-961" y="99"/>
         </scene>
         <!--Registration View Controller-->
         <scene sceneID="M2W-Ow-sFr">
@@ -1171,7 +1172,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="qUD-OQ-aWp" kind="unwind" identifier="registrationToLoginSegueSignedUp" unwindAction="unwindToLoginViewController:" id="eMr-c9-GKh"/>
+                                    <action selector="signUpButtonPressed:" destination="cph-OR-Wbo" eventType="touchUpInside" id="y4H-lx-DPi"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6LQ-oZ-gAf">
@@ -1274,6 +1275,7 @@
                         <outletCollection property="fields" destination="jOG-dw-00O" collectionClass="NSMutableArray" id="nNj-vN-nec"/>
                         <outletCollection property="fields" destination="Uam-Ci-CP7" collectionClass="NSMutableArray" id="DqO-8u-3CL"/>
                         <outletCollection property="fields" destination="O7L-Ca-QoR" collectionClass="NSMutableArray" id="mip-O7-fiD"/>
+                        <segue destination="qUD-OQ-aWp" kind="unwind" identifier="registrationToLoginSegueSignedUp" unwindAction="unwindToLoginViewController:" id="VIa-D4-2oE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kLE-bg-QCN" userLabel="First Responder" sceneMemberID="firstResponder"/>

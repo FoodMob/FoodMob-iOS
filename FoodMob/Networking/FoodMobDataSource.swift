@@ -29,10 +29,11 @@ public protocol FoodMobDataSource {
      - Parameters:
         - emailAddress: The email address for the user
         - password: The password for the user.
+        - completion: When request is done, this block is called.
      
      - returns: A User object for the currently logged in user. `nil` is returned if the login failed.
      */
-    func login(emailAddress: String, password: String) -> User?
+    func login(emailAddress: String, password: String, completion: ((User?)->())?)
     
     /**
      Creates a new user on the server.
@@ -42,10 +43,11 @@ public protocol FoodMobDataSource {
         - lastName: User's last name
         - emailAddress: User's email address
         - password: User's password.
+        - completion: When request is done, this block is called
      
      - returns: The user object for the new user that is created.
      */
-    func register(firstName firstName: String, lastName: String, emailAddress: String, password: String) -> User?
+    func register(firstName firstName: String, lastName: String, emailAddress: String, password: String, completion: ((Bool) -> ())?)
 }
 
 public extension FoodMobDataSource {

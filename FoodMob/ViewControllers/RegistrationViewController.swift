@@ -95,6 +95,23 @@ class RegistrationViewController: UIViewController, UITextFieldDelegate {
 
     // MARK: - Navigation
     
+    @IBAction func signUpButtonPressed(sender: UIButton) {
+        FoodMob.currentDataProvider.register(
+            firstName: firstNameField.safeText,
+            lastName: lastNameField.safeText,
+            emailAddress: emailAddressField.safeText,
+            password: passwordField.safeText,
+            completion:  {
+                [unowned self] (success) -> () in
+                if success {
+                    self.performSegueWithIdentifier(RegistrationViewControllerSegue.ToLoginSegueSignedUp.rawValue, sender: nil)
+                } else {
+                    self.alert("Sign Up Failed", message: "Please make sure you entered a valid email address and password.")
+                }
+            }
+        )
+        
+    }
     @IBAction func cancelButtonPressed(sender: UIButton) {
         fields.forEach { (field) -> () in
             field.text = ""
@@ -102,15 +119,6 @@ class RegistrationViewController: UIViewController, UITextFieldDelegate {
     }
     
     override func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject?) -> Bool {
-        if let segue = RegistrationViewControllerSegue(rawValue: identifier) where segue == .ToLoginSegueSignedUp {
-            
-            FoodMob.currentDataProvider.register(
-                firstName: firstNameField.safeText,
-                lastName: lastNameField.safeText,
-                emailAddress: emailAddressField.safeText,
-                password: passwordField.safeText,
-            )
-        }
         return true
     }
     

@@ -13,21 +13,28 @@ import Foundation
 */
 public struct MockDataSource : FoodMobDataSource {
 
-    public func login(emailAddress: String, password: String) -> User? {
+    public func login(emailAddress: String, password: String, completion: ((User?)->())? = nil) {
         if emailAddress.lowercaseString.containsString("foodmob.me") && password.lowercaseString.containsString("pass") {
             let user = User(firstName: "Jonathan", lastName: "Jemson", emailAddress: emailAddress, authToken: "0123456789abcdef")
-            return user
+            if let completion = completion {
+                completion(user)
+            }
         }
-        return nil
+        if let completion = completion {
+            completion(nil)
+        }
         
     }
 
-    public func register(firstName firstName: String, lastName: String, emailAddress: String, password: String) -> User? {
+    public func register(firstName firstName: String, lastName: String, emailAddress: String, password: String, completion: ((Bool)->())? = nil) {
         guard validateName(firstName) &&
             validateName(lastName) &&
             validateEmailAddress(emailAddress) &&
             validatePassword(password)
-            else { return nil }
-        return User(firstName: firstName, lastName: lastName, emailAddress: emailAddress, authToken: "9876543210fedcba")
+            else {
+                completion?(false)
+                return
+        }
+        completion?(true)
     }
 }
