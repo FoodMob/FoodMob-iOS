@@ -16,25 +16,67 @@ enum LoginViewControllerSegue: String {
     case ToRegisterSegue = "loginToRegisterSegue"
 }
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, UITextFieldDelegate {
     
     // MARK: - UI Elements
     @IBOutlet weak var emailAddressField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
+    @IBOutlet weak var bottomLayoutConstraint: NSLayoutConstraint!
     
     // MARK: - Model Elements
     private var currentUser: User?
     
+    // MARK: - View Controller Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        emailAddressField.delegate = self
+        passwordField.delegate = self
+    }
 
-        // Do any additional setup after loading the view.
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil)
+    }
+
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        NSNotificationCenter.defaultCenter().removeObserver(self)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    // MARK: - Text Field and Keyboard Management
+    func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
+        return true
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        switch textField {
+        case emailAddressField:
+            passwordField.becomeFirstResponder()
+        default:
+            loginButtonPressed(UIButton())
+            textField.resignFirstResponder()
+        }
+        return true
+    }
+    
+    func keyboardWillShow(notification: NSNotification) {
+        if let userInfo = notification.userInfo, keyboardSize = (userInfo[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue() {
+            bottomLayoutConstraint.constant = keyboardSize.height + CGFloat(20)
+            self.view.layoutIfNeeded()
+        }
+    }
+    
+    func keyboardWillHide(notification: NSNotification) {
+        bottomLayoutConstraint.constant = 0
+        self.view.layoutIfNeeded()
+    }
+
 
     
     // MARK: - Navigation

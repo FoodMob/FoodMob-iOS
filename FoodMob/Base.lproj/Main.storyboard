@@ -1093,7 +1093,7 @@
                                 </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="egn-W0-QNc">
-                                <rect key="frame" x="175" y="327" width="250" height="40"/>
+                                <rect key="frame" x="175" y="312" width="250" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="hsa-zs-uew"/>
                                 </constraints>
@@ -1105,7 +1105,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ce5-eA-a1s">
-                                <rect key="frame" x="175" y="375" width="250" height="40"/>
+                                <rect key="frame" x="175" y="360" width="250" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="xUT-Co-0ky"/>
                                 </constraints>
@@ -1124,7 +1124,7 @@
                             <constraint firstItem="E8v-Vk-Cfs" firstAttribute="top" secondItem="Kgv-UW-94X" secondAttribute="bottom" constant="-20" id="BLb-3r-goh"/>
                             <constraint firstItem="E8v-Vk-Cfs" firstAttribute="leading" secondItem="yMC-Po-TMg" secondAttribute="leadingMargin" constant="-20" id="DTG-wW-XZS"/>
                             <constraint firstItem="Qva-Bp-KEg" firstAttribute="centerX" secondItem="E8v-Vk-Cfs" secondAttribute="centerX" id="EQZ-Wl-6D8"/>
-                            <constraint firstItem="egn-W0-QNc" firstAttribute="top" secondItem="nuW-ul-9nW" secondAttribute="bottom" constant="65" id="HQV-ni-Eqb"/>
+                            <constraint firstItem="egn-W0-QNc" firstAttribute="top" secondItem="nuW-ul-9nW" secondAttribute="bottom" constant="50" id="HQV-ni-Eqb"/>
                             <constraint firstItem="Ce5-eA-a1s" firstAttribute="top" secondItem="egn-W0-QNc" secondAttribute="bottom" constant="8" id="QxS-01-9xv"/>
                             <constraint firstAttribute="trailingMargin" secondItem="E8v-Vk-Cfs" secondAttribute="trailing" constant="-20" id="R0u-zs-ghq"/>
                             <constraint firstItem="4ga-t5-t1H" firstAttribute="top" secondItem="E8v-Vk-Cfs" secondAttribute="bottom" id="Zgf-cK-Pxt"/>
@@ -1132,11 +1132,13 @@
                             <constraint firstItem="Qva-Bp-KEg" firstAttribute="centerX" secondItem="egn-W0-QNc" secondAttribute="centerX" id="kDo-hf-cl0"/>
                             <constraint firstItem="Ce5-eA-a1s" firstAttribute="leading" secondItem="egn-W0-QNc" secondAttribute="leading" id="lSQ-SZ-e7P"/>
                             <constraint firstItem="nuW-ul-9nW" firstAttribute="top" secondItem="Qva-Bp-KEg" secondAttribute="bottom" constant="40" id="qeq-P2-i1e"/>
-                            <constraint firstItem="Qva-Bp-KEg" firstAttribute="top" secondItem="Kgv-UW-94X" secondAttribute="bottom" constant="73" id="vhn-bk-LDv"/>
+                            <constraint firstItem="4ga-t5-t1H" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Dkg-Ap-GFT" secondAttribute="bottom" id="sGp-zp-Vao"/>
+                            <constraint firstItem="Qva-Bp-KEg" firstAttribute="top" secondItem="Kgv-UW-94X" secondAttribute="bottom" priority="999" constant="73" id="vhn-bk-LDv"/>
                         </constraints>
                     </view>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
+                        <outlet property="bottomLayoutConstraint" destination="sGp-zp-Vao" id="hyK-cZ-F5j"/>
                         <outlet property="emailAddressField" destination="sWi-Hs-ll5" id="Kas-h7-6Er"/>
                         <outlet property="passwordField" destination="Dkg-Ap-GFT" id="rQj-tI-ecg"/>
                         <segue destination="49e-Tb-3d3" kind="show" identifier="loginToMainSegue" id="mSw-Ld-UUb"/>
@@ -1227,7 +1229,7 @@
                                         </constraints>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next" secureTextEntry="YES"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="go" secureTextEntry="YES"/>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Verify Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="O7L-Ca-QoR" customClass="SimpleTextField" customModule="FoodMob" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="184" width="250" height="21"/>

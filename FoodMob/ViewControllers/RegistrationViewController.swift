@@ -73,6 +73,7 @@ class RegistrationViewController: UIViewController, UITextFieldDelegate {
         case emailAddressField:
             passwordField.becomeFirstResponder()
         default:
+            signUpButtonPressed(UIButton())
             textField.resignFirstResponder()
         }
         return true

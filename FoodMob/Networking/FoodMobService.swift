@@ -1,5 +1,5 @@
 //
-//  RemoteDataSource.swift
+//  FoodMobService.swift
 //  FoodMob
 //
 //  Created by Jonathan Jemson on 2/5/16.
@@ -53,7 +53,7 @@ public struct FoodMobService: FoodMobDataSource {
                 if let value = response.result.value {
                     let json = JSON(value)
                     print("json: \(json)")
-                    completion?(true)
+                    completion?(json["success"].boolValue)
                 }
             case .Failure(let error):
                 print(error)
