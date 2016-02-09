@@ -1,7 +1,7 @@
 # FoodMob
 [![Build Status](https://travis-ci.org/FoodMob/FoodMob-iOS.svg?branch=master)](https://travis-ci.org/FoodMob/FoodMob-iOS)
 
-Eating out with friends made easy.  This is the iOS portion of the application.  The backend server is in \[repo not yet specified\]
+Eating out with friends made easy.  This is the iOS portion of the application.  The backend server is in [FoodMob-Node](https://github.com/FoodMob/FoodMob-Node).
 
 # Build Requirements
 * Xcode 7.2 with iOS 9.2 SDK
