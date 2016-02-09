@@ -23,11 +23,26 @@ public struct FoodMobService: FoodMobDataSource {
     }
 
     public func login(emailAddress: String, password: String, completion: ((User?) -> ())? = nil) {
-        // TODO
-        Alamofire.request(.POST, ServiceEndpoint.login, parameters: ["emailAddress": emailAddress, "password": password], encoding: .JSON).responseData {
+        Alamofire.request(.POST, ServiceEndpoint.login, parameters: [UserField.emailAddress: emailAddress, UserField.password: password], encoding: .JSON).validate().responseJSON {
             response in
-            print(response.request)
-            print(response.response)
+            switch response.result {
+            case .Success:
+                if let value = response.result.value {
+                    let json = JSON(value)
+                    print("json: \(json)")
+                    if let firstName = json[UserField.profile][UserField.firstName].string,
+                        lastName = json[UserField.profile][UserField.lastName].string,
+                        emailAddress = json[UserField.emailAddress].string, authToken = json[UserField.authToken].string {
+                            let user = User(firstName: firstName, lastName: lastName, emailAddress: emailAddress, authToken: authToken)
+                            completion?(user)
+                    } else {
+                        completion?(nil)
+                    }
+                }
+            case .Failure(let error):
+                print(error)
+                completion?(nil)
+            }
         }
     }
 
@@ -61,11 +76,4 @@ public struct FoodMobService: FoodMobDataSource {
             }
         }
     }
-}
-
-private struct UserField {
-    static let emailAddress = "email"
-    static let password = "password"
-    static let firstName = "first_name"
-    static let lastName = "last_name"
 }

@@ -40,6 +40,11 @@ extension UITextField {
 
 extension String {
     
+    /**
+     Simply characters.count
+     
+     - returns: the number of characters in the string (including grapheme clusters).
+     */
     var length: Int {
         return self.characters.count
     }

@@ -38,6 +38,16 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil)
     }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        if let email = NSUserDefaults.standardUserDefaults().stringForKey(UserField.emailAddress) {
+            self.currentUser = User(emailAddress: email)
+            if self.currentUser != nil {
+                self.performSegueWithIdentifier(LoginViewControllerSegue.ToMainSegue.rawValue, sender: nil)
+            }
+        }
+    }
 
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)

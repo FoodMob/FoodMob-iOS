@@ -15,7 +15,7 @@ For testing purposes, use a mock data source.
 
 For testing client-server interaction and release, use the actual service provider.
 */
-let currentDataProvider: FoodMobDataSource = MockDataSource()
+let currentDataProvider: FoodMobDataSource = FoodMobService()
 
 
 /**

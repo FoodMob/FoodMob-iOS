@@ -1141,7 +1141,7 @@
                         <outlet property="bottomLayoutConstraint" destination="sGp-zp-Vao" id="hyK-cZ-F5j"/>
                         <outlet property="emailAddressField" destination="sWi-Hs-ll5" id="Kas-h7-6Er"/>
                         <outlet property="passwordField" destination="Dkg-Ap-GFT" id="rQj-tI-ecg"/>
-                        <segue destination="49e-Tb-3d3" kind="show" identifier="loginToMainSegue" id="mSw-Ld-UUb"/>
+                        <segue destination="49e-Tb-3d3" kind="showDetail" identifier="loginToMainSegue" action="showViewController:sender:" id="mSw-Ld-UUb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DaA-WJ-FPT" userLabel="First Responder" sceneMemberID="firstResponder"/>
