@@ -3,22 +3,22 @@ osx_image: xcode7.2
 xcode_project: FoodMob.xcodeproj
 xcode_scheme: FoodMob
 xcode_sdk: iphonesimulator9.2
-
 env:
   global:
-    - ONLY_ACTIVE_ARCH=NO
+  - ONLY_ACTIVE_ARCH=NO
   matrix:
-    - NAME='iPhone 4s'
-    - NAME='iPhone 5'
-    - NAME='iPhone 5s'
-    - NAME='iPhone 6'
-    - NAME='iPhone 6s Plus'
-
+  - NAME='iPhone 4s'
+  - NAME='iPhone 5'
+  - NAME='iPhone 5s'
+  - NAME='iPhone 6'
+  - NAME='iPhone 6s Plus'
 before_install:
-    - brew update
-    - brew outdated xctool || brew upgrade xctool
-    - brew outdated carthage || brew upgrade carthage
-    - carthage bootstrap --verbose --platform iOS
-
-script:
-  xctool -sdk iphonesimulator9.2 -destination "platform=iOS Simulator,name=$NAME,OS=9.2" -project FoodMob.xcodeproj -scheme FoodMob test
+- brew update
+- brew outdated xctool || brew upgrade xctool
+- brew outdated carthage || brew upgrade carthage
+- carthage bootstrap --verbose --platform iOS
+script: xctool -sdk iphonesimulator9.2 -destination "platform=iOS Simulator,name=$NAME,OS=9.2"
+  -project FoodMob.xcodeproj -scheme FoodMob test
+notifications:
+  slack:
+    secure: ff8GHFedlhQalhimjT8dIZLEUGY9eukxCJR3gkP3Vw1qndllNyskdFzDmwDwuRktJIliME4HKl8yhazd7+G0wlQvO9D/RClNmJXLn/rad2TEKWeDnq9u6Pd9pG95e1p/y5UxWoRUgAvUAA3jnFydJC5+WQkbJMNc/CHBRXMgYx5FyHBS1AhuIOs+/j6cvzoK7ADFwZ5NutndClPrxBPetfru+8QIs8OQ2qYiXCgQV0S0FLuOdID+78zgj56fVm53qRW4caPRLdXRXRus6lj0yGPu0ponoer0yeQw+lhbzxsJQ9awHmXngeqNuqhZzCWy1gy9IU8umBMOTnpdyEWbU968VWG2S0/w35z6q8FWcQ9+GmiOk5TA+qzXXFNMhwpmLUlLHfhBQWohtz8w3suhgzOgjHwdrT98beZEcfgYXfnAckY6tNcsxK9GPj3rh6/RLO2EYXD840AXAwvrZ6bjnQfON7oHBMHl1WfJras5BrrHTmWQPUT4IO4/W9M3mU3DhCrzWAv98VB0FOoOIF70vlVyKq1OJmeIGqhtPps38nBeHwqxz2ZABPqZ7QrFd3xhpRsyBCtBw+B+zK2MS+TtUcr4M7PFcuQFxOrrPZG8W1WYWQST6oT7yH9f3quE30Zsx08dO+wXlPl4lAGGDG0tDqTgyXlxDYY+AHXGVXKO/zA=
