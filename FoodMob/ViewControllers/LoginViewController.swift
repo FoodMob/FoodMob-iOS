@@ -52,6 +52,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             self?.currentUser = User(emailAddress: nil)
             if self?.currentUser != nil {
                 self?.performSegueWithIdentifier(LoginViewControllerSegue.ToMainSegue.rawValue, sender: nil)
+                Session.sharedSession.currentUser = self?.currentUser
             }
         }
     }

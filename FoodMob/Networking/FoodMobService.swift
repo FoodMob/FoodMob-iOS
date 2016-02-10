@@ -29,7 +29,6 @@ public struct FoodMobService: FoodMobDataSource {
             case .Success:
                 if let value = response.result.value {
                     let json = JSON(value)
-                    print("json: \(json)")
                     if let firstName = json[UserField.profile][UserField.firstName].string,
                         lastName = json[UserField.profile][UserField.lastName].string,
                         emailAddress = json[UserField.emailAddress].string, authToken = json[UserField.authToken].string {
@@ -67,7 +66,6 @@ public struct FoodMobService: FoodMobDataSource {
             case .Success:
                 if let value = response.result.value {
                     let json = JSON(value)
-                    print("json: \(json)")
                     completion?(json["success"].boolValue)
                 }
             case .Failure(let error):

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AB3714F01C6BFCBD004EA323 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3714EF1C6BFCBD004EA323 /* Session.swift */; };
 		AB510A331C66763C0056ADEC /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB510A321C66763C0056ADEC /* GradientView.swift */; };
 		AB510A351C6678FE0056ADEC /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB510A341C6678FE0056ADEC /* RegistrationViewController.swift */; };
 		AB510A371C668BBA0056ADEC /* SimpleTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB510A361C668BBA0056ADEC /* SimpleTextField.swift */; };
@@ -59,6 +60,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		AB3714EF1C6BFCBD004EA323 /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		AB510A321C66763C0056ADEC /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		AB510A341C6678FE0056ADEC /* RegistrationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		AB510A361C668BBA0056ADEC /* SimpleTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleTextField.swift; sourceTree = "<group>"; };
@@ -152,6 +154,7 @@
 			isa = PBXGroup;
 			children = (
 				ABF3F56C1C652174000AB856 /* User.swift */,
+				AB3714EF1C6BFCBD004EA323 /* Session.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -314,6 +317,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB3714F01C6BFCBD004EA323 /* Session.swift in Sources */,
 				ABF3F5781C652629000AB856 /* LoginViewController.swift in Sources */,
 				ABF3F5751C65255A000AB856 /* FoodMobService.swift in Sources */,
 				AB510A331C66763C0056ADEC /* GradientView.swift in Sources */,

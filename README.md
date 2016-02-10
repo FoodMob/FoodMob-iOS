@@ -24,7 +24,7 @@ Eating out with friends made easy.  This is the iOS portion of the application. 
 2. In this project directory, run
 
     ```
-    carthage bootstrap
+    carthage bootstrap --platform iOS
     ```
     
     This installs the library dependencies needed for this application.

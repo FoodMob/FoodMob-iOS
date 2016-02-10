@@ -8,6 +8,10 @@
 
 import UIKit
 
+enum ProfileTableViewControllerSegue: String {
+    case ToLoginSegue = "profileToLoginSegue"
+}
+
 class ProfileTableViewController: UITableViewController {
 
     override func viewDidLoad() {
@@ -18,6 +22,7 @@ class ProfileTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -28,10 +33,9 @@ class ProfileTableViewController: UITableViewController {
     // MARK: - Table view data source
 
 //    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-//        // #warning Incomplete implementation, return the number of sections
-//        return 0
+//        return 2
 //    }
-//
+
 //    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 //        // #warning Incomplete implementation, return the number of rows
 //        return 0
@@ -91,5 +95,48 @@ class ProfileTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        switch indexPath.section {
+        case 0:
+            selectedAboutMeRow(indexPath.row)
+        case 1:
+            selectedAccountRow(indexPath.row)
+        default:
+            print("Not implemented")
+        }
+    }
+    
+    func selectedAboutMeRow(row: Int) {
+        
+    }
+    
+    func selectedAccountRow(row: Int) {
+        guard let row = AccountRow(rawValue: row) else { return }
+        
+        switch row {
+        case .SignOut:
+            Session.sharedSession.currentUser!.eraseUser()
+            Session.sharedSession.currentUser = nil
+            self.performSegueWithIdentifier(ProfileTableViewControllerSegue.ToLoginSegue.rawValue, sender: nil)
+        default:
+            print("Not implemented yet")
+        }
+    }
 }
+
+enum AboutMeRow: Int {
+    case Profile = 0
+    case Likes = 1
+    case Dislikes = 2
+    case Restrictions = 3
+}
+
+enum AccountRow: Int {
+    case PasswordSecurity = 0
+    case Help = 1
+    case PrivacyTerms = 2
+    case SignOut = 3
+}
+

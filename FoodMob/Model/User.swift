@@ -36,8 +36,7 @@ public struct User: CreateableSecureStorable, ReadableSecureStorable, Deleteable
         }
         
         do {
-             try self.createInSecureStore()
-            print("Saved to keychain")
+            try self.createInSecureStore()
         } catch {
             print(error)
         }
@@ -55,7 +54,6 @@ public struct User: CreateableSecureStorable, ReadableSecureStorable, Deleteable
         self.lastName = ""
         self.emailAddress = emailAddress ?? Locksmith.loadDataForUserAccount("FDMB-FoodMob")?[UserField.emailAddress] as? String ?? ""
         self.authToken = ""
-        print("Attempting keychain login")
         if let storeData = self.readFromSecureStore(), data = storeData.data,
             firstName = data[UserField.firstName] as? String, lastName = data[UserField.lastName] as? String,
             authToken = data[UserField.authToken] as? String
@@ -63,7 +61,6 @@ public struct User: CreateableSecureStorable, ReadableSecureStorable, Deleteable
             self.firstName = firstName
             self.lastName = lastName
             self.authToken = authToken
-            print("Read from Keychain")
             return
         }
         return nil
