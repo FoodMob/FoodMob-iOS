@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15E33e" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="4MX-mg-wgs">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10109" systemVersion="15E33e" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="4MX-mg-wgs">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10083"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -842,7 +842,7 @@
         <!--My Profile-->
         <scene sceneID="x1R-3S-Rdd">
             <objects>
-                <tableViewController id="ODY-ov-udF" sceneMemberID="viewController">
+                <tableViewController id="ODY-ov-udF" customClass="ProfileTableViewController" customModule="FoodMob" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="1wO-as-LCi">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1069,10 +1069,10 @@
                                 <rect key="frame" x="175" y="93" width="250" height="44"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="nuW-ul-9nW">
-                                <rect key="frame" x="175" y="177" width="250" height="85"/>
+                                <rect key="frame" x="175" y="177" width="250" height="93"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sWi-Hs-ll5">
-                                        <rect key="frame" x="0.0" y="0.0" width="250" height="40"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="250" height="44"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="250" id="GVI-Fc-TjN"/>
@@ -1081,7 +1081,7 @@
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress"/>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="18" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Dkg-Ap-GFT">
-                                        <rect key="frame" x="0.0" y="45" width="250" height="40"/>
+                                        <rect key="frame" x="0.0" y="49" width="250" height="44"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
@@ -1093,10 +1093,11 @@
                                 </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="egn-W0-QNc">
-                                <rect key="frame" x="175" y="312" width="250" height="40"/>
+                                <rect key="frame" x="175" y="320" width="250" height="50"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="hsa-zs-uew"/>
+                                    <constraint firstAttribute="height" constant="50" id="hsa-zs-uew"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <state key="normal" title="Log In" backgroundImage="LoginButton">
                                     <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -1105,10 +1106,11 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ce5-eA-a1s">
-                                <rect key="frame" x="175" y="360" width="250" height="40"/>
+                                <rect key="frame" x="175" y="378" width="250" height="50"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="xUT-Co-0ky"/>
+                                    <constraint firstAttribute="height" constant="50" id="xUT-Co-0ky"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <state key="normal" title="Sign Up" backgroundImage="LoginButton">
                                     <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -1128,9 +1130,10 @@
                             <constraint firstItem="Ce5-eA-a1s" firstAttribute="top" secondItem="egn-W0-QNc" secondAttribute="bottom" constant="8" id="QxS-01-9xv"/>
                             <constraint firstAttribute="trailingMargin" secondItem="E8v-Vk-Cfs" secondAttribute="trailing" constant="-20" id="R0u-zs-ghq"/>
                             <constraint firstItem="4ga-t5-t1H" firstAttribute="top" secondItem="E8v-Vk-Cfs" secondAttribute="bottom" id="Zgf-cK-Pxt"/>
-                            <constraint firstItem="sWi-Hs-ll5" firstAttribute="height" secondItem="egn-W0-QNc" secondAttribute="height" id="aL3-eT-1h1"/>
+                            <constraint firstItem="sWi-Hs-ll5" firstAttribute="height" secondItem="egn-W0-QNc" secondAttribute="height" constant="-6" id="aL3-eT-1h1"/>
                             <constraint firstItem="Qva-Bp-KEg" firstAttribute="centerX" secondItem="egn-W0-QNc" secondAttribute="centerX" id="kDo-hf-cl0"/>
                             <constraint firstItem="Ce5-eA-a1s" firstAttribute="leading" secondItem="egn-W0-QNc" secondAttribute="leading" id="lSQ-SZ-e7P"/>
+                            <constraint firstItem="Ce5-eA-a1s" firstAttribute="width" secondItem="egn-W0-QNc" secondAttribute="width" id="lUq-Fc-Hxd"/>
                             <constraint firstItem="nuW-ul-9nW" firstAttribute="top" secondItem="Qva-Bp-KEg" secondAttribute="bottom" constant="40" id="qeq-P2-i1e"/>
                             <constraint firstItem="4ga-t5-t1H" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Dkg-Ap-GFT" secondAttribute="bottom" id="sGp-zp-Vao"/>
                             <constraint firstItem="Qva-Bp-KEg" firstAttribute="top" secondItem="Kgv-UW-94X" secondAttribute="bottom" priority="999" constant="73" id="vhn-bk-LDv"/>
@@ -1140,7 +1143,13 @@
                     <connections>
                         <outlet property="bottomLayoutConstraint" destination="sGp-zp-Vao" id="hyK-cZ-F5j"/>
                         <outlet property="emailAddressField" destination="sWi-Hs-ll5" id="Kas-h7-6Er"/>
+                        <outlet property="loginButton" destination="egn-W0-QNc" id="EGh-eT-cOI"/>
                         <outlet property="passwordField" destination="Dkg-Ap-GFT" id="rQj-tI-ecg"/>
+                        <outlet property="signUpButton" destination="Ce5-eA-a1s" id="Kos-5O-Ytg"/>
+                        <outletCollection property="controls" destination="sWi-Hs-ll5" collectionClass="NSMutableArray" id="Vou-wA-KgF"/>
+                        <outletCollection property="controls" destination="Dkg-Ap-GFT" collectionClass="NSMutableArray" id="Ldb-lY-ss6"/>
+                        <outletCollection property="controls" destination="egn-W0-QNc" collectionClass="NSMutableArray" id="yez-hh-eBI"/>
+                        <outletCollection property="controls" destination="Ce5-eA-a1s" collectionClass="NSMutableArray" id="q2f-Iq-dZW"/>
                         <segue destination="49e-Tb-3d3" kind="showDetail" identifier="loginToMainSegue" action="showViewController:sender:" id="mSw-Ld-UUb"/>
                     </connections>
                 </viewController>
@@ -1318,7 +1327,7 @@
         <image name="JamesPark" width="444" height="444"/>
         <image name="JonathanJemson" width="240" height="240"/>
         <image name="LaunchBackground" width="375" height="667"/>
-        <image name="LoginButton" width="250" height="40"/>
+        <image name="LoginButton" width="11" height="40"/>
         <image name="Moe's" width="466" height="478"/>
         <image name="NoFriendImage" width="198" height="198"/>
         <image name="Profile" width="32" height="32"/>

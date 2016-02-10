@@ -47,7 +47,8 @@ public protocol FoodMobDataSource {
      
      - returns: The user object for the new user that is created.
      */
-    func register(firstName firstName: String, lastName: String, emailAddress: String, password: String, completion: ((Bool) -> ())?)
+    func register(firstName firstName: String, lastName: String,
+         emailAddress: String, password: String, completion: ((Bool) -> ())?)
 }
 
 public extension FoodMobDataSource {

@@ -15,14 +15,20 @@ public struct User: CreateableSecureStorable, ReadableSecureStorable, Deleteable
     private(set) public var emailAddress: String
     private(set) internal var authToken: String
     
-    public init(firstName: String, lastName: String, emailAddress: String, authToken: String = "") {
+    public init(firstName: String, lastName: String, emailAddress: String, authToken: String = "", saveToKeychain: Bool = true) {
         self.firstName = firstName
         self.lastName = lastName
         self.emailAddress = emailAddress
         self.authToken = authToken
-        
-        NSUserDefaults.standardUserDefaults().setObject(emailAddress, forKey: UserField.emailAddress)
-        
+        if saveToKeychain {
+            NSUserDefaults.standardUserDefaults().setObject(emailAddress, forKey: UserField.emailAddress)
+            do {
+                try Locksmith.saveData([UserField.emailAddress: emailAddress], forUserAccount: "FDMB-FoodMob")
+            } catch {
+                print(error)
+            }
+        }
+
         do {
             try self.deleteFromSecureStore()
         } catch {
@@ -30,19 +36,24 @@ public struct User: CreateableSecureStorable, ReadableSecureStorable, Deleteable
         }
         
         do {
-            try self.createInSecureStore()
+             try self.createInSecureStore()
             print("Saved to keychain")
         } catch {
             print(error)
         }
     }
     
-    public init?(emailAddress: String) {
+    /**
+     Initialize a user from their email address.
+     This intializer requires that the user has attempted to log in at least once before,
+     and that the `eraseUser` method has not been called.
+     */
+    public init?(emailAddress: String?) {
         
         // Blah blah compiler complained.
         self.firstName = ""
         self.lastName = ""
-        self.emailAddress = emailAddress
+        self.emailAddress = emailAddress ?? Locksmith.loadDataForUserAccount("FDMB-FoodMob")?[UserField.emailAddress] as? String ?? ""
         self.authToken = ""
         print("Attempting keychain login")
         if let storeData = self.readFromSecureStore(), data = storeData.data,
@@ -58,7 +69,14 @@ public struct User: CreateableSecureStorable, ReadableSecureStorable, Deleteable
         return nil
     }
     
-    
+    public func eraseUser() {
+        do {
+            try self.deleteFromSecureStore()
+            try Locksmith.deleteDataForUserAccount("FDMB-FoodMob")
+        } catch {
+            print(error)
+        }
+    }
     
     public let service = "FoodMob"
     public var account: String {

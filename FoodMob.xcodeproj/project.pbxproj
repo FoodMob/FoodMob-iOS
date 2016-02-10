@@ -13,6 +13,7 @@
 		AB510A391C668C770056ADEC /* Locksmith.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB510A381C668C770056ADEC /* Locksmith.framework */; };
 		AB510A3A1C668C770056ADEC /* Locksmith.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AB510A381C668C770056ADEC /* Locksmith.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		AB87B9A21C1358E900CFC95F /* AppearanceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB87B9A11C1358E900CFC95F /* AppearanceManager.swift */; };
+		AB8AEF901C6A98590013293D /* ProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8AEF8F1C6A98590013293D /* ProfileTableViewController.swift */; };
 		ABD291551C67999300C31501 /* DataSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD291541C67999300C31501 /* DataSourceTests.swift */; };
 		ABF3F5641C651DBE000AB856 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABF3F5601C651D84000AB856 /* Alamofire.framework */; };
 		ABF3F5651C651DBE000AB856 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = ABF3F5601C651D84000AB856 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -63,6 +64,7 @@
 		AB510A361C668BBA0056ADEC /* SimpleTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleTextField.swift; sourceTree = "<group>"; };
 		AB510A381C668C770056ADEC /* Locksmith.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Locksmith.framework; sourceTree = "<group>"; };
 		AB87B9A11C1358E900CFC95F /* AppearanceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = AppearanceManager.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		AB8AEF8F1C6A98590013293D /* ProfileTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileTableViewController.swift; sourceTree = "<group>"; };
 		ABD291491C67995500C31501 /* FoodMobTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FoodMobTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABD2914D1C67995500C31501 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ABD291531C67999300C31501 /* FoodMobTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FoodMobTests-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -159,6 +161,7 @@
 			children = (
 				ABF3F5771C652629000AB856 /* LoginViewController.swift */,
 				AB510A341C6678FE0056ADEC /* RegistrationViewController.swift */,
+				AB8AEF8F1C6A98590013293D /* ProfileTableViewController.swift */,
 			);
 			name = "View Controllers";
 			path = ViewControllers;
@@ -319,6 +322,7 @@
 				ABF9B4F61C666E8700AE4FF8 /* FoodMobExtensions.swift in Sources */,
 				ABF3F57A1C656A29000AB856 /* Endpoint.swift in Sources */,
 				AB510A371C668BBA0056ADEC /* SimpleTextField.swift in Sources */,
+				AB8AEF901C6A98590013293D /* ProfileTableViewController.swift in Sources */,
 				AB87B9A21C1358E900CFC95F /* AppearanceManager.swift in Sources */,
 				ABF3F56D1C652174000AB856 /* User.swift in Sources */,
 				ABFCB69B1C038F3300ED33BE /* AppDelegate.swift in Sources */,

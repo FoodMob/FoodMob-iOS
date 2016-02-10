@@ -22,6 +22,13 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var emailAddressField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var bottomLayoutConstraint: NSLayoutConstraint!
+    @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet weak var signUpButton: UIButton!
+    
+    
+    @IBOutlet var controls: [UIControl]!
+    
+    private var dispatchToken: dispatch_once_t = 0
     
     // MARK: - Model Elements
     private var currentUser: User?
@@ -41,10 +48,10 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        if let email = NSUserDefaults.standardUserDefaults().stringForKey(UserField.emailAddress) {
-            self.currentUser = User(emailAddress: email)
-            if self.currentUser != nil {
-                self.performSegueWithIdentifier(LoginViewControllerSegue.ToMainSegue.rawValue, sender: nil)
+        dispatch_once(&dispatchToken) { [weak self] in
+            self?.currentUser = User(emailAddress: nil)
+            if self?.currentUser != nil {
+                self?.performSegueWithIdentifier(LoginViewControllerSegue.ToMainSegue.rawValue, sender: nil)
             }
         }
     }
@@ -96,6 +103,10 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func loginButtonPressed(sender: UIButton) {
+        controls.forEach { (control) in
+            control.enabled = false
+        }
+        UIApplication.sharedApplication().networkActivityIndicatorVisible = true
         FoodMob.currentDataProvider.login(emailAddressField.safeText, password: passwordField.safeText) { [unowned self] (user) -> () in
             if let user = user {
                 self.currentUser = user
@@ -103,6 +114,10 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             } else {
                 self.alert("Log In Failed", message: "Check your email address and password, and try again.")
             }
+            self.controls.forEach({ (control) in
+                control.enabled = true
+            })
+            UIApplication.sharedApplication().networkActivityIndicatorVisible = false
         }
     }
 
