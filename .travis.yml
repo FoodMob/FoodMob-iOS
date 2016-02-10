@@ -5,13 +5,13 @@ xcode_scheme: FoodMob
 xcode_sdk: iphonesimulator9.2
 
 env:
+  ONLY_ACTIVE_ARCH=NO
   matrix:
-    - OS=9.1 NAME='iPhone 5'
-    - OS=9.2 NAME='iPhone 5'
-    - OS=9.1 NAME='iPhone 6'
-    - OS=9.2 NAME='iPhone 6'
-    - OS=9.1 NAME='iPhone 6s Plus'
-    - OS=9.2 NAME='iPhone 6s Plus'
+    - NAME='iPhone 4s'
+    - NAME='iPhone 5'
+    - NAME='iPhone 5s'
+    - NAME='iPhone 6'
+    - NAME='iPhone 6s Plus'
 
 before_install:
     - brew update
@@ -20,4 +20,4 @@ before_install:
     - carthage bootstrap --verbose --platform iOS
 
 script:
-  xctool -sdk iphonesimulator9.2 -destination "platform=iOS Simulator,name=$NAME,OS=$OS" -project FoodMob.xcodeproj -scheme FoodMob test
+  xctool -sdk iphonesimulator9.2 -destination "platform=iOS Simulator,name=$NAME,OS=9.2" -project FoodMob.xcodeproj -scheme FoodMob test
