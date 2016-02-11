@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AB2194A81C6C2F6B00A7323A /* FoodCategories.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2194A71C6C2F6B00A7323A /* FoodCategories.swift */; };
 		AB3714F01C6BFCBD004EA323 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3714EF1C6BFCBD004EA323 /* Session.swift */; };
 		AB510A331C66763C0056ADEC /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB510A321C66763C0056ADEC /* GradientView.swift */; };
 		AB510A351C6678FE0056ADEC /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB510A341C6678FE0056ADEC /* RegistrationViewController.swift */; };
@@ -60,6 +61,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		AB2194A71C6C2F6B00A7323A /* FoodCategories.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodCategories.swift; sourceTree = "<group>"; };
 		AB3714EF1C6BFCBD004EA323 /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		AB510A321C66763C0056ADEC /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		AB510A341C6678FE0056ADEC /* RegistrationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
@@ -155,6 +157,7 @@
 			children = (
 				ABF3F56C1C652174000AB856 /* User.swift */,
 				AB3714EF1C6BFCBD004EA323 /* Session.swift */,
+				AB2194A71C6C2F6B00A7323A /* FoodCategories.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -326,6 +329,7 @@
 				ABF9B4F61C666E8700AE4FF8 /* FoodMobExtensions.swift in Sources */,
 				ABF3F57A1C656A29000AB856 /* Endpoint.swift in Sources */,
 				AB510A371C668BBA0056ADEC /* SimpleTextField.swift in Sources */,
+				AB2194A81C6C2F6B00A7323A /* FoodCategories.swift in Sources */,
 				AB8AEF901C6A98590013293D /* ProfileTableViewController.swift in Sources */,
 				AB87B9A21C1358E900CFC95F /* AppearanceManager.swift in Sources */,
 				ABF3F56D1C652174000AB856 /* User.swift in Sources */,
