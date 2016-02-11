@@ -10,13 +10,25 @@ import UIKit
 
 enum ProfileTableViewControllerSegue: String {
     case ToLoginSegue = "profileToLoginSegue"
+    case ToCategoriesSegue = "profileToCategoriesSegue"
 }
 
 class ProfileTableViewController: UITableViewController {
 
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var emailLabel: UILabel!
+    @IBOutlet weak var likesLabel: UILabel!
+    @IBOutlet weak var dislikesLabel: UILabel!
+    @IBOutlet weak var restrictionsLabel: UILabel!
+    
+    private var currentUser: User!
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        currentUser = Session.sharedSession.currentUser!
+        nameLabel.text = currentUser.fullName
+        emailLabel.text = currentUser.emailAddress
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -86,15 +98,16 @@ class ProfileTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if let dest = segue.destinationViewController as? FoodCategoriesTableViewController, sender = sender as? Int, pref = Preference(rawValue: sender) {
+            dest.showingPreference = pref
+        }
     }
-    */
+
     
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
@@ -109,7 +122,18 @@ class ProfileTableViewController: UITableViewController {
     }
     
     func selectedAboutMeRow(row: Int) {
+        guard let row = AboutMeRow(rawValue: row) else { return }
         
+        switch row {
+        case .Likes:
+            self.performSegueWithIdentifier(ProfileTableViewControllerSegue.ToCategoriesSegue.rawValue, sender: Preference.Like.rawValue)
+        case .Dislikes:
+            self.performSegueWithIdentifier(ProfileTableViewControllerSegue.ToCategoriesSegue.rawValue, sender: Preference.Dislike.rawValue)
+        case .Restrictions:
+            self.performSegueWithIdentifier(ProfileTableViewControllerSegue.ToCategoriesSegue.rawValue, sender: Preference.Restriction.rawValue)
+        default:
+            print("Not implemented yet")
+        }
     }
     
     func selectedAccountRow(row: Int) {
@@ -123,6 +147,9 @@ class ProfileTableViewController: UITableViewController {
         default:
             print("Not implemented yet")
         }
+    }
+    
+    @IBAction func unwindToProfilePage(segue: UIStoryboardSegue) {
     }
 }
 

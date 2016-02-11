@@ -111,6 +111,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         FoodMob.currentDataProvider.login(emailAddressField.safeText, password: passwordField.safeText) { [unowned self] (user) -> () in
             if let user = user {
                 self.currentUser = user
+                Session.sharedSession.currentUser = user
                 self.performSegueWithIdentifier(LoginViewControllerSegue.ToMainSegue.rawValue, sender: nil)
             } else {
                 self.alert("Log In Failed", message: "Check your email address and password, and try again.")

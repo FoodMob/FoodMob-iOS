@@ -1029,13 +1029,60 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="My Profile" id="oPu-DP-8bM"/>
                     <connections>
+                        <outlet property="dislikesLabel" destination="hpF-bm-q9X" id="hZU-gU-XRO"/>
+                        <outlet property="emailLabel" destination="Mg4-QT-qjB" id="2P1-o3-SjJ"/>
+                        <outlet property="likesLabel" destination="g4T-bO-5Om" id="LPU-TN-OTh"/>
+                        <outlet property="nameLabel" destination="wOf-bf-eRP" id="l3y-Wp-Qwp"/>
+                        <outlet property="restrictionsLabel" destination="JqJ-rE-CjN" id="B6A-8F-LbZ"/>
                         <segue destination="KFc-W6-j0I" kind="unwind" identifier="profileToLoginSegue" unwindAction="unwindToLoginViewController:" id="Hjz-lB-b0f"/>
+                        <segue destination="aGm-LX-Q9y" kind="show" identifier="profileToCategoriesSegue" id="wFW-5u-mwP"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XdK-ey-5ww" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="KFc-W6-j0I" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1225" y="1037"/>
+            <point key="canvasLocation" x="1191" y="1037"/>
+        </scene>
+        <!--Food Categories Table View Controller-->
+        <scene sceneID="T3U-Yp-ewm">
+            <objects>
+                <tableViewController id="aGm-LX-Q9y" customClass="FoodCategoriesTableViewController" customModule="FoodMob" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="31i-oY-hu8">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CategoriesCellReuseIdentifier" textLabel="p88-cP-MJc" style="IBUITableViewCellStyleDefault" id="Frd-Bb-UYs">
+                                <rect key="frame" x="0.0" y="113.5" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Frd-Bb-UYs" id="hqG-kt-PP4">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="p88-cP-MJc">
+                                            <rect key="frame" x="15" y="0.0" width="570" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="aGm-LX-Q9y" id="BJE-H8-Qao"/>
+                            <outlet property="delegate" destination="aGm-LX-Q9y" id="8KI-RQ-xFl"/>
+                        </connections>
+                    </tableView>
+                    <connections>
+                        <segue destination="dCm-x7-cdN" kind="unwind" unwindAction="unwindToProfilePage:" id="xvk-Hd-kYO"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Sln-uH-0AW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="dCm-x7-cdN" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1865" y="1036"/>
         </scene>
         <!--Profile-->
         <scene sceneID="YVe-yZ-PdP">

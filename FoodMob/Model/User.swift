@@ -14,6 +14,18 @@ public struct User: CreateableSecureStorable, ReadableSecureStorable, Deleteable
     private(set) public var lastName: String
     private(set) public var emailAddress: String
     private(set) internal var authToken: String
+    public var categories = [FoodCategory: Preference]()
+    
+    /**
+     Get the user's full name, localized by region.
+     */
+    public var fullName: String {
+        let nameFormatter = NSPersonNameComponentsFormatter()
+        let nameComponents = NSPersonNameComponents()
+        nameComponents.givenName = firstName
+        nameComponents.familyName = lastName
+        return nameFormatter.stringFromPersonNameComponents(nameComponents)
+    }
     
     public init(firstName: String, lastName: String, emailAddress: String, authToken: String = "", saveToKeychain: Bool = true) {
         self.firstName = firstName
@@ -75,6 +87,19 @@ public struct User: CreateableSecureStorable, ReadableSecureStorable, Deleteable
         }
     }
     
+    public func preferenceForCategory(category: FoodCategory) -> Preference {
+        return categories[category] ?? Preference.None
+    }
+    
+    public mutating func setPreference(preference: Preference, forCategory category: FoodCategory) {
+        if preference == .None {
+            categories.removeValueForKey(category)
+        } else {
+            categories[category] = preference
+        }
+    }
+    
+    // Locksmith: Keychain services.
     public let service = "FoodMob"
     public var account: String {
         return self.emailAddress
@@ -86,6 +111,7 @@ public struct User: CreateableSecureStorable, ReadableSecureStorable, Deleteable
             UserField.authToken: self.authToken
         ]
     }
+    
 }
 
 internal struct UserField {

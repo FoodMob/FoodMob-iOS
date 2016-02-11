@@ -13,7 +13,7 @@ import UIKit
 struct AppearanceManager {
     static let applicationBarTintColor: UIColor? = nil
 
-    static let applicationTintColor: UIColor = UIColor(red:0.969, green:0.528, blue:0.268, alpha:1)
+    static let applicationTintColor = UIColor(hue:0.079, saturation:0.996, brightness:0.903, alpha:1)
     
     /**
      Used in the `GradientView` class.

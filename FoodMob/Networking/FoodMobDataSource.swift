@@ -15,7 +15,7 @@ For testing purposes, use a mock data source.
 
 For testing client-server interaction and release, use the actual service provider.
 */
-let currentDataProvider: FoodMobDataSource = FoodMobService()
+let currentDataProvider: FoodMobDataSource = MockDataSource()
 
 
 /**
@@ -49,6 +49,9 @@ public protocol FoodMobDataSource {
      */
     func register(firstName firstName: String, lastName: String,
          emailAddress: String, password: String, completion: ((Bool) -> ())?)
+    
+    
+    func updateCategoriesForUser(user: User)
 }
 
 public extension FoodMobDataSource {

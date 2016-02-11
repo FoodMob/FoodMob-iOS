@@ -74,4 +74,8 @@ public struct FoodMobService: FoodMobDataSource {
             }
         }
     }
+    
+    public func updateCategoriesForUser(user: User) {
+        fatalError("Not yet implemented")
+    }
 }
