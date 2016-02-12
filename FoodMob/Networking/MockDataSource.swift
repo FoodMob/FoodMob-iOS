@@ -18,7 +18,7 @@ public struct MockDataSource : FoodMobDataSource {
             var user = User(firstName: "Jonathan", lastName: "Jemson", emailAddress: emailAddress, authToken: "0123456789abcdef")
             user.categories[FoodCategory.Indian] = Preference.Like
             user.categories[FoodCategory.SushiBars] = Preference.Dislike
-            user.categories[FoodCategory.LiveAndRawFood] = Preference.Restriction
+            user.categories[FoodCategory.Seafood] = Preference.Restriction
             if let completion = completion {
                 completion(user)
             }
