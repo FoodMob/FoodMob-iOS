@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>  Reference</title>
+    <link rel="stylesheet" type="text/css" href="css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="js/jquery.min.js" defer></script>
+    <script src="js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a title="  Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="index.html"> Docs</a> (52% documented)</p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="index.html"> Reference</a>
+        <img id="carat" src="img/carat.png" />
+          Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Classes/User.html">User</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Enums.html">Enums</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Enums/FoodCategory.html">FoodCategory</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Enums/Preference.html">Preference</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Protocols/Endpoint.html">Endpoint</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols/FoodMobDataSource.html">FoodMobDataSource</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Structs.html">Structs</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Structs/FoodMobService.html">FoodMobService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/MockDataSource.html">MockDataSource</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/Session.html">Session</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            
+            <a href='#foodmob' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h1 id='foodmob'>FoodMob</h1>
+
+<p><a href="https://travis-ci.org/FoodMob/FoodMob-iOS"><img src="https://travis-ci.org/FoodMob/FoodMob-iOS.svg?branch=master" alt="Build Status"></a></p>
+
+<p>Eating out with friends made easy.  This is the iOS portion of the application.  The backend server is in <a href="https://github.com/FoodMob/FoodMob-Node">FoodMob-Node</a>.</p>
+<a href='#build_requirements' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h1 id='build_requirements'>Build Requirements</h1>
+
+<ul>
+<li>Xcode 7.2 with iOS 9.2 SDK
+
+<ul>
+<li>Current Swift version: 2.1.1</li>
+<li>Targeted iOS version: 9.1</li>
+</ul></li>
+<li>Homebrew (<a href="http://brew.sh">http://brew.sh</a>)</li>
+<li>Carthage (<a href="https://github.com/Carthage/Carthage">GitHub</a>)</li>
+</ul>
+<a href='#getting_started' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h1 id='getting_started'>Getting Started</h1>
+
+<ol>
+<li>Install the two command line tools you will need if you don&rsquo;t have them:</li>
+</ol>
+<pre class="highlight plaintext"><code>* [Homebrew](http://brew.sh)
+* Carthage using Homebrew:
+
+    ```
+    brew update
+    brew install carthage
+    ```
+</code></pre>
+
+<ol>
+<li><p>In this project directory, run</p>
+<pre class="highlight plaintext"><code>carthage bootstrap --platform iOS
+</code></pre>
+
+<p>This installs the library dependencies needed for this application.</p></li>
+<li><p>Open the <code>FoodMob.xcproject</code> file using Xcode.</p></li>
+<li><p>In the top bar, the scheme should be set to FoodMob, and the destination should be a simulator or device (i.e, not <q>Generic iOS Device</q>).</p></li>
+<li><p>Click the ▶️ Run button in Xcode.</p></li>
+</ol>
+<a href='#adding_new_libraries' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h1 id='adding_new_libraries'>Adding new libraries</h1>
+
+<p>Please follow these procedures for adding new libraries.</p>
+
+<ol>
+<li>Libraries must be licensed permissively.  No GPL/LGPL crap.  MIT and Apache are good ones.</li>
+<li>Libraries should be available as a framework (dynamic library).</li>
+<li>Libraries should be approved by Jonathan (@jonjesbuzz).  Open a GitHub issue or contact him on Slack.</li>
+<li>Libraries should be available to download using <a href="https://github.com/Carthage/Carthage">Carthage</a>.</li>
+<li>It would be nice if the library is written in Swift. (This effectively requires #2 for technical reasons.)  Objective-C libraries are allowed, but Swift libraries tend to be nicer to work with in Swift (obviously) and tend to be more modern.</li>
+</ol>
+
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2016 <a class="link" href="" target="_blank" rel="external"></a>. All rights reserved. (Last updated: 2016-02-13)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.5.0</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

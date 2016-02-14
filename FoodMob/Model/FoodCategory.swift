@@ -8,12 +8,20 @@
 
 import Foundation
 
+/**
+ Preference indicates whether a user likes, dislikes, or cannot have a certain food category.
+ */
 public enum Preference: Int {
+    /// No preference.  Usuaslly a sign of an error.
     case None = 0
+    /// Indicates that a user likes this category.
     case Like = 1
+    /// Indicates that a user dislikes this category.
     case Dislike = 2
+    /// Indicates that a user cannot have this category.
     case Restriction = 3
 
+    /// A string representation of this enum.
     public var showingTypeString: String {
         switch self {
         case None:
@@ -28,13 +36,22 @@ public enum Preference: Int {
     }
 }
 
+/**
+ Various food categories that the user can search for, like, dislike, and restrict.
+ */
 public enum FoodCategory: String, Hashable {
 
+    /**
+     Returns the hash value for the string representation of the food category.
+     */
     public var hashValue: Int {
         return self.rawValue.hashValue
     }
 
-    static let values = [
+    /**
+     Provides an easily enumerated way to get all possible categories.
+     */
+    public static let values = [
         AmericanNew,
         AmericanTraditional,
         AsianFusion,

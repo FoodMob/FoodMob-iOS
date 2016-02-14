@@ -11,17 +11,17 @@ import UIKit
 /**
  A gradient view controller, as specified from Appearance Manager.
 */
-public class GradientView : UIView {
-    override public class func layerClass() ->  AnyClass {
+class GradientView : UIView {
+    override class func layerClass() ->  AnyClass {
         return CAGradientLayer.self
     }
     
-    public required init?(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         initGradientLayer()
     }
     
-    override public init(frame: CGRect) {
+    override init(frame: CGRect) {
         super.init(frame: frame)
         initGradientLayer()
     }

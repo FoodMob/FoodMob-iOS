@@ -8,7 +8,21 @@
 
 import Foundation
 
+/**
+ Represents a session shared across the application.
+ */
 public struct Session {
+    /**
+     Retrieves the current session.
+     */
     public static var sharedSession = Session()
+    
+    /**
+     Retrieves the currently signed in user.
+     */
     public var currentUser: User?
+
+    private init() {
+        
+    }
 }

@@ -9,11 +9,34 @@
 import Foundation
 import Locksmith
 
+/**
+ Represents a FoodMob user.
+ */
 public class User: CreateableSecureStorable, ReadableSecureStorable, DeleteableSecureStorable, GenericPasswordSecureStorable {
+    
+    /**
+     The user's first name (or given name)
+     */
     private(set) public var firstName: String
+    
+    /**
+     The user's last name (or family name)
+     */
     private(set) public var lastName: String
+    
+    /**
+     The user's email address (used as their unique identifier).
+     */
     private(set) public var emailAddress: String
+    
+    /**
+     The user's authentication token for the current login.
+     */
     private(set) internal var authToken: String
+    
+    /**
+     Stores the user's likes, dislikes, and restrictions.
+     */
     public var categories = [FoodCategory: Preference]()
     
     /**
@@ -27,7 +50,16 @@ public class User: CreateableSecureStorable, ReadableSecureStorable, DeleteableS
         return nameFormatter.stringFromPersonNameComponents(nameComponents)
     }
     
-    public init(firstName: String, lastName: String, emailAddress: String, authToken: String = "", saveToKeychain: Bool = true) {
+    /**
+     Initializes a new user, typically when they register.
+     
+     - Parameters:
+        - firstName: User's first name/given name.
+        - lastName: User's last name/family name.
+        - emailAddress: User's email address
+        - authToken: Optionally provide the
+     */
+    public init(firstName: String, lastName: String, emailAddress: String, authToken: String, saveToKeychain: Bool = true) {
         self.firstName = firstName
         self.lastName = lastName
         self.emailAddress = emailAddress
@@ -56,6 +88,7 @@ public class User: CreateableSecureStorable, ReadableSecureStorable, DeleteableS
     
     /**
      Initialize a user from their email address.
+     
      This intializer requires that the user has attempted to log in at least once before,
      and that the `eraseUser` method has not been called.
      */
@@ -78,6 +111,9 @@ public class User: CreateableSecureStorable, ReadableSecureStorable, DeleteableS
         return nil
     }
     
+    /**
+     Removes the user from the device's keychain.
+     */
     public func eraseUser() {
         do {
             try self.deleteFromSecureStore()
