@@ -156,7 +156,9 @@ class ProfileTableViewController: UITableViewController {
         
         switch row {
         case .SignOut:
-            Session.sharedSession.currentUser!.eraseUser()
+            FoodMob.currentDataProvider.logout(Session.sharedSession.currentUser!, completion: { (success) in
+                print("Logout successful? \(success)")
+            })
             Session.sharedSession.currentUser = nil
             self.performSegueWithIdentifier(ProfileTableViewControllerSegue.ToLoginSegue.rawValue, sender: nil)
         default:
