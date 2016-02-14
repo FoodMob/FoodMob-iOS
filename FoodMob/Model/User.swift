@@ -9,7 +9,7 @@
 import Foundation
 import Locksmith
 
-public struct User: CreateableSecureStorable, ReadableSecureStorable, DeleteableSecureStorable, GenericPasswordSecureStorable {
+public class User: CreateableSecureStorable, ReadableSecureStorable, DeleteableSecureStorable, GenericPasswordSecureStorable {
     private(set) public var firstName: String
     private(set) public var lastName: String
     private(set) public var emailAddress: String
@@ -91,7 +91,20 @@ public struct User: CreateableSecureStorable, ReadableSecureStorable, Deleteable
         return categories[category] ?? Preference.None
     }
     
-    public mutating func setPreference(preference: Preference, forCategory category: FoodCategory) {
+    func stringForPreference(preference: Preference) -> String {
+        var str = ""
+        for (cat, pref) in categories {
+            if pref == preference {
+                str += cat.rawValue + ", "
+            }
+        }
+        if (str.length < 2) {
+            return str
+        }
+        return str.substringToIndex(str.endIndex.advancedBy(-2))
+    }
+    
+    public func setPreference(preference: Preference, forCategory category: FoodCategory) {
         if preference == .None {
             categories.removeValueForKey(category)
         } else {
@@ -120,5 +133,11 @@ internal struct UserField {
     static let firstName = "first_name"
     static let lastName = "last_name"
     static let profile = "profile"
-    static let authToken = "token"
+    static let foodProfile = "food_profile"
+    static let authToken = "auth_token"
+    struct FoodProfile {
+        static let restrictions = "allergies"
+        static let likes = "likes"
+        static let dislikes = "dislikes"
+    }
 }

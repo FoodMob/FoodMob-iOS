@@ -15,7 +15,7 @@ For testing purposes, use a mock data source.
 
 For testing client-server interaction and release, use the actual service provider.
 */
-let currentDataProvider: FoodMobDataSource = MockDataSource()
+let currentDataProvider: FoodMobDataSource = FoodMobService()
 
 
 /**
@@ -36,6 +36,14 @@ public protocol FoodMobDataSource {
     func login(emailAddress: String, password: String, completion: ((User?)->())?)
     
     /**
+     Logs the user out.
+     
+     - Parameters:
+        - user: The user to log out.
+     */
+    func logout(user: User, completion: ((Bool) -> ())?)
+    
+    /**
      Creates a new user on the server.
      
      - Parameters:
@@ -50,7 +58,21 @@ public protocol FoodMobDataSource {
     func register(firstName firstName: String, lastName: String,
          emailAddress: String, password: String, completion: ((Bool) -> ())?)
     
+    /**
+     Retrieve the list of categories for the user and store it in the user object.
+     
+     - Parameters:
+        - user: The current user.
+        - completion: Completion block to be called with a success code.
+     */
+    func fetchCategoriesForUser(user: User, completion: ((Bool)->())?)
     
+    /**
+     Push the user's categories up to the server.
+     
+     - Parameters:
+         - user: The current user.
+     */
     func updateCategoriesForUser(user: User)
 }
 

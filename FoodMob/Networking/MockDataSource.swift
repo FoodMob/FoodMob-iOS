@@ -15,10 +15,8 @@ public struct MockDataSource : FoodMobDataSource {
 
     public func login(emailAddress: String, password: String, completion: ((User?)->())? = nil) {
         if emailAddress.lowercaseString.containsString("foodmob.me") && password.lowercaseString.containsString("pass") {
-            var user = User(firstName: "Jonathan", lastName: "Jemson", emailAddress: emailAddress, authToken: "0123456789abcdef")
-            user.categories[FoodCategory.Indian] = Preference.Like
-            user.categories[FoodCategory.SushiBars] = Preference.Dislike
-            user.categories[FoodCategory.Seafood] = Preference.Restriction
+            let user = User(firstName: "Jonathan", lastName: "Jemson", emailAddress: emailAddress, authToken: "0123456789abcdef")
+            fetchCategoriesForUser(user)
             if let completion = completion {
                 completion(user)
             }
@@ -41,8 +39,21 @@ public struct MockDataSource : FoodMobDataSource {
         completion?(true)
     }
     
+    public func fetchCategoriesForUser(user: User, completion: ((Bool)->())? = nil) {
+        user.categories[FoodCategory.Indian] = Preference.Like
+        user.categories[FoodCategory.Mexican] = Preference.Like
+        user.categories[FoodCategory.SushiBars] = Preference.Dislike
+        user.categories[FoodCategory.Seafood] = Preference.Restriction
+        completion?(true)
+    }
+    
     public func updateCategoriesForUser(user: User) {
         // Not much to mock :P
         print("Updating categories for user")
+    }
+    
+    public func logout(user: User, completion: ((Bool) -> ())? = nil) {
+        user.eraseUser()
+        completion?(true)
     }
 }

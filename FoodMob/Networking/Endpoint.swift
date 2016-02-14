@@ -25,10 +25,28 @@ public extension Endpoint {
     public static var login: String {
         return "\(self.root)/login"
     }
+    public static var loginMethod: Alamofire.Method {
+        return .POST
+    }
+    public static var logout: String {
+        return "\(self.root)/logout"
+    }
+    public static var logoutMethod: Alamofire.Method {
+        return .POST
+    }
     public static var register: String {
-        return "\(self.root)/user"
+        return "\(self.root)/users"
     }
     public static var registerMethod: Alamofire.Method {
         return .POST
+    }
+    public static func foodProfile(user: User) -> String {
+        return "\(self.root)/users/\(user.emailAddress)/food_profile"
+    }
+    public static var updateFoodProfileMethod: Alamofire.Method {
+        return .PUT
+    }
+    public static var getFoodProfileMethod: Alamofire.Method {
+        return .GET
     }
 }

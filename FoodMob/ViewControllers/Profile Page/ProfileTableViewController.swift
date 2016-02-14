@@ -25,8 +25,16 @@ class ProfileTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         currentUser = Session.sharedSession.currentUser!
+        FoodMob.currentDataProvider.fetchCategoriesForUser(currentUser) {
+            [unowned self] success in
+            if success {
+                self.likesLabel.text = self.currentUser.stringForPreference(.Like)
+                self.dislikesLabel.text = self.currentUser.stringForPreference(.Dislike)
+                self.restrictionsLabel.text = self.currentUser.stringForPreference(.Restriction)
+                self.tableView.reloadData()
+            }
+        }
         nameLabel.text = currentUser.fullName
         emailLabel.text = currentUser.emailAddress
         // Uncomment the following line to preserve selection between presentations
@@ -35,6 +43,13 @@ class ProfileTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        likesLabel.text = currentUser.stringForPreference(.Like)
+        dislikesLabel.text = currentUser.stringForPreference(.Dislike)
+        restrictionsLabel.text = currentUser.stringForPreference(.Restriction)
     }
 
     override func didReceiveMemoryWarning() {
