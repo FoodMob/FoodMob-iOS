@@ -992,7 +992,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="567" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Privacy &amp; Terms" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="7XG-Ia-e60">
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Legal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="7XG-Ia-e60">
                                                     <rect key="frame" x="15" y="0.0" width="550" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
@@ -1109,31 +1109,26 @@
                         <viewControllerLayoutGuide type="top" id="Kgv-UW-94X"/>
                         <viewControllerLayoutGuide type="bottom" id="4ga-t5-t1H"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="yMC-Po-TMg">
+                    <view key="view" contentMode="scaleToFill" id="yMC-Po-TMg" customClass="GradientView" customModule="FoodMob" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LaunchBackground" translatesAutoresizingMaskIntoConstraints="NO" id="E8v-Vk-Cfs">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                            </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FoodMobLogo" translatesAutoresizingMaskIntoConstraints="NO" id="Qva-Bp-KEg">
                                 <rect key="frame" x="175" y="93" width="250" height="44"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="nuW-ul-9nW">
                                 <rect key="frame" x="175" y="177" width="250" height="93"/>
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sWi-Hs-ll5">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sWi-Hs-ll5" customClass="SimpleTextField" customModule="FoodMob" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="250" height="44"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="250" id="GVI-Fc-TjN"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress"/>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="18" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Dkg-Ap-GFT">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="18" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Dkg-Ap-GFT" customClass="SimpleTextField" customModule="FoodMob" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="49" width="250" height="44"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
@@ -1149,9 +1144,7 @@
                                     <constraint firstAttribute="height" constant="50" id="hsa-zs-uew"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                <state key="normal" title="Log In" backgroundImage="LoginButton">
-                                    <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
+                                <state key="normal" title="Log In"/>
                                 <connections>
                                     <action selector="loginButtonPressed:" destination="4MX-mg-wgs" eventType="touchUpInside" id="MG5-gb-6DK"/>
                                 </connections>
@@ -1162,9 +1155,7 @@
                                     <constraint firstAttribute="height" constant="50" id="xUT-Co-0ky"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                <state key="normal" title="Sign Up" backgroundImage="LoginButton">
-                                    <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
+                                <state key="normal" title="Sign Up"/>
                                 <connections>
                                     <segue destination="cph-OR-Wbo" kind="show" identifier="loginToRegisterSegue" id="WMB-Kf-I4r"/>
                                 </connections>
@@ -1174,18 +1165,14 @@
                         <constraints>
                             <constraint firstItem="sWi-Hs-ll5" firstAttribute="width" secondItem="egn-W0-QNc" secondAttribute="width" id="2UI-Xo-yl1"/>
                             <constraint firstItem="nuW-ul-9nW" firstAttribute="centerX" secondItem="Qva-Bp-KEg" secondAttribute="centerX" id="7dU-A8-Xkj"/>
-                            <constraint firstItem="E8v-Vk-Cfs" firstAttribute="top" secondItem="Kgv-UW-94X" secondAttribute="bottom" constant="-20" id="BLb-3r-goh"/>
-                            <constraint firstItem="E8v-Vk-Cfs" firstAttribute="leading" secondItem="yMC-Po-TMg" secondAttribute="leadingMargin" constant="-20" id="DTG-wW-XZS"/>
-                            <constraint firstItem="Qva-Bp-KEg" firstAttribute="centerX" secondItem="E8v-Vk-Cfs" secondAttribute="centerX" id="EQZ-Wl-6D8"/>
                             <constraint firstItem="egn-W0-QNc" firstAttribute="top" secondItem="nuW-ul-9nW" secondAttribute="bottom" constant="50" id="HQV-ni-Eqb"/>
                             <constraint firstItem="Ce5-eA-a1s" firstAttribute="top" secondItem="egn-W0-QNc" secondAttribute="bottom" constant="8" id="QxS-01-9xv"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="E8v-Vk-Cfs" secondAttribute="trailing" constant="-20" id="R0u-zs-ghq"/>
-                            <constraint firstItem="4ga-t5-t1H" firstAttribute="top" secondItem="E8v-Vk-Cfs" secondAttribute="bottom" id="Zgf-cK-Pxt"/>
                             <constraint firstItem="sWi-Hs-ll5" firstAttribute="height" secondItem="egn-W0-QNc" secondAttribute="height" constant="-6" id="aL3-eT-1h1"/>
                             <constraint firstItem="Qva-Bp-KEg" firstAttribute="centerX" secondItem="egn-W0-QNc" secondAttribute="centerX" id="kDo-hf-cl0"/>
                             <constraint firstItem="Ce5-eA-a1s" firstAttribute="leading" secondItem="egn-W0-QNc" secondAttribute="leading" id="lSQ-SZ-e7P"/>
                             <constraint firstItem="Ce5-eA-a1s" firstAttribute="width" secondItem="egn-W0-QNc" secondAttribute="width" id="lUq-Fc-Hxd"/>
                             <constraint firstItem="nuW-ul-9nW" firstAttribute="top" secondItem="Qva-Bp-KEg" secondAttribute="bottom" constant="40" id="qeq-P2-i1e"/>
+                            <constraint firstItem="Qva-Bp-KEg" firstAttribute="centerX" secondItem="yMC-Po-TMg" secondAttribute="centerX" id="s5b-bG-Bn9"/>
                             <constraint firstItem="4ga-t5-t1H" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Dkg-Ap-GFT" secondAttribute="bottom" id="sGp-zp-Vao"/>
                             <constraint firstItem="Qva-Bp-KEg" firstAttribute="top" secondItem="Kgv-UW-94X" secondAttribute="bottom" priority="999" constant="73" id="vhn-bk-LDv"/>
                         </constraints>
@@ -1377,8 +1364,6 @@
         <image name="Friends Selected" width="32" height="32"/>
         <image name="JamesPark" width="444" height="444"/>
         <image name="JonathanJemson" width="240" height="240"/>
-        <image name="LaunchBackground" width="375" height="667"/>
-        <image name="LoginButton" width="11" height="40"/>
         <image name="Moe's" width="466" height="478"/>
         <image name="NoFriendImage" width="198" height="198"/>
         <image name="Profile" width="32" height="32"/>

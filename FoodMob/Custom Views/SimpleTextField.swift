@@ -8,6 +8,7 @@
 
 import UIKit
 
+@IBDesignable
 class SimpleTextField: UITextField {
     override func drawRect(rect: CGRect) {
         self.attributedPlaceholder = NSAttributedString(string: self.placeholder!, attributes: [NSForegroundColorAttributeName: AppearanceManager.lightPlaceholderColor])
@@ -18,5 +19,6 @@ class SimpleTextField: UITextField {
         layer.borderWidth = width
         self.layer.addSublayer(layer)
         self.layer.masksToBounds = true
+        self.textColor = UIColor.whiteColor()
     }
 }

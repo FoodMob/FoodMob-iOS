@@ -11,6 +11,7 @@ import UIKit
 /**
  A gradient view controller, as specified from Appearance Manager.
 */
+@IBDesignable
 class GradientView : UIView {
     override class func layerClass() ->  AnyClass {
         return CAGradientLayer.self

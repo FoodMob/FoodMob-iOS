@@ -12,6 +12,9 @@ env:
   - NAME='iPhone 5s'
   - NAME='iPhone 6'
   - NAME='iPhone 6s Plus'
+cache:
+  directories:
+    - Carthage
 before_install:
 - brew update
 - brew outdated xctool || brew upgrade xctool

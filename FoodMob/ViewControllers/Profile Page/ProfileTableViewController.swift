@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SafariServices
 
 enum ProfileTableViewControllerSegue: String {
     case ToLoginSegue = "profileToLoginSegue"
@@ -134,6 +135,7 @@ class ProfileTableViewController: UITableViewController {
         default:
             print("Not implemented")
         }
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
     
     func selectedAboutMeRow(row: Int) {
@@ -161,6 +163,8 @@ class ProfileTableViewController: UITableViewController {
             })
             Session.sharedSession.currentUser = nil
             self.performSegueWithIdentifier(ProfileTableViewControllerSegue.ToLoginSegue.rawValue, sender: nil)
+        case .Legal:
+            let _ = NSBundle.mainBundle().URLForResource("legal", withExtension: "html")!
         default:
             print("Not implemented yet")
         }
@@ -180,7 +184,7 @@ enum AboutMeRow: Int {
 enum AccountRow: Int {
     case PasswordSecurity = 0
     case Help = 1
-    case PrivacyTerms = 2
+    case Legal = 2
     case SignOut = 3
 }
 

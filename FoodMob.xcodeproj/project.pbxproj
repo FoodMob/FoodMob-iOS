@@ -18,6 +18,7 @@
 		AB87B9A21C1358E900CFC95F /* AppearanceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB87B9A11C1358E900CFC95F /* AppearanceManager.swift */; };
 		AB8AEF901C6A98590013293D /* ProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8AEF8F1C6A98590013293D /* ProfileTableViewController.swift */; };
 		ABD291551C67999300C31501 /* DataSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD291541C67999300C31501 /* DataSourceTests.swift */; };
+		ABD87D111C70E4B7005EC1A7 /* legal.html in Resources */ = {isa = PBXBuildFile; fileRef = ABD87D101C70E4B7005EC1A7 /* legal.html */; };
 		ABF3F5641C651DBE000AB856 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABF3F5601C651D84000AB856 /* Alamofire.framework */; };
 		ABF3F5651C651DBE000AB856 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = ABF3F5601C651D84000AB856 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		ABF3F56A1C651FC1000AB856 /* FoodMobDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF3F5691C651FC1000AB856 /* FoodMobDataSource.swift */; };
@@ -75,6 +76,7 @@
 		ABD2914D1C67995500C31501 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ABD291531C67999300C31501 /* FoodMobTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FoodMobTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		ABD291541C67999300C31501 /* DataSourceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataSourceTests.swift; sourceTree = "<group>"; };
+		ABD87D101C70E4B7005EC1A7 /* legal.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = legal.html; sourceTree = "<group>"; };
 		ABF3F5601C651D84000AB856 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Alamofire.framework; sourceTree = "<group>"; };
 		ABF3F5691C651FC1000AB856 /* FoodMobDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodMobDataSource.swift; sourceTree = "<group>"; };
 		ABF3F56C1C652174000AB856 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -141,6 +143,15 @@
 			path = FoodMobTests;
 			sourceTree = "<group>";
 		};
+		ABD87D0F1C70E49D005EC1A7 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				ABD87D101C70E4B7005EC1A7 /* legal.html */,
+			);
+			name = Resources;
+			path = FoodMob/Resources;
+			sourceTree = "<group>";
+		};
 		ABF3F5671C651E19000AB856 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -187,6 +198,7 @@
 		ABFCB68E1C038F3300ED33BE = {
 			isa = PBXGroup;
 			children = (
+				ABD87D0F1C70E49D005EC1A7 /* Resources */,
 				ABFCB6991C038F3300ED33BE /* FoodMob */,
 				ABD2914A1C67995500C31501 /* FoodMobTests */,
 				ABF3F5671C651E19000AB856 /* Frameworks */,
@@ -312,6 +324,7 @@
 			files = (
 				ABFCB6A71C038F3300ED33BE /* LaunchScreen.storyboard in Resources */,
 				ABFCB6A41C038F3300ED33BE /* Assets.xcassets in Resources */,
+				ABD87D111C70E4B7005EC1A7 /* legal.html in Resources */,
 				ABFCB6A21C038F3300ED33BE /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
