@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		AB2194A81C6C2F6B00A7323A /* FoodCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2194A71C6C2F6B00A7323A /* FoodCategory.swift */; };
 		AB2194AA1C6C359400A7323A /* FoodCategoriesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2194A91C6C359400A7323A /* FoodCategoriesTableViewController.swift */; };
+		AB27C2B61C72D27100FCE7B8 /* RoundedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB27C2B51C72D27100FCE7B8 /* RoundedImageView.swift */; };
+		AB27C2BC1C72DBD400FCE7B8 /* CryptoSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB27C2B71C72D7C500FCE7B8 /* CryptoSwift.framework */; };
+		AB27C2BD1C72DBD400FCE7B8 /* CryptoSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AB27C2B71C72D7C500FCE7B8 /* CryptoSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		AB27C2C21C72DBF600FCE7B8 /* AlamofireImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB27C2BE1C72DBDE00FCE7B8 /* AlamofireImage.framework */; };
+		AB27C2C31C72DBF600FCE7B8 /* AlamofireImage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AB27C2BE1C72DBDE00FCE7B8 /* AlamofireImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		AB3714F01C6BFCBD004EA323 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3714EF1C6BFCBD004EA323 /* Session.swift */; };
 		AB510A331C66763C0056ADEC /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB510A321C66763C0056ADEC /* GradientView.swift */; };
 		AB510A351C6678FE0056ADEC /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB510A341C6678FE0056ADEC /* RegistrationViewController.swift */; };
@@ -54,8 +59,10 @@
 			dstSubfolderSpec = 10;
 			files = (
 				AB510A3A1C668C770056ADEC /* Locksmith.framework in Embed Frameworks */,
+				AB27C2C31C72DBF600FCE7B8 /* AlamofireImage.framework in Embed Frameworks */,
 				ABF3F5711C6523FB000AB856 /* SwiftyJSON.framework in Embed Frameworks */,
 				ABF3F5651C651DBE000AB856 /* Alamofire.framework in Embed Frameworks */,
+				AB27C2BD1C72DBD400FCE7B8 /* CryptoSwift.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -65,6 +72,9 @@
 /* Begin PBXFileReference section */
 		AB2194A71C6C2F6B00A7323A /* FoodCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodCategory.swift; sourceTree = "<group>"; };
 		AB2194A91C6C359400A7323A /* FoodCategoriesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodCategoriesTableViewController.swift; sourceTree = "<group>"; };
+		AB27C2B51C72D27100FCE7B8 /* RoundedImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedImageView.swift; sourceTree = "<group>"; };
+		AB27C2B71C72D7C500FCE7B8 /* CryptoSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CryptoSwift.framework; sourceTree = "<group>"; };
+		AB27C2BE1C72DBDE00FCE7B8 /* AlamofireImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AlamofireImage.framework; sourceTree = "<group>"; };
 		AB3714EF1C6BFCBD004EA323 /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		AB510A321C66763C0056ADEC /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		AB510A341C6678FE0056ADEC /* RegistrationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
@@ -107,8 +117,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				AB510A391C668C770056ADEC /* Locksmith.framework in Frameworks */,
+				AB27C2C21C72DBF600FCE7B8 /* AlamofireImage.framework in Frameworks */,
 				ABF3F56F1C6523F2000AB856 /* SwiftyJSON.framework in Frameworks */,
 				ABF3F5641C651DBE000AB856 /* Alamofire.framework in Frameworks */,
+				AB27C2BC1C72DBD400FCE7B8 /* CryptoSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -129,6 +141,7 @@
 			children = (
 				AB510A321C66763C0056ADEC /* GradientView.swift */,
 				AB510A361C668BBA0056ADEC /* SimpleTextField.swift */,
+				AB27C2B51C72D27100FCE7B8 /* RoundedImageView.swift */,
 			);
 			path = "Custom Views";
 			sourceTree = "<group>";
@@ -156,6 +169,8 @@
 			isa = PBXGroup;
 			children = (
 				ABF3F5601C651D84000AB856 /* Alamofire.framework */,
+				AB27C2BE1C72DBDE00FCE7B8 /* AlamofireImage.framework */,
+				AB27C2B71C72D7C500FCE7B8 /* CryptoSwift.framework */,
 				AB510A381C668C770056ADEC /* Locksmith.framework */,
 				ABF3F56E1C6523F2000AB856 /* SwiftyJSON.framework */,
 			);
@@ -353,6 +368,7 @@
 				ABF9B4F61C666E8700AE4FF8 /* FoodMobExtensions.swift in Sources */,
 				AB2194AA1C6C359400A7323A /* FoodCategoriesTableViewController.swift in Sources */,
 				ABF3F57A1C656A29000AB856 /* Endpoint.swift in Sources */,
+				AB27C2B61C72D27100FCE7B8 /* RoundedImageView.swift in Sources */,
 				AB510A371C668BBA0056ADEC /* SimpleTextField.swift in Sources */,
 				AB2194A81C6C2F6B00A7323A /* FoodCategory.swift in Sources */,
 				AB8AEF901C6A98590013293D /* ProfileTableViewController.swift in Sources */,

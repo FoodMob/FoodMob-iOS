@@ -857,7 +857,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="54.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="JonathanJemson" translatesAutoresizingMaskIntoConstraints="NO" id="UNo-cs-G3m">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UNo-cs-G3m" customClass="RoundedImageView" customModule="FoodMob" customModuleProvider="target">
                                                     <rect key="frame" x="14" y="6" width="40" height="40"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Jonathan Jemson" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wOf-bf-eRP">
@@ -1034,6 +1034,7 @@
                         <outlet property="likesLabel" destination="g4T-bO-5Om" id="LPU-TN-OTh"/>
                         <outlet property="nameLabel" destination="wOf-bf-eRP" id="l3y-Wp-Qwp"/>
                         <outlet property="restrictionsLabel" destination="JqJ-rE-CjN" id="B6A-8F-LbZ"/>
+                        <outlet property="userImage" destination="UNo-cs-G3m" id="d1r-wY-ZUf"/>
                         <segue destination="KFc-W6-j0I" kind="unwind" identifier="profileToLoginSegue" unwindAction="unwindToLoginViewController:" id="Hjz-lB-b0f"/>
                         <segue destination="aGm-LX-Q9y" kind="show" identifier="profileToCategoriesSegue" id="wFW-5u-mwP"/>
                     </connections>
@@ -1113,73 +1114,77 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FoodMobLogo" translatesAutoresizingMaskIntoConstraints="NO" id="Qva-Bp-KEg">
-                                <rect key="frame" x="175" y="93" width="250" height="44"/>
-                            </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="nuW-ul-9nW">
-                                <rect key="frame" x="175" y="177" width="250" height="93"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="nuW-ul-9nW">
+                                <rect key="frame" x="175" y="267" width="250" height="67"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sWi-Hs-ll5" customClass="SimpleTextField" customModule="FoodMob" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="250" height="44"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="250" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="250" id="GVI-Fc-TjN"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress"/>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="18" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Dkg-Ap-GFT" customClass="SimpleTextField" customModule="FoodMob" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="49" width="250" height="44"/>
+                                        <rect key="frame" x="0.0" y="46" width="250" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="Dkg-Ap-GFT" firstAttribute="width" secondItem="sWi-Hs-ll5" secondAttribute="width" id="HfS-2v-ppL"/>
-                                    <constraint firstItem="Dkg-Ap-GFT" firstAttribute="height" secondItem="sWi-Hs-ll5" secondAttribute="height" id="qS7-5m-Qtq"/>
+                                    <constraint firstAttribute="height" constant="67" id="WeL-VZ-kpj"/>
                                 </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="egn-W0-QNc">
-                                <rect key="frame" x="175" y="320" width="250" height="50"/>
+                                <rect key="frame" x="175" y="358" width="250" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="hsa-zs-uew"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                <state key="normal" title="Log In"/>
+                                <state key="normal" title="Log In" backgroundImage="LoginButton"/>
                                 <connections>
                                     <action selector="loginButtonPressed:" destination="4MX-mg-wgs" eventType="touchUpInside" id="MG5-gb-6DK"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ce5-eA-a1s">
-                                <rect key="frame" x="175" y="378" width="250" height="50"/>
+                                <rect key="frame" x="175" y="416" width="250" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="xUT-Co-0ky"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                <state key="normal" title="Sign Up"/>
+                                <state key="normal" title="Sign Up" backgroundImage="LoginButton"/>
                                 <connections>
                                     <segue destination="cph-OR-Wbo" kind="show" identifier="loginToRegisterSegue" id="WMB-Kf-I4r"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FoodMobLogo" translatesAutoresizingMaskIntoConstraints="NO" id="Qva-Bp-KEg">
+                                <rect key="frame" x="176.5" y="95" width="247" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="QSS-w0-leC"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="sWi-Hs-ll5" firstAttribute="width" secondItem="egn-W0-QNc" secondAttribute="width" id="2UI-Xo-yl1"/>
-                            <constraint firstItem="nuW-ul-9nW" firstAttribute="centerX" secondItem="Qva-Bp-KEg" secondAttribute="centerX" id="7dU-A8-Xkj"/>
-                            <constraint firstItem="egn-W0-QNc" firstAttribute="top" secondItem="nuW-ul-9nW" secondAttribute="bottom" constant="50" id="HQV-ni-Eqb"/>
-                            <constraint firstItem="Ce5-eA-a1s" firstAttribute="top" secondItem="egn-W0-QNc" secondAttribute="bottom" constant="8" id="QxS-01-9xv"/>
-                            <constraint firstItem="sWi-Hs-ll5" firstAttribute="height" secondItem="egn-W0-QNc" secondAttribute="height" constant="-6" id="aL3-eT-1h1"/>
-                            <constraint firstItem="Qva-Bp-KEg" firstAttribute="centerX" secondItem="egn-W0-QNc" secondAttribute="centerX" id="kDo-hf-cl0"/>
-                            <constraint firstItem="Ce5-eA-a1s" firstAttribute="leading" secondItem="egn-W0-QNc" secondAttribute="leading" id="lSQ-SZ-e7P"/>
-                            <constraint firstItem="Ce5-eA-a1s" firstAttribute="width" secondItem="egn-W0-QNc" secondAttribute="width" id="lUq-Fc-Hxd"/>
-                            <constraint firstItem="nuW-ul-9nW" firstAttribute="top" secondItem="Qva-Bp-KEg" secondAttribute="bottom" constant="40" id="qeq-P2-i1e"/>
-                            <constraint firstItem="Qva-Bp-KEg" firstAttribute="centerX" secondItem="yMC-Po-TMg" secondAttribute="centerX" id="s5b-bG-Bn9"/>
-                            <constraint firstItem="4ga-t5-t1H" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Dkg-Ap-GFT" secondAttribute="bottom" id="sGp-zp-Vao"/>
-                            <constraint firstItem="Qva-Bp-KEg" firstAttribute="top" secondItem="Kgv-UW-94X" secondAttribute="bottom" priority="999" constant="73" id="vhn-bk-LDv"/>
+                            <constraint firstItem="Ce5-eA-a1s" firstAttribute="top" secondItem="egn-W0-QNc" secondAttribute="bottom" constant="8" id="0LJ-MS-z9Z"/>
+                            <constraint firstItem="Ce5-eA-a1s" firstAttribute="leading" secondItem="nuW-ul-9nW" secondAttribute="leading" id="1fW-Qh-KrV"/>
+                            <constraint firstItem="egn-W0-QNc" firstAttribute="leading" secondItem="nuW-ul-9nW" secondAttribute="leading" id="1ki-az-IsB"/>
+                            <constraint firstItem="egn-W0-QNc" firstAttribute="centerX" secondItem="yMC-Po-TMg" secondAttribute="centerX" id="6Yq-dZ-can"/>
+                            <constraint firstItem="nuW-ul-9nW" firstAttribute="centerX" secondItem="yMC-Po-TMg" secondAttribute="centerX" id="Bfy-Zi-d0r"/>
+                            <constraint firstItem="Ce5-eA-a1s" firstAttribute="centerX" secondItem="yMC-Po-TMg" secondAttribute="centerX" id="DTQ-wf-cfM"/>
+                            <constraint firstItem="Qva-Bp-KEg" firstAttribute="top" secondItem="Kgv-UW-94X" secondAttribute="bottom" priority="999" constant="75" id="I5s-MT-laP"/>
+                            <constraint firstItem="nuW-ul-9nW" firstAttribute="centerY" secondItem="yMC-Po-TMg" secondAttribute="centerY" priority="999" id="Nnx-hh-GQy"/>
+                            <constraint firstItem="4ga-t5-t1H" firstAttribute="top" relation="greaterThanOrEqual" secondItem="nuW-ul-9nW" secondAttribute="bottom" constant="20" id="PWK-wL-dLG"/>
+                            <constraint firstItem="Qva-Bp-KEg" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Kgv-UW-94X" secondAttribute="bottom" id="VXL-EV-g8Q"/>
+                            <constraint firstItem="nuW-ul-9nW" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Qva-Bp-KEg" secondAttribute="bottom" constant="20" id="WtQ-99-OP9"/>
+                            <constraint firstItem="egn-W0-QNc" firstAttribute="top" secondItem="nuW-ul-9nW" secondAttribute="bottom" constant="24" id="ogt-ln-LF4"/>
+                            <constraint firstItem="Qva-Bp-KEg" firstAttribute="centerX" secondItem="yMC-Po-TMg" secondAttribute="centerX" id="sgQ-Zo-skS"/>
+                            <constraint firstItem="4ga-t5-t1H" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Ce5-eA-a1s" secondAttribute="bottom" constant="10" id="wdx-EK-kSd"/>
                         </constraints>
                     </view>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
-                        <outlet property="bottomLayoutConstraint" destination="sGp-zp-Vao" id="hyK-cZ-F5j"/>
+                        <outlet property="bottomLayoutConstraint" destination="PWK-wL-dLG" id="czu-YE-ofj"/>
                         <outlet property="emailAddressField" destination="sWi-Hs-ll5" id="Kas-h7-6Er"/>
                         <outlet property="loginButton" destination="egn-W0-QNc" id="EGh-eT-cOI"/>
                         <outlet property="passwordField" destination="Dkg-Ap-GFT" id="rQj-tI-ecg"/>
@@ -1359,11 +1364,11 @@
         <image name="Barrelhouse" width="164" height="163"/>
         <image name="BurgerLogo" width="260" height="203"/>
         <image name="EmilyRitter" width="75" height="75"/>
-        <image name="FoodMobLogo" width="250" height="44"/>
+        <image name="FoodMobLogo" width="247" height="41"/>
         <image name="Friends" width="32" height="32"/>
         <image name="Friends Selected" width="32" height="32"/>
         <image name="JamesPark" width="444" height="444"/>
-        <image name="JonathanJemson" width="240" height="240"/>
+        <image name="LoginButton" width="11" height="40"/>
         <image name="Moe's" width="466" height="478"/>
         <image name="NoFriendImage" width="198" height="198"/>
         <image name="Profile" width="32" height="32"/>
