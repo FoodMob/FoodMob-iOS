@@ -1113,12 +1113,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FoodMobLogo" translatesAutoresizingMaskIntoConstraints="NO" id="Qva-Bp-KEg">
-                                <rect key="frame" x="175" y="95" width="250" height="44"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="QSS-w0-leC"/>
-                                </constraints>
-                            </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="nuW-ul-9nW">
                                 <rect key="frame" x="175" y="267" width="250" height="67"/>
                                 <subviews>
@@ -1162,6 +1156,12 @@
                                     <segue destination="cph-OR-Wbo" kind="show" identifier="loginToRegisterSegue" id="WMB-Kf-I4r"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FoodMobLogo" translatesAutoresizingMaskIntoConstraints="NO" id="Qva-Bp-KEg">
+                                <rect key="frame" x="175" y="95" width="250" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="QSS-w0-leC"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
