@@ -21,12 +21,14 @@ class ProfileTableViewController: UITableViewController {
     @IBOutlet weak var likesLabel: UILabel!
     @IBOutlet weak var dislikesLabel: UILabel!
     @IBOutlet weak var restrictionsLabel: UILabel!
+    @IBOutlet weak var userImage: UIImageView!
     
     private var currentUser: User!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         currentUser = Session.sharedSession.currentUser!
+        userImage.setImageForUser(currentUser)
         FoodMob.currentDataProvider.fetchCategoriesForUser(currentUser) {
             [unowned self] success in
             if success {

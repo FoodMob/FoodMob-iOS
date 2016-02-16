@@ -37,6 +37,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="FoodMobLogo" width="250" height="44"/>
+        <image name="FoodMobLogo" width="247" height="41"/>
     </resources>
 </document>

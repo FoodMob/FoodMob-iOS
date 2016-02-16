@@ -857,7 +857,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="54.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="JonathanJemson" translatesAutoresizingMaskIntoConstraints="NO" id="UNo-cs-G3m">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UNo-cs-G3m" customClass="RoundedImageView" customModule="FoodMob" customModuleProvider="target">
                                                     <rect key="frame" x="14" y="6" width="40" height="40"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Jonathan Jemson" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wOf-bf-eRP">
@@ -1034,6 +1034,7 @@
                         <outlet property="likesLabel" destination="g4T-bO-5Om" id="LPU-TN-OTh"/>
                         <outlet property="nameLabel" destination="wOf-bf-eRP" id="l3y-Wp-Qwp"/>
                         <outlet property="restrictionsLabel" destination="JqJ-rE-CjN" id="B6A-8F-LbZ"/>
+                        <outlet property="userImage" destination="UNo-cs-G3m" id="d1r-wY-ZUf"/>
                         <segue destination="KFc-W6-j0I" kind="unwind" identifier="profileToLoginSegue" unwindAction="unwindToLoginViewController:" id="Hjz-lB-b0f"/>
                         <segue destination="aGm-LX-Q9y" kind="show" identifier="profileToCategoriesSegue" id="wFW-5u-mwP"/>
                     </connections>
@@ -1135,7 +1136,7 @@
                                 </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="egn-W0-QNc">
-                                <rect key="frame" x="175" y="357.5" width="250" height="50"/>
+                                <rect key="frame" x="175" y="358" width="250" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="hsa-zs-uew"/>
                                 </constraints>
@@ -1146,7 +1147,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ce5-eA-a1s">
-                                <rect key="frame" x="175" y="415.5" width="250" height="50"/>
+                                <rect key="frame" x="175" y="416" width="250" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="xUT-Co-0ky"/>
                                 </constraints>
@@ -1157,7 +1158,7 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FoodMobLogo" translatesAutoresizingMaskIntoConstraints="NO" id="Qva-Bp-KEg">
-                                <rect key="frame" x="175" y="95" width="250" height="44"/>
+                                <rect key="frame" x="176.5" y="95" width="247" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="QSS-w0-leC"/>
                                 </constraints>
@@ -1363,11 +1364,10 @@
         <image name="Barrelhouse" width="164" height="163"/>
         <image name="BurgerLogo" width="260" height="203"/>
         <image name="EmilyRitter" width="75" height="75"/>
-        <image name="FoodMobLogo" width="250" height="44"/>
+        <image name="FoodMobLogo" width="247" height="41"/>
         <image name="Friends" width="32" height="32"/>
         <image name="Friends Selected" width="32" height="32"/>
         <image name="JamesPark" width="444" height="444"/>
-        <image name="JonathanJemson" width="240" height="240"/>
         <image name="LoginButton" width="11" height="40"/>
         <image name="Moe's" width="466" height="478"/>
         <image name="NoFriendImage" width="198" height="198"/>

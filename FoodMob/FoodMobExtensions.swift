@@ -10,6 +10,16 @@
 //
 
 import UIKit
+import AlamofireImage
+import CryptoSwift
+
+extension UIImageView {
+    func setImageForUser(user: User) {
+        let md5 = user.emailAddress.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet()).lowercaseString.md5()
+        let size = self.frame.size.width * UIScreen.mainScreen().scale
+        self.af_setImageWithURL(NSURL(string: "https://www.gravatar.com/avatar/\(md5).jpg?d=identicon&s=\(size)")!, placeholderImage: UIImage(named: "NoFriendImage")!, imageTransition: .CrossDissolve(0.2))
+    }
+}
 
 extension UIViewController {
     /**
