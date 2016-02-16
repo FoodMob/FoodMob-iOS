@@ -14,6 +14,10 @@ import Foundation
 public struct MockDataSource : FoodMobDataSource {
 
     public func login(emailAddress: String, password: String, completion: ((User?)->())? = nil) {
+        guard validateEmailAddress(emailAddress) && validatePassword(password) else {
+            completion?(nil)
+            return
+        }
         if emailAddress.lowercaseString.containsString("foodmob.me") && password.lowercaseString.containsString("pass") {
             let user = User(firstName: "Jonathan", lastName: "Jemson", emailAddress: emailAddress, authToken: "0123456789abcdef")
             fetchCategoriesForUser(user)

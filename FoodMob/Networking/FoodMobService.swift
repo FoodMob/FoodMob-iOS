@@ -23,6 +23,10 @@ public struct FoodMobService: FoodMobDataSource {
     }
 
     public func login(emailAddress: String, password: String, completion: ((User?) -> ())? = nil) {
+        guard validateEmailAddress(emailAddress) && validatePassword(password) else {
+            completion?(nil)
+            return
+        }
         Alamofire.request(ServiceEndpoint.loginMethod, ServiceEndpoint.login, parameters: [UserField.emailAddress: emailAddress, UserField.password: password], encoding: .JSON).validate().responseJSON {
             response in
             switch response.result {
