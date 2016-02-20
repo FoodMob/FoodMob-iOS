@@ -127,6 +127,7 @@ public class User: CreateableSecureStorable, ReadableSecureStorable, DeleteableS
         return categories[category] ?? Preference.None
     }
     
+    @warn_unused_result
     func stringForPreference(preference: Preference) -> String {
         var str = ""
         for (cat, pref) in categories {
@@ -139,7 +140,7 @@ public class User: CreateableSecureStorable, ReadableSecureStorable, DeleteableS
         }
         return str.substringToIndex(str.endIndex.advancedBy(-2))
     }
-    
+
     public func setPreference(preference: Preference, forCategory category: FoodCategory) {
         if preference == .None {
             categories.removeValueForKey(category)
@@ -160,6 +161,7 @@ public class User: CreateableSecureStorable, ReadableSecureStorable, DeleteableS
             UserField.authToken: self.authToken
         ]
     }
+
     
 }
 

@@ -39,6 +39,22 @@ extension UIViewController {
     }
 }
 
+extension UINavigationController {
+    func presentTransparentNavigationBar() {
+        self.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: .Default)
+        self.navigationBar.translucent = true
+        self.navigationBar.shadowImage = UIImage()
+        self.setNavigationBarHidden(false, animated: true)
+    }
+    
+    func hideTransparentNavigationBar() {
+        self.setNavigationBarHidden(true, animated:false)
+        self.navigationBar.setBackgroundImage(UINavigationBar.appearance().backgroundImageForBarMetrics(UIBarMetrics.Default), forBarMetrics:UIBarMetrics.Default)
+        self.navigationBar.translucent = UINavigationBar.appearance().translucent
+        self.navigationBar.shadowImage = UINavigationBar.appearance().shadowImage
+    }
+}
+
 extension UITextField {
     /**
      - returns: The text in the field, and empty string if it's nil (somehow)

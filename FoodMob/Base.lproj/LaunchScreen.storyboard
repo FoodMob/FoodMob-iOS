@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FoodMobLogo" translatesAutoresizingMaskIntoConstraints="NO" id="lEQ-3h-x7Y">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="FoodMobLogo" translatesAutoresizingMaskIntoConstraints="NO" id="lEQ-3h-x7Y">
                                 <rect key="frame" x="176.5" y="95" width="247" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="fm1-2i-eDL"/>

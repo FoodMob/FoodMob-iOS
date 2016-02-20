@@ -174,6 +174,10 @@ class ProfileTableViewController: UITableViewController {
     
     @IBAction func unwindToProfilePage(segue: UIStoryboardSegue) {
     }
+    
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return .LightContent
+    }
 }
 
 enum AboutMeRow: Int {

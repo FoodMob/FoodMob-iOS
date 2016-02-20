@@ -1,5 +1,5 @@
 github "Alamofire/Alamofire" "3.2.0"
 github "krzyzanowskim/CryptoSwift" "0.2.3"
-github "matthewpalmer/Locksmith" "2.0.7"
+github "matthewpalmer/Locksmith" "2.0.8"
 github "SwiftyJSON/SwiftyJSON" "2.3.3"
 github "Alamofire/AlamofireImage" "2.3.1"

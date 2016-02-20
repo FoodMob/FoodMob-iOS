@@ -137,6 +137,7 @@ public struct FoodMobService: FoodMobDataSource {
     
     public func fetchCategoriesForUser(user: User, completion: ((Bool)->())? = nil) {
         Alamofire.request(ServiceEndpoint.getFoodProfileMethod, ServiceEndpoint.foodProfile(user), parameters: [UserField.authToken: user.authToken], encoding: .URL).validate().responseJSON { response in
+            debugPrint(response.request)
             switch response.result {
             case .Success:
                 if let value = response.result.value {

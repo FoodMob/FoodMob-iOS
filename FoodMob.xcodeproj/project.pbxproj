@@ -15,6 +15,9 @@
 		AB27C2C21C72DBF600FCE7B8 /* AlamofireImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB27C2BE1C72DBDE00FCE7B8 /* AlamofireImage.framework */; };
 		AB27C2C31C72DBF600FCE7B8 /* AlamofireImage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AB27C2BE1C72DBDE00FCE7B8 /* AlamofireImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		AB3714F01C6BFCBD004EA323 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3714EF1C6BFCBD004EA323 /* Session.swift */; };
+		AB4478211C740CEE0092A2AF /* SearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4478201C740CEE0092A2AF /* SearchTableViewController.swift */; };
+		AB4478231C740D1A0092A2AF /* SearchDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4478221C740D1A0092A2AF /* SearchDetailTableViewController.swift */; };
+		AB4478251C7419BC0092A2AF /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB4478241C7419BC0092A2AF /* MapKit.framework */; };
 		AB510A331C66763C0056ADEC /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB510A321C66763C0056ADEC /* GradientView.swift */; };
 		AB510A351C6678FE0056ADEC /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB510A341C6678FE0056ADEC /* RegistrationViewController.swift */; };
 		AB510A371C668BBA0056ADEC /* SimpleTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB510A361C668BBA0056ADEC /* SimpleTextField.swift */; };
@@ -76,6 +79,9 @@
 		AB27C2B71C72D7C500FCE7B8 /* CryptoSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CryptoSwift.framework; sourceTree = "<group>"; };
 		AB27C2BE1C72DBDE00FCE7B8 /* AlamofireImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AlamofireImage.framework; sourceTree = "<group>"; };
 		AB3714EF1C6BFCBD004EA323 /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
+		AB4478201C740CEE0092A2AF /* SearchTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchTableViewController.swift; sourceTree = "<group>"; };
+		AB4478221C740D1A0092A2AF /* SearchDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchDetailTableViewController.swift; sourceTree = "<group>"; };
+		AB4478241C7419BC0092A2AF /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		AB510A321C66763C0056ADEC /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		AB510A341C6678FE0056ADEC /* RegistrationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		AB510A361C668BBA0056ADEC /* SimpleTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleTextField.swift; sourceTree = "<group>"; };
@@ -116,6 +122,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB4478251C7419BC0092A2AF /* MapKit.framework in Frameworks */,
 				AB510A391C668C770056ADEC /* Locksmith.framework in Frameworks */,
 				AB27C2C21C72DBF600FCE7B8 /* AlamofireImage.framework in Frameworks */,
 				ABF3F56F1C6523F2000AB856 /* SwiftyJSON.framework in Frameworks */,
@@ -168,6 +175,7 @@
 		ABF3F5671C651E19000AB856 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AB4478241C7419BC0092A2AF /* MapKit.framework */,
 				ABF3F5601C651D84000AB856 /* Alamofire.framework */,
 				AB27C2BE1C72DBDE00FCE7B8 /* AlamofireImage.framework */,
 				AB27C2B71C72D7C500FCE7B8 /* CryptoSwift.framework */,
@@ -205,6 +213,8 @@
 				AB2194AB1C6C359B00A7323A /* Profile Page */,
 				ABF3F5771C652629000AB856 /* LoginViewController.swift */,
 				AB510A341C6678FE0056ADEC /* RegistrationViewController.swift */,
+				AB4478201C740CEE0092A2AF /* SearchTableViewController.swift */,
+				AB4478221C740D1A0092A2AF /* SearchDetailTableViewController.swift */,
 			);
 			name = "View Controllers";
 			path = ViewControllers;
@@ -294,7 +304,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0720;
-				LastUpgradeCheck = 0710;
+				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = FoodMob;
 				TargetAttributes = {
 					ABD291481C67995500C31501 = {
@@ -360,6 +370,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				AB3714F01C6BFCBD004EA323 /* Session.swift in Sources */,
+				AB4478211C740CEE0092A2AF /* SearchTableViewController.swift in Sources */,
+				AB4478231C740D1A0092A2AF /* SearchDetailTableViewController.swift in Sources */,
 				ABF3F5781C652629000AB856 /* LoginViewController.swift in Sources */,
 				ABF3F5751C65255A000AB856 /* FoodMobService.swift in Sources */,
 				AB510A331C66763C0056ADEC /* GradientView.swift in Sources */,

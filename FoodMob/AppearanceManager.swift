@@ -11,9 +11,9 @@ import UIKit
 // All random-seeming values were generated from Skala Color.
 
 struct AppearanceManager {
-    static let applicationBarTintColor: UIColor? = nil
+    static let applicationBarTintColor: UIColor? = UIColor(hue:0.095, saturation:0.851, brightness:0.959, alpha:1)
 
-    static let applicationTintColor = UIColor(hue:0.079, saturation:0.996, brightness:0.903, alpha:1)
+    static let applicationTintColor = UIColor.whiteColor()
     
     /**
      Used in the `GradientView` class.
@@ -36,8 +36,9 @@ struct AppearanceManager {
         UINavigationBar.appearance().tintColor = AppearanceManager.applicationTintColor
         UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: AppearanceManager.applicationTintColor]
         UINavigationBar.appearance().barTintColor = AppearanceManager.applicationBarTintColor
-        UITabBar.appearance().barTintColor = AppearanceManager.applicationBarTintColor
-        UITabBar.appearance().tintColor = AppearanceManager.applicationTintColor
+//        UITabBar.appearance().barTintColor = AppearanceManager.applicationBarTintColor
+        UITabBar.appearance().tintColor = AppearanceManager.applicationBarTintColor
+        UISegmentedControl.appearance().tintColor = applicationBarTintColor
     }
 
 }
