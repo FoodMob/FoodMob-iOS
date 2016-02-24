@@ -7,14 +7,20 @@
 //
 
 import UIKit
+import CoreLocation
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    
+
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         AppearanceManager.configureAppearance()
+        if CLLocationManager.authorizationStatus() == .NotDetermined {
+            Session.sharedSession.locationManager = CLLocationManager()
+            let manager = Session.sharedSession.locationManager!
+            manager.requestWhenInUseAuthorization()
+        }
         return true
     }
 
@@ -42,4 +48,3 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
 }
-

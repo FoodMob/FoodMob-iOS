@@ -8,6 +8,7 @@
 
 import UIKit
 import MapKit
+import CoreLocation
 
 class SearchDetailTableViewController: UITableViewController {
     
@@ -21,15 +22,30 @@ class SearchDetailTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-        let location = CLLocationCoordinate2D(latitude: 33.7802445, longitude: -84.3861063)
-        let regionRadius: Double = 100
-        let coordinateRegion = MKCoordinateRegionMakeWithDistance(location, regionRadius * 2, regionRadius * 2)
-        map.setRegion(coordinateRegion, animated: true)
+        let geocoder = CLGeocoder()
+        var location: CLLocation?
+        geocoder.geocodeAddressString("933 Peachtree St, Atlanta, GA 30309") { [unowned self] (placemarks, error) in
+            if let placemarks = placemarks, first = placemarks.first {
+                location = first.location
+            }
+            var coordinate = CLLocationCoordinate2D(latitude: 33.7802445, longitude: -84.3861063)
+            if let foundLoc = location {
+                coordinate = foundLoc.coordinate
+            }
+            let regionRadius: Double = 100
+            let coordinateRegion = MKCoordinateRegionMakeWithDistance(coordinate, regionRadius * 2.25, regionRadius * 2.25)
+            self.map.setRegion(coordinateRegion, animated: true)
+        }
         self.title = "Sweet Hut Bakery & Cafe"
     }
     
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+    }
+    
     override func viewWillDisappear(animated: Bool) {
-        super.viewWillDisappear(true)
+        super.viewWillDisappear(animated)
+        self.map = nil
     }
 
     override func didReceiveMemoryWarning() {

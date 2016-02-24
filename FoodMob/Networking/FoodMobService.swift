@@ -18,7 +18,7 @@ public struct FoodMobService: FoodMobDataSource {
     
     private struct ServiceEndpoint : Endpoint {
         static var root: String {
-            return "http://fm.fluf.me"
+            return "https://fm.fluf.me"
         }
     }
 

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CoreLocation
 
 /**
  Represents a session shared across the application.
@@ -21,6 +22,8 @@ public struct Session {
      Retrieves the currently signed in user.
      */
     public var currentUser: User?
+    
+    public var locationManager: CLLocationManager?
 
     private init() {
         
