@@ -12,6 +12,7 @@ import SafariServices
 enum ProfileTableViewControllerSegue: String {
     case ToLoginSegue = "profileToLoginSegue"
     case ToCategoriesSegue = "profileToCategoriesSegue"
+    case ToWebSegue = "profileToWebSegue"
 }
 
 class ProfileTableViewController: UITableViewController {
@@ -124,6 +125,9 @@ class ProfileTableViewController: UITableViewController {
         if let dest = segue.destinationViewController as? FoodCategoriesTableViewController, sender = sender as? Int, pref = Preference(rawValue: sender) {
             dest.showingPreference = pref
         }
+        if let dest = segue.destinationViewController as? FMWebViewController, sender = sender as? NSURL {
+            dest.url = sender
+        }
     }
 
     
@@ -166,7 +170,8 @@ class ProfileTableViewController: UITableViewController {
             Session.sharedSession.currentUser = nil
             self.performSegueWithIdentifier(ProfileTableViewControllerSegue.ToLoginSegue.rawValue, sender: nil)
         case .Legal:
-            let _ = NSBundle.mainBundle().URLForResource("legal", withExtension: "html")!
+            let url = NSBundle.mainBundle().URLForResource("legal", withExtension: "html")!
+            self.performSegueWithIdentifier(ProfileTableViewControllerSegue.ToWebSegue.rawValue, sender: url)
         default:
             print("Not implemented yet")
         }

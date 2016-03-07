@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10112" systemVersion="15E49a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="4MX-mg-wgs">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10115" systemVersion="15E56a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="4MX-mg-wgs">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10083"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10084"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -1240,12 +1240,13 @@
                         <outlet property="userImage" destination="UNo-cs-G3m" id="d1r-wY-ZUf"/>
                         <segue destination="KFc-W6-j0I" kind="unwind" identifier="profileToLoginSegue" unwindAction="unwindToLoginViewController:" id="Hjz-lB-b0f"/>
                         <segue destination="aGm-LX-Q9y" kind="show" identifier="profileToCategoriesSegue" id="wFW-5u-mwP"/>
+                        <segue destination="Gsd-dT-lJu" kind="show" identifier="profileToWebSegue" id="bMx-Qn-zWY"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XdK-ey-5ww" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="KFc-W6-j0I" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1191" y="1037"/>
+            <point key="canvasLocation" x="1075" y="1013"/>
         </scene>
         <!--Food Categories Table View Controller-->
         <scene sceneID="T3U-Yp-ewm">
@@ -1287,6 +1288,39 @@
                 <exit id="dCm-x7-cdN" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1865" y="1036"/>
+        </scene>
+        <!--Web View Controller-->
+        <scene sceneID="iOX-0J-yas">
+            <objects>
+                <viewController id="Gsd-dT-lJu" customClass="FMWebViewController" customModule="FoodMob" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="BiO-7u-YLm"/>
+                        <viewControllerLayoutGuide type="bottom" id="jNM-Jb-pCY"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="IMc-Ur-3aw">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sr0-Xi-ZcI">
+                                <rect key="frame" x="0.0" y="0.0" width="597" height="600"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Sr0-Xi-ZcI" firstAttribute="top" secondItem="BiO-7u-YLm" secondAttribute="bottom" constant="-64" id="XNM-jH-uc4"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Sr0-Xi-ZcI" secondAttribute="trailing" constant="-17" id="cNb-yx-WoE"/>
+                            <constraint firstItem="Sr0-Xi-ZcI" firstAttribute="leading" secondItem="IMc-Ur-3aw" secondAttribute="leadingMargin" constant="-20" id="fgQ-et-WBi"/>
+                            <constraint firstItem="jNM-Jb-pCY" firstAttribute="top" secondItem="Sr0-Xi-ZcI" secondAttribute="bottom" constant="-49" id="htC-Bc-1Mm"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="Sr0-Xi-ZcI" id="BRE-5s-PxE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jlm-IB-dFm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1849" y="1874"/>
         </scene>
         <!--Profile-->
         <scene sceneID="YVe-yZ-PdP">
