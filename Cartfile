@@ -3,3 +3,5 @@ github "Alamofire/AlamofireImage" ~> 2.0
 github "SwiftyJSON/SwiftyJSON"
 github "matthewpalmer/Locksmith"
 github "krzyzanowskim/CryptoSwift"
+github "marketplacer/Cosmos" ~> 1.2
+

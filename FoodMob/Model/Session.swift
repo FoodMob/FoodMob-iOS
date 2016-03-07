@@ -23,7 +23,7 @@ public struct Session {
      */
     public var currentUser: User?
     
-    public var locationManager: CLLocationManager?
+    public var locationManager: CLLocationManager!
 
     private init() {
         

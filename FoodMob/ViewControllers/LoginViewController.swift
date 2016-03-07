@@ -25,6 +25,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var signUpButton: UIButton!
     
+    private var keyboardShowing = false
+    
     
     @IBOutlet var controls: [UIControl]!
     
@@ -84,14 +86,17 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     
     func keyboardWillShow(notification: NSNotification) {
+        guard keyboardShowing == false else { return }
         if let userInfo = notification.userInfo, keyboardSize = (userInfo[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue() {
             bottomLayoutConstraint.constant = keyboardSize.height + CGFloat(20)
             self.view.layoutIfNeeded()
+            keyboardShowing = true
         }
     }
     
     func keyboardWillHide(notification: NSNotification) {
         bottomLayoutConstraint.constant = 0
+        keyboardShowing = false
         self.view.layoutIfNeeded()
     }
 

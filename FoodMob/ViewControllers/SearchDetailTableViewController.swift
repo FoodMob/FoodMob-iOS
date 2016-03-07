@@ -9,10 +9,14 @@
 import UIKit
 import MapKit
 import CoreLocation
+import Cosmos
 
 class SearchDetailTableViewController: UITableViewController {
     
     @IBOutlet weak var map: MKMapView!
+    @IBOutlet weak var heroImageView: UIImageView!
+    @IBOutlet weak var openLabel: UILabel!
+    @IBOutlet weak var ratingView: CosmosView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,6 +40,18 @@ class SearchDetailTableViewController: UITableViewController {
             let coordinateRegion = MKCoordinateRegionMakeWithDistance(coordinate, regionRadius * 2.25, regionRadius * 2.25)
             self.map.setRegion(coordinateRegion, animated: true)
         }
+        heroImageView.image = heroImageView.image?.applyBlurWithRadius(10, tintColor: UIColor(white: 0.10, alpha: 0.73), saturationDeltaFactor: 1.8)
+        ratingView.rating = 4.5
+        ratingView.text = "59 reviews "
+        ratingView.settings.updateOnTouch = false
+        ratingView.settings.emptyBorderColor = UIColor.whiteColor()
+        ratingView.settings.filledBorderColor = UIColor.whiteColor()
+        ratingView.settings.textColor = UIColor.whiteColor()
+        ratingView.settings.textFont = UIFont.systemFontOfSize(openLabel.font.pointSize)
+        ratingView.settings.filledColor = UIColor.whiteColor()
+        ratingView.settings.fillMode = .Half
+        ratingView.backgroundColor = UIColor.clearColor()
+        
         self.title = "Sweet Hut Bakery & Cafe"
     }
     

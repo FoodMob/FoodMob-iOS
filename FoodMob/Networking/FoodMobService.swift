@@ -172,4 +172,8 @@ public struct FoodMobService: FoodMobDataSource {
             }
         }
     }
+    
+    public func fetchRestaurantsForSearch(search: RestaurantSearch, completion: (([Restaurant]) -> ())?) {
+        fatalError("Not yet implemented.")
+    }
 }

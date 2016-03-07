@@ -6,6 +6,20 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		ABCD6A751C83BC4B0089C740 /* Frameworks */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = ABCD6A781C83BC4B0089C740 /* Build configuration list for PBXAggregateTarget "Frameworks" */;
+			buildPhases = (
+				ABCD6A791C83BC520089C740 /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = Frameworks;
+			productName = Frameworks;
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		AB2194A81C6C2F6B00A7323A /* FoodCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2194A71C6C2F6B00A7323A /* FoodCategory.swift */; };
 		AB2194AA1C6C359400A7323A /* FoodCategoriesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2194A91C6C359400A7323A /* FoodCategoriesTableViewController.swift */; };
@@ -23,9 +37,14 @@
 		AB510A371C668BBA0056ADEC /* SimpleTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB510A361C668BBA0056ADEC /* SimpleTextField.swift */; };
 		AB510A391C668C770056ADEC /* Locksmith.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB510A381C668C770056ADEC /* Locksmith.framework */; };
 		AB510A3A1C668C770056ADEC /* Locksmith.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AB510A381C668C770056ADEC /* Locksmith.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		AB874EBE1C8784E7007E43FF /* RestaurantSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB874EBD1C8784E7007E43FF /* RestaurantSearch.swift */; };
 		AB87B9A21C1358E900CFC95F /* AppearanceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB87B9A11C1358E900CFC95F /* AppearanceManager.swift */; };
 		AB8AEF901C6A98590013293D /* ProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8AEF8F1C6A98590013293D /* ProfileTableViewController.swift */; };
+		ABAFB2BD1C86932600FBA18E /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABAFB2BC1C86932600FBA18E /* Restaurant.swift */; };
+		ABCD6A7D1C83C7A30089C740 /* Cosmos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABCD6A7C1C83C7A30089C740 /* Cosmos.framework */; };
+		ABCD6A7E1C83C7A30089C740 /* Cosmos.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = ABCD6A7C1C83C7A30089C740 /* Cosmos.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		ABD291551C67999300C31501 /* DataSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD291541C67999300C31501 /* DataSourceTests.swift */; };
+		ABD4BA631C7D72C1006894F5 /* UIImage+Effects.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD4BA621C7D72C1006894F5 /* UIImage+Effects.swift */; };
 		ABD87D111C70E4B7005EC1A7 /* legal.html in Resources */ = {isa = PBXBuildFile; fileRef = ABD87D101C70E4B7005EC1A7 /* legal.html */; };
 		ABF3F5641C651DBE000AB856 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABF3F5601C651D84000AB856 /* Alamofire.framework */; };
 		ABF3F5651C651DBE000AB856 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = ABF3F5601C651D84000AB856 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -63,6 +82,7 @@
 			files = (
 				AB510A3A1C668C770056ADEC /* Locksmith.framework in Embed Frameworks */,
 				AB27C2C31C72DBF600FCE7B8 /* AlamofireImage.framework in Embed Frameworks */,
+				ABCD6A7E1C83C7A30089C740 /* Cosmos.framework in Embed Frameworks */,
 				ABF3F5711C6523FB000AB856 /* SwiftyJSON.framework in Embed Frameworks */,
 				ABF3F5651C651DBE000AB856 /* Alamofire.framework in Embed Frameworks */,
 				AB27C2BD1C72DBD400FCE7B8 /* CryptoSwift.framework in Embed Frameworks */,
@@ -86,12 +106,17 @@
 		AB510A341C6678FE0056ADEC /* RegistrationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		AB510A361C668BBA0056ADEC /* SimpleTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleTextField.swift; sourceTree = "<group>"; };
 		AB510A381C668C770056ADEC /* Locksmith.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Locksmith.framework; sourceTree = "<group>"; };
+		AB874EBD1C8784E7007E43FF /* RestaurantSearch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantSearch.swift; sourceTree = "<group>"; };
 		AB87B9A11C1358E900CFC95F /* AppearanceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = AppearanceManager.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		AB8AEF8F1C6A98590013293D /* ProfileTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileTableViewController.swift; sourceTree = "<group>"; };
+		ABAFB2BC1C86932600FBA18E /* Restaurant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
+		ABCD6A7C1C83C7A30089C740 /* Cosmos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Cosmos.framework; sourceTree = "<group>"; };
 		ABD291491C67995500C31501 /* FoodMobTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FoodMobTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABD2914D1C67995500C31501 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ABD291531C67999300C31501 /* FoodMobTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FoodMobTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		ABD291541C67999300C31501 /* DataSourceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataSourceTests.swift; sourceTree = "<group>"; };
+		ABD4BA5E1C7D71BE006894F5 /* FoodMob-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FoodMob-Bridging-Header.h"; sourceTree = "<group>"; };
+		ABD4BA621C7D72C1006894F5 /* UIImage+Effects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Effects.swift"; sourceTree = "<group>"; };
 		ABD87D101C70E4B7005EC1A7 /* legal.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = legal.html; sourceTree = "<group>"; };
 		ABF3F5601C651D84000AB856 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Alamofire.framework; sourceTree = "<group>"; };
 		ABF3F5691C651FC1000AB856 /* FoodMobDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodMobDataSource.swift; sourceTree = "<group>"; };
@@ -128,6 +153,7 @@
 				ABF3F56F1C6523F2000AB856 /* SwiftyJSON.framework in Frameworks */,
 				ABF3F5641C651DBE000AB856 /* Alamofire.framework in Frameworks */,
 				AB27C2BC1C72DBD400FCE7B8 /* CryptoSwift.framework in Frameworks */,
+				ABCD6A7D1C83C7A30089C740 /* Cosmos.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -149,6 +175,7 @@
 				AB510A321C66763C0056ADEC /* GradientView.swift */,
 				AB510A361C668BBA0056ADEC /* SimpleTextField.swift */,
 				AB27C2B51C72D27100FCE7B8 /* RoundedImageView.swift */,
+				ABD4BA5E1C7D71BE006894F5 /* FoodMob-Bridging-Header.h */,
 			);
 			path = "Custom Views";
 			sourceTree = "<group>";
@@ -175,6 +202,7 @@
 		ABF3F5671C651E19000AB856 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				ABCD6A7C1C83C7A30089C740 /* Cosmos.framework */,
 				AB4478241C7419BC0092A2AF /* MapKit.framework */,
 				ABF3F5601C651D84000AB856 /* Alamofire.framework */,
 				AB27C2BE1C72DBDE00FCE7B8 /* AlamofireImage.framework */,
@@ -203,6 +231,8 @@
 				ABF3F56C1C652174000AB856 /* User.swift */,
 				AB3714EF1C6BFCBD004EA323 /* Session.swift */,
 				AB2194A71C6C2F6B00A7323A /* FoodCategory.swift */,
+				ABAFB2BC1C86932600FBA18E /* Restaurant.swift */,
+				AB874EBD1C8784E7007E43FF /* RestaurantSearch.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -223,6 +253,7 @@
 		ABFCB68E1C038F3300ED33BE = {
 			isa = PBXGroup;
 			children = (
+				ABD4BA621C7D72C1006894F5 /* UIImage+Effects.swift */,
 				ABD87D0F1C70E49D005EC1A7 /* Resources */,
 				ABFCB6991C038F3300ED33BE /* FoodMob */,
 				ABD2914A1C67995500C31501 /* FoodMobTests */,
@@ -303,16 +334,20 @@
 		ABFCB68F1C038F3300ED33BE /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0720;
+				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = FoodMob;
 				TargetAttributes = {
+					ABCD6A751C83BC4B0089C740 = {
+						CreatedOnToolsVersion = 7.3;
+					};
 					ABD291481C67995500C31501 = {
 						CreatedOnToolsVersion = 7.2.1;
 						TestTargetID = ABFCB6961C038F3300ED33BE;
 					};
 					ABFCB6961C038F3300ED33BE = {
 						CreatedOnToolsVersion = 7.1.1;
+						DevelopmentTeam = 56S7AJ6FDD;
 					};
 				};
 			};
@@ -331,6 +366,7 @@
 			targets = (
 				ABFCB6961C038F3300ED33BE /* FoodMob */,
 				ABD291481C67995500C31501 /* FoodMobTests */,
+				ABCD6A751C83BC4B0089C740 /* Frameworks */,
 			);
 		};
 /* End PBXProject section */
@@ -355,6 +391,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		ABCD6A791C83BC520089C740 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "carthage bootstrap --platform iOS";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		ABD291451C67995500C31501 /* Sources */ = {
@@ -385,6 +437,9 @@
 				AB2194A81C6C2F6B00A7323A /* FoodCategory.swift in Sources */,
 				AB8AEF901C6A98590013293D /* ProfileTableViewController.swift in Sources */,
 				AB87B9A21C1358E900CFC95F /* AppearanceManager.swift in Sources */,
+				ABD4BA631C7D72C1006894F5 /* UIImage+Effects.swift in Sources */,
+				ABAFB2BD1C86932600FBA18E /* Restaurant.swift in Sources */,
+				AB874EBE1C8784E7007E43FF /* RestaurantSearch.swift in Sources */,
 				ABF3F56D1C652174000AB856 /* User.swift in Sources */,
 				ABFCB69B1C038F3300ED33BE /* AppDelegate.swift in Sources */,
 				ABF3F56A1C651FC1000AB856 /* FoodMobDataSource.swift in Sources */,
@@ -421,6 +476,22 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		ABCD6A761C83BC4B0089C740 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		ABCD6A771C83BC4B0089C740 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		ABD291501C67995500C31501 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -539,14 +610,19 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = FoodMob/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.cixocommunications.FoodMob;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cixocommunications.foodmob;
 				PRODUCT_NAME = FoodMob;
+				PROVISIONING_PROFILE = "79b1f192-3c77-44ec-9323-cf1f02b0552a";
+				SWIFT_OBJC_BRIDGING_HEADER = "FoodMob/Custom Views/FoodMob-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -554,20 +630,34 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Jemson Vasanthakumar (56S7AJ6FDD)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = FoodMob/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.cixocommunications.FoodMob;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cixocommunications.foodmob;
 				PRODUCT_NAME = FoodMob;
+				PROVISIONING_PROFILE = "79b1f192-3c77-44ec-9323-cf1f02b0552a";
+				SWIFT_OBJC_BRIDGING_HEADER = "FoodMob/Custom Views/FoodMob-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		ABCD6A781C83BC4B0089C740 /* Build configuration list for PBXAggregateTarget "Frameworks" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ABCD6A761C83BC4B0089C740 /* Debug */,
+				ABCD6A771C83BC4B0089C740 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		ABD291521C67995500C31501 /* Build configuration list for PBXNativeTarget "FoodMobTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

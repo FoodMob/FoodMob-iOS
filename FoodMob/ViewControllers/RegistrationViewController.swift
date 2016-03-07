@@ -26,6 +26,7 @@ class RegistrationViewController: UIViewController, UITextFieldDelegate {
     private var keyboardHeight: CGFloat = 0.0
     @IBOutlet weak var textFieldStack: UIStackView!
     private var activeTextField: UITextField?
+    private var keyboardShowing = false
 
 
     @IBOutlet weak var stackViewToBottomConstraint: NSLayoutConstraint!
@@ -80,17 +81,20 @@ class RegistrationViewController: UIViewController, UITextFieldDelegate {
     }
     
     func keyboardWillShow(notification: NSNotification) {
+        guard keyboardShowing == false else { return }
         if let userInfo = notification.userInfo, keyboardSize = (userInfo[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue() {
             keyboardHeight = keyboardSize.height
             if (activeTextField?.tag ?? 0 >= 2) {
                 stackViewToBottomConstraint.constant = keyboardSize.height + CGFloat(20)
             }
             self.view.layoutIfNeeded()
+            keyboardShowing = true
         }
     }
     
     func keyboardWillHide(notification: NSNotification) {
         stackViewToBottomConstraint.constant = 0
+        keyboardShowing = false
         self.view.layoutIfNeeded()
     }
 

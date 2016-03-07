@@ -74,6 +74,14 @@ public protocol FoodMobDataSource {
          - user: The current user.
      */
     func updateCategoriesForUser(user: User)
+    
+    /**
+     Perform a search given a restaruant search object.
+     
+     - Parameter search: A restaurant search object.
+     - Parameter completion: The completion handler for when the server responds
+     */
+    func fetchRestaurantsForSearch(search: RestaurantSearch, completion: (([Restaurant]) -> ())?)
 }
 
 public extension FoodMobDataSource {

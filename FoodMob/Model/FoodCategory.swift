@@ -62,13 +62,11 @@ public enum FoodCategory: String, Hashable {
         ChickenWings,
         Chinese,
         Diners,
-        Food,
         Indian,
         Italian,
         Japanese,
         Korean,
         Mexican,
-        Nightlife,
         Pizza,
         Sandwiches,
         Seafood,
@@ -77,20 +75,22 @@ public enum FoodCategory: String, Hashable {
         Steakhouses,
         SushiBars,
         TexMex,
-        Thai
+        Thai,
+        Bakery,
+        Dessert,
+        CoffeeAndTea
+        
     ]
 
     case Sandwiches = "Sandwiches"
     case Pizza = "Pizza"
     case Mexican = "Mexican"
     case AmericanTraditional = "American (Traditional)"
-    case Nightlife = "Nightlife"
     case Burgers = "Burgers"
     case Bars = "Bars"
     case ChickenWings = "Chicken Wings"
     case Chinese = "Chinese"
     case AmericanNew = "American (New)"
-    case Food = "Food"
     case BreakfastAndBrunch = "Breakfast & Brunch"
     case Italian = "Italian"
     case Seafood = "Seafood"
@@ -106,4 +106,7 @@ public enum FoodCategory: String, Hashable {
     case Korean = "Korean"
     case AsianFusion = "Asian Fusion"
     case Indian = "Indian"
+    case Bakery = "Bakeries"
+    case CoffeeAndTea = "Coffee & Tea"
+    case Dessert = "Desserts"
 }
