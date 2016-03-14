@@ -21,6 +21,7 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		AB12184F1C96241B006DCB7E /* SearchConfigurationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB12184E1C96241B006DCB7E /* SearchConfigurationTableViewController.swift */; };
 		AB2194A81C6C2F6B00A7323A /* FoodCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2194A71C6C2F6B00A7323A /* FoodCategory.swift */; };
 		AB2194AA1C6C359400A7323A /* FoodCategoriesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2194A91C6C359400A7323A /* FoodCategoriesTableViewController.swift */; };
 		AB27C2B61C72D27100FCE7B8 /* RoundedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB27C2B51C72D27100FCE7B8 /* RoundedImageView.swift */; };
@@ -94,6 +95,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		AB12184E1C96241B006DCB7E /* SearchConfigurationTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchConfigurationTableViewController.swift; sourceTree = "<group>"; };
 		AB2194A71C6C2F6B00A7323A /* FoodCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodCategory.swift; sourceTree = "<group>"; };
 		AB2194A91C6C359400A7323A /* FoodCategoriesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodCategoriesTableViewController.swift; sourceTree = "<group>"; };
 		AB27C2B51C72D27100FCE7B8 /* RoundedImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedImageView.swift; sourceTree = "<group>"; };
@@ -248,6 +250,7 @@
 				AB510A341C6678FE0056ADEC /* RegistrationViewController.swift */,
 				AB4478201C740CEE0092A2AF /* SearchTableViewController.swift */,
 				AB4478221C740D1A0092A2AF /* SearchDetailTableViewController.swift */,
+				AB12184E1C96241B006DCB7E /* SearchConfigurationTableViewController.swift */,
 			);
 			name = "View Controllers";
 			path = ViewControllers;
@@ -264,6 +267,7 @@
 				ABFCB6981C038F3300ED33BE /* Products */,
 			);
 			sourceTree = "<group>";
+			wrapsLines = 0;
 		};
 		ABFCB6981C038F3300ED33BE /* Products */ = {
 			isa = PBXGroup;
@@ -407,7 +411,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "carthage bootstrap --platform iOS";
+			shellScript = "env ENABLE_BITCODE=YES\ncarthage update --platform iOS";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -444,6 +448,7 @@
 				AB40B5DA1C8E000100073F01 /* FMWebViewController.swift in Sources */,
 				ABAFB2BD1C86932600FBA18E /* Restaurant.swift in Sources */,
 				AB874EBE1C8784E7007E43FF /* RestaurantSearch.swift in Sources */,
+				AB12184F1C96241B006DCB7E /* SearchConfigurationTableViewController.swift in Sources */,
 				ABF3F56D1C652174000AB856 /* User.swift in Sources */,
 				ABFCB69B1C038F3300ED33BE /* AppDelegate.swift in Sources */,
 				ABF3F56A1C651FC1000AB856 /* FoodMobDataSource.swift in Sources */,
@@ -616,6 +621,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Jemson Vasanthakumar (DW558H8T5Y)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -624,7 +630,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cixocommunications.foodmob;
 				PRODUCT_NAME = FoodMob;
-				PROVISIONING_PROFILE = "79b1f192-3c77-44ec-9323-cf1f02b0552a";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "FoodMob/Custom Views/FoodMob-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -635,7 +641,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Jemson Vasanthakumar (56S7AJ6FDD)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -644,7 +650,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cixocommunications.foodmob;
 				PRODUCT_NAME = FoodMob;
-				PROVISIONING_PROFILE = "79b1f192-3c77-44ec-9323-cf1f02b0552a";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "FoodMob/Custom Views/FoodMob-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 			};

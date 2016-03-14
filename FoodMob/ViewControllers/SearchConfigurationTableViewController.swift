@@ -1,27 +1,18 @@
 //
-//  SearchTableViewController.swift
+//  SearchConfigurationTableViewController.swift
 //  FoodMob
 //
-//  Created by Jonathan Jemson on 2/16/16.
+//  Created by Jonathan Jemson on 3/13/16.
 //  Copyright © 2016 FoodMob. All rights reserved.
 //
 
 import UIKit
 
-enum SearchTableViewControllerSegue: String {
-    case ToDetail = "searchToDetailSegue"
-}
+class SearchConfigurationTableViewController: UITableViewController {
 
-class SearchTableViewController: UITableViewController {
+    @IBOutlet weak var locationField: UITextField!
+    var search = RestaurantSearch()
     
-    var lastSelectedIndexPath: NSIndexPath?
-    
-    var restaurants = [Restaurant]() {
-        didSet {
-            tableView.reloadData()
-        }
-    }
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -37,32 +28,27 @@ class SearchTableViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    // MARK: - Table view data source
+//    // MARK: - Table view data source
+//
+//    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+//        // #warning Incomplete implementation, return the number of sections
+//        return 0
+//    }
+//
+//    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        // #warning Incomplete implementation, return the number of rows
+//        return 0
+//    }
 
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1
-    }
-
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return restaurants.count
-    }
-
+    /*
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("RestaurantCell", forIndexPath: indexPath)
-        let restaurant = restaurants[indexPath.row]
-        cell.textLabel?.text = restaurant.name
-        cell.textLabel?.font = UIFont.systemFontOfSize(18.0)
-        cell.detailTextLabel?.text = restaurant.categoriesString
-        if let imageURL = restaurant.imageURL {
-            cell.imageView?.af_setImageWithURL(imageURL)
-            cell.imageView?.frame.size = CGSize(width: 80, height: 80)
-        }
+        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
+
+        // Configure the cell...
+
         return cell
     }
-    
-    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 50
-    }
+    */
 
     /*
     // Override to support conditional editing of the table view.
@@ -99,22 +85,24 @@ class SearchTableViewController: UITableViewController {
     }
     */
 
-
-    // MARK: - Navigation
     
-    override func tableView(tableView: UITableView, willSelectRowAtIndexPath indexPath: NSIndexPath) -> NSIndexPath? {
-        self.lastSelectedIndexPath = indexPath
-        return indexPath
-    }
+    // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-        if let destination = segue.destinationViewController as? SearchDetailTableViewController, indexPath = lastSelectedIndexPath {
-            destination.restaurant = restaurants[indexPath.row]
-            lastSelectedIndexPath = nil
+        if self.locationField.text != "" {
+            search.locationString = self.locationField.text
+        } else {
+            search.location = Session.sharedSession.locationManager.location!.coordinate
+        }
+        if let destination = segue.destinationViewController as? SearchTableViewController {
+            currentDataProvider.fetchRestaurantsForSearch(self.search, withUser: Session.sharedSession.currentUser!, completion: { (restaurants) in
+                destination.restaurants = restaurants
+            })
         }
     }
+    
 
 }

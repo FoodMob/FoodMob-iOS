@@ -81,7 +81,7 @@ public protocol FoodMobDataSource {
      - Parameter search: A restaurant search object.
      - Parameter completion: The completion handler for when the server responds
      */
-    func fetchRestaurantsForSearch(search: RestaurantSearch, completion: (([Restaurant]) -> ())?)
+    func fetchRestaurantsForSearch(search: RestaurantSearch, withUser user: User, completion: (([Restaurant]) -> ())?)
 }
 
 public extension FoodMobDataSource {

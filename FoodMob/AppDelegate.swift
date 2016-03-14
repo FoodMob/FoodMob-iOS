@@ -16,11 +16,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         AppearanceManager.configureAppearance()
+        Session.sharedSession.locationManager = CLLocationManager()
+        let manager = Session.sharedSession.locationManager!
         if CLLocationManager.authorizationStatus() == .NotDetermined {
-            Session.sharedSession.locationManager = CLLocationManager()
-            let manager = Session.sharedSession.locationManager!
             manager.requestWhenInUseAuthorization()
         }
+        
         return true
     }
 

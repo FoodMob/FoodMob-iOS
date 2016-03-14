@@ -1,14 +1,3 @@
-//
-//  UIImage+Effects.swift
-//  FoodMob
-//
-//  Created by Jonathan Jemson on 2/24/16.
-//  Copyright © 2016 FoodMob. All rights reserved.
-//
-
-import Foundation
-import UIKit
-
 /*
  File: UIImage+ImageEffects.m
  Abstract: This is a category of UIImage that adds methods to apply blur and tint effects to an image. This is the code you’ll want to look out to find out how to use vImage to efficiently calculate a blur.

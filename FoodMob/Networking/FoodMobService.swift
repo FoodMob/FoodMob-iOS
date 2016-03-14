@@ -9,10 +9,12 @@
 import Foundation
 import Alamofire
 import SwiftyJSON
+import UIKit.UIImage
+import AlamofireImage
 
 /**
  The actual FoodMob service data source.   Requires network access in order to function properly.
-*/
+ */
 
 public struct FoodMobService: FoodMobDataSource {
     
@@ -21,7 +23,7 @@ public struct FoodMobService: FoodMobDataSource {
             return "https://fm.fluf.me"
         }
     }
-
+    
     public func login(emailAddress: String, password: String, completion: ((User?) -> ())? = nil) {
         guard validateEmailAddress(emailAddress) && validatePassword(password) else {
             completion?(nil)
@@ -37,8 +39,8 @@ public struct FoodMobService: FoodMobDataSource {
                     if let firstName = json[UserField.profile][UserField.firstName].string,
                         lastName = json[UserField.profile][UserField.lastName].string,
                         emailAddress = json[UserField.emailAddress].string, authToken = json[UserField.authToken].string {
-                            let user = User(firstName: firstName, lastName: lastName, emailAddress: emailAddress, authToken: authToken)
-                            completion?(user)
+                        let user = User(firstName: firstName, lastName: lastName, emailAddress: emailAddress, authToken: authToken)
+                        completion?(user)
                     } else {
                         completion?(nil)
                     }
@@ -49,7 +51,7 @@ public struct FoodMobService: FoodMobDataSource {
             }
         }
     }
-
+    
     @warn_unused_result
     public func register(firstName firstName: String, lastName: String, emailAddress: String, password: String, completion: ((Bool) -> ())? = nil) {
         guard validateName(firstName) &&
@@ -80,7 +82,7 @@ public struct FoodMobService: FoodMobDataSource {
             }
         }
     }
-
+    
     public func logout(user: User, completion: ((Bool) -> ())? = nil) {
         Alamofire.request(ServiceEndpoint.logoutMethod, ServiceEndpoint.logout, parameters: [UserField.emailAddress: user.emailAddress, UserField.authToken: user.authToken], encoding: .JSON).validate().responseJSON { response in
             switch response.result {
@@ -95,7 +97,7 @@ public struct FoodMobService: FoodMobDataSource {
                 completion?(false)
             }
         }
-
+        
         // We should probably log the user out of the local app anyway.
         user.eraseUser()
     }
@@ -120,7 +122,7 @@ public struct FoodMobService: FoodMobDataSource {
         
         let foodProfile = [UserField.FoodProfile.likes: likes, UserField.FoodProfile.dislikes: dislikes, UserField.FoodProfile.restrictions : restrictions]
         
-            Alamofire.request(ServiceEndpoint.updateFoodProfileMethod, ServiceEndpoint.foodProfile(user), parameters: [UserField.authToken: user.authToken, UserField.foodProfile: foodProfile], encoding: .JSON).validate().responseJSON { response in
+        Alamofire.request(ServiceEndpoint.updateFoodProfileMethod, ServiceEndpoint.foodProfile(user), parameters: [UserField.authToken: user.authToken, UserField.foodProfile: foodProfile], encoding: .JSON).validate().responseJSON { response in
             
             switch response.result {
             case .Success:
@@ -173,7 +175,38 @@ public struct FoodMobService: FoodMobDataSource {
         }
     }
     
-    public func fetchRestaurantsForSearch(search: RestaurantSearch, completion: (([Restaurant]) -> ())?) {
-        fatalError("Not yet implemented.")
+    public func fetchRestaurantsForSearch(search: RestaurantSearch, withUser user: User, completion: (([Restaurant]) -> ())?) {
+        let parameters = [
+            UserField.authToken: user.authToken,
+            UserField.emailAddress: user.emailAddress,
+            RestaurantSearchField.locationField: search.locationString ?? "Georgia Tech"
+        ]
+        Alamofire.request(ServiceEndpoint.searchMethod, ServiceEndpoint.search, parameters: parameters, encoding: .JSON).validate().responseJSON { response in
+            switch response.result {
+            case .Success:
+                var restaurants = [Restaurant]()
+                if let value = response.result.value {
+                    let json = JSON(value)
+                    for restaurant in json["businesses"].arrayValue {
+                        var cats = restaurant["categories"].arrayValue.reduce("", combine: { (str, json) -> String in
+                            return "\(str), \(json.arrayValue[0].stringValue)"
+                        })
+                        cats = cats.substringFromIndex(cats.startIndex.advancedBy(2))
+                        let location = restaurant["location"].dictionaryValue
+                        let address = location["display_address"]?.arrayValue.reduce("", combine: { (s, json) -> String in
+                            return "\(s)\(json.stringValue)\n"
+                        }).stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
+                        var rst = Restaurant(name: restaurant["name"].stringValue, categories: cats, stars: restaurant["rating"].doubleValue, numReviews: restaurant["review_count"].intValue, hours: "", phoneNumber: restaurant["display_phone"].stringValue, address: address ?? "")
+                        rst.imageURL = restaurant["image_url"].URL
+                        restaurants.append(rst)
+                    }
+                }
+                completion?(restaurants)
+            case .Failure(let error):
+                print(error)
+                completion?([])
+            }
+            
+        }
     }
 }
