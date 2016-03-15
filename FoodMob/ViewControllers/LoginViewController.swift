@@ -24,6 +24,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var bottomLayoutConstraint: NSLayoutConstraint!
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var signUpButton: UIButton!
+    private var tapRecognizer = UITapGestureRecognizer()
     
     private var keyboardShowing = false
     
@@ -40,6 +41,16 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         emailAddressField.delegate = self
         passwordField.delegate = self
+        tapRecognizer.numberOfTapsRequired = 1
+        tapRecognizer.numberOfTouchesRequired = 1
+        tapRecognizer.addTarget(self, action: "hideKeyboard")
+        self.view.addGestureRecognizer(tapRecognizer)
+    }
+    
+    func hideKeyboard() {
+        self.emailAddressField.resignFirstResponder()
+        self.passwordField.resignFirstResponder()
+        keyboardShowing = false
     }
 
     override func viewWillAppear(animated: Bool) {

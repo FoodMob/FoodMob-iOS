@@ -27,6 +27,7 @@ class RegistrationViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var textFieldStack: UIStackView!
     private var activeTextField: UITextField?
     private var keyboardShowing = false
+    private var tapRecognizer = UITapGestureRecognizer()
 
 
     @IBOutlet weak var stackViewToBottomConstraint: NSLayoutConstraint!
@@ -38,6 +39,16 @@ class RegistrationViewController: UIViewController, UITextFieldDelegate {
             field.delegate = self
         }
         verifyPasswordField.removeFromSuperview()
+        tapRecognizer.numberOfTapsRequired = 1
+        tapRecognizer.numberOfTouchesRequired = 1
+        tapRecognizer.addTarget(self, action: "hideKeyboard")
+        self.view.addGestureRecognizer(tapRecognizer)
+    }
+    
+    func hideKeyboard() {
+        for field in fields {
+            field.resignFirstResponder()
+        }
     }
     
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
