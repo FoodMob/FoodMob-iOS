@@ -176,11 +176,16 @@ public struct FoodMobService: FoodMobDataSource {
     }
     
     public func fetchRestaurantsForSearch(search: RestaurantSearch, withUser user: User, completion: (([Restaurant]) -> ())?) {
-        let parameters = [
+        var parameters: [String: AnyObject] = [
             UserField.authToken: user.authToken,
             UserField.emailAddress: user.emailAddress,
-            RestaurantSearchField.locationField: search.locationString ?? "Georgia Tech"
+            RestaurantSearchField.nearby: [search.nearbyLocation?.latitude ?? 0, search.nearbyLocation?.longitude ?? 0]
         ]
+        if let location = search.locationString where location != "" {
+            parameters[RestaurantSearchField.locationField] = location
+        } else if let location = search.location {
+            parameters[RestaurantSearchField.latLong] = [location.latitude, location.longitude]
+        }
         Alamofire.request(ServiceEndpoint.searchMethod, ServiceEndpoint.search, parameters: parameters, encoding: .JSON).validate().responseJSON { response in
             switch response.result {
             case .Success:

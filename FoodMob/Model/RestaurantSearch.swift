@@ -22,9 +22,22 @@ public struct RestaurantSearch {
     /// Radius to search near `location`.
     public var radius: CLLocationDistance = 10_000
     /// Location to search around.
-    public var location: CLLocationCoordinate2D? = Session.sharedSession.locationManager.location?.coordinate
+    public var location: CLLocationCoordinate2D? = Session.sharedSession.locationManager.location?.coordinate {
+        willSet {
+            if newValue != nil {
+                self.locationString = nil
+            }
+        }
+    }
+    public let nearbyLocation = Session.sharedSession.locationManager.location?.coordinate
     /// Location to search around.  When set, the coordinate is ignored.
-    public var locationString: String?
+    public var locationString: String? {
+        willSet {
+            if newValue != nil && newValue! != "" {
+                self.location = nil
+            }
+        }
+    }
     
     public init() {
         
@@ -32,6 +45,8 @@ public struct RestaurantSearch {
 }
 public struct RestaurantSearchField {
     static let locationField = "location"
+    static let latLong = "ll"
+    static let nearby = "cll"
 }
 
 /**
