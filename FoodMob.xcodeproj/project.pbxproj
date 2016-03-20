@@ -21,6 +21,7 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		1A8936E01C9B82490079EEF1 /* SearchResultsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A8936DF1C9B82490079EEF1 /* SearchResultsTableViewCell.swift */; };
 		AB12184F1C96241B006DCB7E /* SearchConfigurationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB12184E1C96241B006DCB7E /* SearchConfigurationTableViewController.swift */; };
 		AB2194A81C6C2F6B00A7323A /* FoodCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2194A71C6C2F6B00A7323A /* FoodCategory.swift */; };
 		AB2194AA1C6C359400A7323A /* FoodCategoriesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2194A91C6C359400A7323A /* FoodCategoriesTableViewController.swift */; };
@@ -95,6 +96,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1A8936DF1C9B82490079EEF1 /* SearchResultsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultsTableViewCell.swift; sourceTree = "<group>"; };
 		AB12184E1C96241B006DCB7E /* SearchConfigurationTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchConfigurationTableViewController.swift; sourceTree = "<group>"; };
 		AB2194A71C6C2F6B00A7323A /* FoodCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodCategory.swift; sourceTree = "<group>"; };
 		AB2194A91C6C359400A7323A /* FoodCategoriesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodCategoriesTableViewController.swift; sourceTree = "<group>"; };
@@ -181,6 +183,7 @@
 				AB510A361C668BBA0056ADEC /* SimpleTextField.swift */,
 				AB27C2B51C72D27100FCE7B8 /* RoundedImageView.swift */,
 				ABD4BA5E1C7D71BE006894F5 /* FoodMob-Bridging-Header.h */,
+				1A8936DF1C9B82490079EEF1 /* SearchResultsTableViewCell.swift */,
 			);
 			path = "Custom Views";
 			sourceTree = "<group>";
@@ -451,6 +454,7 @@
 				AB12184F1C96241B006DCB7E /* SearchConfigurationTableViewController.swift in Sources */,
 				ABF3F56D1C652174000AB856 /* User.swift in Sources */,
 				ABFCB69B1C038F3300ED33BE /* AppDelegate.swift in Sources */,
+				1A8936E01C9B82490079EEF1 /* SearchResultsTableViewCell.swift in Sources */,
 				ABF3F56A1C651FC1000AB856 /* FoodMobDataSource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
