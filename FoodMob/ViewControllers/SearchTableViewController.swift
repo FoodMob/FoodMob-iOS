@@ -48,21 +48,29 @@ class SearchTableViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("RestaurantCell", forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier("RestaurantCell", forIndexPath: indexPath) as! SearchResultsTableViewCell
         let restaurant = restaurants[indexPath.row]
-        cell.textLabel?.text = restaurant.name
-        cell.textLabel?.font = UIFont.systemFontOfSize(18.0)
-        cell.detailTextLabel?.text = restaurant.categoriesString
+        cell.name?.text = restaurant.name
+        cell.categories?.text = restaurant.categoriesString
         if let imageURL = restaurant.imageURL {
-            cell.imageView?.af_setImageWithURL(imageURL)
-            cell.imageView?.frame.size = CGSize(width: 80, height: 80)
+            /* Converts image thumbnail URL to original size image for high def */
+            // imageURL = https://s3-media1.fl.yelpcdn.com/bphoto/q6G7o4bqd3rv6G0MVP2PoA/ms.jpg etc.
+            let originalImageStr: String = imageURL.relativeString!
+            let newStr = originalImageStr.substringWithRange(Range<String.Index>(start: originalImageStr.startIndex, end: originalImageStr.endIndex.advancedBy(-6)))
+            // originalImageURL = https://s3-media1.fl.yelpcdn.com/bphoto/q6G7o4bqd3rv6G0MVP2PoA/o.jpg
+            let originalImageURL = NSURL(string: newStr + "o.jpg")
+            
+            cell.img?.af_setImageWithURL(originalImageURL!)
+            //cell.imageView?.frame.size = CGSize(width: 80, height: 80)
         }
         return cell
     }
     
+    /*
+    // Override to force a fixed height TableViewCell
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return 50
-    }
+    }*/
 
     /*
     // Override to support conditional editing of the table view.
