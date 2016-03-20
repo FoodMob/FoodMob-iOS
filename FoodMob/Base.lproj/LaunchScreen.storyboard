@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10109" systemVersion="15E39d" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" initialViewController="01J-lp-oVM">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10083"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -17,16 +17,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="FoodMobLogo" translatesAutoresizingMaskIntoConstraints="NO" id="lEQ-3h-x7Y">
-                                <rect key="frame" x="176.5" y="95" width="247" height="44"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FoodMobLogo" translatesAutoresizingMaskIntoConstraints="NO" id="lEQ-3h-x7Y">
+                                <rect key="frame" x="188" y="120" width="225" height="37"/>
                                 <constraints>
+                                    <constraint firstAttribute="height" constant="37.350000000000001" id="GWD-1j-7ye"/>
+                                    <constraint firstAttribute="width" constant="225" id="Mbl-8J-L8S"/>
+                                    <constraint firstAttribute="height" constant="37" id="bS4-h7-flN"/>
                                     <constraint firstAttribute="height" constant="44" id="fm1-2i-eDL"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="225" id="nVA-aD-IgE"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="GWD-1j-7ye"/>
+                                        <exclude reference="fm1-2i-eDL"/>
+                                        <exclude reference="nVA-aD-IgE"/>
+                                    </mask>
+                                </variation>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="0.97752517461776733" green="0.52865779399871826" blue="0.22858753800392151" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.96470588239999999" green="0.44705882349999998" blue="0.1764705882" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="lEQ-3h-x7Y" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="75" id="Wtp-0l-DFu"/>
+                            <constraint firstItem="lEQ-3h-x7Y" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="100" id="Wtp-0l-DFu"/>
                             <constraint firstItem="lEQ-3h-x7Y" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="ufR-0S-PRx"/>
                         </constraints>
                     </view>
