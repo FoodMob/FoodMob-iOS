@@ -822,6 +822,11 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress"/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="GVI-Fc-TjN"/>
+                                            </mask>
+                                        </variation>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="18" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Dkg-Ap-GFT" customClass="SimpleTextField" customModule="FoodMob" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="52" width="225" height="22"/>
@@ -829,6 +834,9 @@
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="225" id="rbU-1z-IFt"/>
+                                </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="egn-W0-QNc">
                                 <rect key="frame" x="188" y="331" width="225" height="35"/>
@@ -925,16 +933,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BurgerLogo" translatesAutoresizingMaskIntoConstraints="NO" id="ljF-yH-sff">
-                                <rect key="frame" x="279" y="40" width="42" height="33"/>
+                                <rect key="frame" x="278" y="70" width="45" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="ljF-yH-sff" secondAttribute="height" multiplier="260:203" id="9UQ-WQ-wgW"/>
-                                    <constraint firstAttribute="width" constant="42" id="e4E-Ez-rxD"/>
+                                    <constraint firstAttribute="width" constant="45" id="e4E-Ez-rxD"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rrA-s6-fGh">
-                                <rect key="frame" x="517" y="40" width="63" height="33"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
-                                <state key="normal" title="Sign Up">
+                                <rect key="frame" x="498" y="30" width="72" height="34"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                <state key="normal" title="SIGN UP">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -942,8 +950,8 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6LQ-oZ-gAf">
-                                <rect key="frame" x="20" y="40" width="53" height="33"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="30" y="30" width="56" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="Cancel">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -953,78 +961,114 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="Ctk-0K-z5W">
-                                <rect key="frame" x="175" y="198" width="250" height="205"/>
+                                <rect key="frame" x="188" y="195" width="225" height="210"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="First Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qrT-MJ-TfD" customClass="SimpleTextField" customModule="FoodMob" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="250" height="21"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="225" height="22"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="250" id="Auf-8b-YB9"/>
+                                            <constraint firstAttribute="width" constant="225" id="Auf-8b-YB9"/>
                                             <constraint firstAttribute="height" constant="21" id="cqI-W6-d22"/>
                                         </constraints>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" returnKeyType="next"/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="cqI-W6-d22"/>
+                                            </mask>
+                                        </variation>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Last Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="agt-2f-WOH" customClass="SimpleTextField" customModule="FoodMob" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="46" width="250" height="21"/>
+                                        <rect key="frame" x="0.0" y="47" width="225" height="22"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="21" id="bs1-2g-JMd"/>
-                                            <constraint firstAttribute="width" constant="250" id="k4D-Ph-68R"/>
+                                            <constraint firstAttribute="height" constant="21" id="VK4-7C-ckM"/>
                                         </constraints>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" returnKeyType="next"/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="VK4-7C-ckM"/>
+                                            </mask>
+                                        </variation>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jOG-dw-00O" customClass="SimpleTextField" customModule="FoodMob" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="92" width="250" height="21"/>
+                                        <rect key="frame" x="0.0" y="94" width="225" height="22"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="21" id="FaQ-kN-lJV"/>
-                                            <constraint firstAttribute="width" constant="250" id="dbj-q2-5oy"/>
+                                            <constraint firstAttribute="height" constant="21" id="AUO-qX-KFe"/>
                                         </constraints>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" returnKeyType="next"/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="AUO-qX-KFe"/>
+                                            </mask>
+                                        </variation>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Uam-Ci-CP7" customClass="SimpleTextField" customModule="FoodMob" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="138" width="250" height="21"/>
+                                        <rect key="frame" x="0.0" y="141" width="225" height="22"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="21" id="dtG-9k-fZq"/>
-                                            <constraint firstAttribute="width" constant="250" id="rot-Sf-Rw9"/>
+                                            <constraint firstAttribute="height" constant="21" id="5iO-IW-yGX"/>
                                         </constraints>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="go" secureTextEntry="YES"/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="5iO-IW-yGX"/>
+                                            </mask>
+                                        </variation>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Verify Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="O7L-Ca-QoR" customClass="SimpleTextField" customModule="FoodMob" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="184" width="250" height="21"/>
+                                        <rect key="frame" x="0.0" y="188" width="225" height="22"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="21" id="nOE-Oc-RAN"/>
-                                            <constraint firstAttribute="width" constant="250" id="tzE-MQ-9lu"/>
+                                            <constraint firstAttribute="height" constant="21" id="tVp-f5-8jr"/>
                                         </constraints>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done" secureTextEntry="YES"/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="tVp-f5-8jr"/>
+                                            </mask>
+                                        </variation>
                                     </textField>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="225" id="KHY-f6-K4q"/>
+                                    <constraint firstItem="jOG-dw-00O" firstAttribute="centerY" secondItem="Ctk-0K-z5W" secondAttribute="centerY" id="cTh-gH-Mgb"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="cTh-gH-Mgb"/>
+                                    </mask>
+                                </variation>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.93725490199999995" green="0.42352941179999998" blue="0.1215686275" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="ljF-yH-sff" firstAttribute="top" secondItem="AqD-Jb-sCr" secondAttribute="bottom" priority="999" constant="20" id="5UK-dl-TjD"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="6LQ-oZ-gAf" secondAttribute="leading" id="7Pl-b0-Pby"/>
+                            <constraint firstItem="ljF-yH-sff" firstAttribute="top" secondItem="AqD-Jb-sCr" secondAttribute="bottom" priority="999" constant="50" id="5UK-dl-TjD"/>
                             <constraint firstItem="rrA-s6-fGh" firstAttribute="centerY" secondItem="ljF-yH-sff" secondAttribute="centerY" id="AeA-G6-exX"/>
+                            <constraint firstItem="6LQ-oZ-gAf" firstAttribute="leading" secondItem="rBR-Wv-lYD" secondAttribute="leadingMargin" constant="10" id="AoG-xp-t2F"/>
                             <constraint firstItem="dJC-C4-5ay" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Ctk-0K-z5W" secondAttribute="bottom" id="JPN-au-vS6"/>
                             <constraint firstItem="Ctk-0K-z5W" firstAttribute="centerY" secondItem="rBR-Wv-lYD" secondAttribute="centerY" priority="999" id="O9J-27-4me"/>
                             <constraint firstItem="ljF-yH-sff" firstAttribute="centerX" secondItem="rBR-Wv-lYD" secondAttribute="centerX" id="QzP-wn-Ef5"/>
                             <constraint firstItem="Ctk-0K-z5W" firstAttribute="top" relation="greaterThanOrEqual" secondItem="ljF-yH-sff" secondAttribute="bottom" constant="40" id="UM8-YX-xcG"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="rrA-s6-fGh" secondAttribute="trailing" id="fCe-76-K5Y"/>
-                            <constraint firstItem="6LQ-oZ-gAf" firstAttribute="top" secondItem="AqD-Jb-sCr" secondAttribute="bottom" constant="20" id="j1f-8C-yMH"/>
+                            <constraint firstItem="Ctk-0K-z5W" firstAttribute="centerX" secondItem="rBR-Wv-lYD" secondAttribute="centerX" id="Wia-cR-XGR"/>
+                            <constraint firstItem="jOG-dw-00O" firstAttribute="centerY" secondItem="rBR-Wv-lYD" secondAttribute="centerY" id="Z40-y6-iRU"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="rrA-s6-fGh" secondAttribute="trailing" constant="10" id="fCe-76-K5Y"/>
+                            <constraint firstItem="6LQ-oZ-gAf" firstAttribute="baseline" secondItem="rrA-s6-fGh" secondAttribute="baseline" id="hw7-Nu-dEE"/>
+                            <constraint firstItem="6LQ-oZ-gAf" firstAttribute="top" secondItem="AqD-Jb-sCr" secondAttribute="bottom" constant="10" id="jwX-nh-YWb"/>
                             <constraint firstItem="Ctk-0K-z5W" firstAttribute="centerX" secondItem="rBR-Wv-lYD" secondAttribute="centerX" id="kGF-gn-iAI"/>
-                            <constraint firstItem="6LQ-oZ-gAf" firstAttribute="top" secondItem="rrA-s6-fGh" secondAttribute="top" id="zBe-oj-eDW"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="O9J-27-4me"/>
+                                <exclude reference="UM8-YX-xcG"/>
+                                <exclude reference="kGF-gn-iAI"/>
                                 <exclude reference="AeA-G6-exX"/>
+                                <exclude reference="JPN-au-vS6"/>
                             </mask>
                         </variation>
                     </view>
