@@ -41,7 +41,7 @@ class RegistrationViewController: UIViewController, UITextFieldDelegate {
         verifyPasswordField.removeFromSuperview()
         tapRecognizer.numberOfTapsRequired = 1
         tapRecognizer.numberOfTouchesRequired = 1
-        tapRecognizer.addTarget(self, action: "hideKeyboard")
+        tapRecognizer.addTarget(self, action: #selector(RegistrationViewController.hideKeyboard))
         self.view.addGestureRecognizer(tapRecognizer)
     }
     
@@ -57,8 +57,8 @@ class RegistrationViewController: UIViewController, UITextFieldDelegate {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(RegistrationViewController.keyboardWillShow(_:)), name: UIKeyboardWillShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(RegistrationViewController.keyboardWillHide(_:)), name: UIKeyboardWillHideNotification, object: nil)
     }
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
