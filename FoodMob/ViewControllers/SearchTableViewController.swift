@@ -48,21 +48,21 @@ class SearchTableViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("RestaurantCell", forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier("RestaurantCell", forIndexPath: indexPath) as! SearchResultsTableViewCell
         let restaurant = restaurants[indexPath.row]
-        cell.textLabel?.text = restaurant.name
-        cell.textLabel?.font = UIFont.systemFontOfSize(18.0)
-        cell.detailTextLabel?.text = restaurant.categoriesString
+        cell.name?.text = restaurant.name
+        cell.categories?.text = restaurant.categoriesString
         if let imageURL = restaurant.imageURL {
-            cell.imageView?.af_setImageWithURL(imageURL)
-            cell.imageView?.frame.size = CGSize(width: 80, height: 80)
+            cell.img?.af_setImageWithURL(imageURL.yelpHiResURL!)
         }
         return cell
     }
     
+    /*
+    // Override to force a fixed height TableViewCell
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return 50
-    }
+    }*/
 
     /*
     // Override to support conditional editing of the table view.

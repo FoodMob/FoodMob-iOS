@@ -43,7 +43,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         passwordField.delegate = self
         tapRecognizer.numberOfTapsRequired = 1
         tapRecognizer.numberOfTouchesRequired = 1
-        tapRecognizer.addTarget(self, action: "hideKeyboard")
+        tapRecognizer.addTarget(self, action: #selector(LoginViewController.hideKeyboard))
         self.view.addGestureRecognizer(tapRecognizer)
     }
     
@@ -55,8 +55,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
 
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(LoginViewController.keyboardWillShow(_:)), name: UIKeyboardWillShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(LoginViewController.keyboardWillHide(_:)), name: UIKeyboardWillHideNotification, object: nil)
     }
     
     override func viewDidAppear(animated: Bool) {
