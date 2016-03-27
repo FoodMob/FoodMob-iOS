@@ -813,7 +813,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="nuW-ul-9nW">
-                                <rect key="frame" x="188" y="237" width="225" height="74"/>
+                                <rect key="frame" x="188" y="207" width="225" height="74"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sWi-Hs-ll5" customClass="SimpleTextField" customModule="FoodMob" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="225" height="22"/>
@@ -836,12 +836,14 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="225" id="rbU-1z-IFt"/>
+                                    <constraint firstAttribute="height" constant="74" id="xKY-vs-xYP"/>
                                 </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="egn-W0-QNc">
-                                <rect key="frame" x="188" y="331" width="225" height="35"/>
+                                <rect key="frame" x="188" y="301" width="225" height="35"/>
                                 <color key="backgroundColor" red="0.96470588239999999" green="0.34467812352936178" blue="0.19048363572682678" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" constant="225" id="VZQ-9Z-QOE"/>
                                     <constraint firstAttribute="height" constant="35" id="XNF-aq-x8F"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
@@ -864,9 +866,10 @@
                                 </variation>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ce5-eA-a1s">
-                                <rect key="frame" x="188" y="381" width="225" height="35"/>
+                                <rect key="frame" x="188" y="351" width="225" height="35"/>
                                 <color key="backgroundColor" red="0.96470588239999999" green="0.34467812349999999" blue="0.19048363569999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" constant="225" id="Asx-oE-KNr"/>
                                     <constraint firstAttribute="height" constant="35" id="pWk-dq-EMn"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
@@ -879,32 +882,21 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Dkg-Ap-GFT" firstAttribute="centerY" secondItem="yMC-Po-TMg" secondAttribute="centerY" id="11R-Vc-CEr"/>
-                            <constraint firstItem="egn-W0-QNc" firstAttribute="trailing" secondItem="nuW-ul-9nW" secondAttribute="trailing" id="5XR-wT-IBj"/>
-                            <constraint firstItem="egn-W0-QNc" firstAttribute="leading" secondItem="nuW-ul-9nW" secondAttribute="leading" id="6UE-Um-UNr"/>
-                            <constraint firstItem="Ce5-eA-a1s" firstAttribute="top" secondItem="egn-W0-QNc" secondAttribute="bottom" constant="15" id="KmF-Qn-BVB"/>
-                            <constraint firstItem="nuW-ul-9nW" firstAttribute="top" secondItem="Qva-Bp-KEg" secondAttribute="bottom" constant="100" id="Ksy-D3-b3g"/>
-                            <constraint firstItem="egn-W0-QNc" firstAttribute="centerX" secondItem="yMC-Po-TMg" secondAttribute="centerX" id="Thh-IE-Kf9"/>
-                            <constraint firstItem="Qva-Bp-KEg" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Kgv-UW-94X" secondAttribute="bottom" id="VXL-EV-g8Q"/>
-                            <constraint firstItem="egn-W0-QNc" firstAttribute="leading" secondItem="Ce5-eA-a1s" secondAttribute="leading" id="cIj-LZ-3ja"/>
-                            <constraint firstItem="egn-W0-QNc" firstAttribute="trailing" secondItem="Ce5-eA-a1s" secondAttribute="trailing" id="dao-Db-QKj"/>
-                            <constraint firstItem="Qva-Bp-KEg" firstAttribute="top" secondItem="Kgv-UW-94X" secondAttribute="bottom" constant="100" id="fZr-Eh-SNG"/>
-                            <constraint firstItem="egn-W0-QNc" firstAttribute="top" secondItem="nuW-ul-9nW" secondAttribute="bottom" constant="20" id="hFn-zk-npL"/>
-                            <constraint firstItem="4ga-t5-t1H" firstAttribute="top" secondItem="Ce5-eA-a1s" secondAttribute="bottom" constant="157" id="qEo-tQ-1bj"/>
-                            <constraint firstItem="sWi-Hs-ll5" firstAttribute="centerY" secondItem="yMC-Po-TMg" secondAttribute="centerY" id="rnc-lP-PK8"/>
-                            <constraint firstItem="nuW-ul-9nW" firstAttribute="leading" secondItem="Qva-Bp-KEg" secondAttribute="leading" id="u7u-k0-PXQ"/>
+                            <constraint firstItem="nuW-ul-9nW" firstAttribute="top" secondItem="Qva-Bp-KEg" secondAttribute="bottom" priority="999" constant="50" id="40J-h0-v2m"/>
+                            <constraint firstItem="Ce5-eA-a1s" firstAttribute="centerX" secondItem="yMC-Po-TMg" secondAttribute="centerX" id="Dr5-hN-QHn"/>
+                            <constraint firstItem="egn-W0-QNc" firstAttribute="top" secondItem="nuW-ul-9nW" secondAttribute="bottom" constant="20" id="Ez5-8t-WKY"/>
+                            <constraint firstItem="4ga-t5-t1H" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Ce5-eA-a1s" secondAttribute="bottom" constant="10" id="GAu-BZ-4sD"/>
+                            <constraint firstItem="4ga-t5-t1H" firstAttribute="top" relation="greaterThanOrEqual" secondItem="nuW-ul-9nW" secondAttribute="bottom" constant="10" id="HyH-EP-a7B"/>
+                            <constraint firstItem="Ce5-eA-a1s" firstAttribute="top" secondItem="egn-W0-QNc" secondAttribute="bottom" constant="15" id="Ij3-8c-cQo"/>
+                            <constraint firstItem="Qva-Bp-KEg" firstAttribute="top" secondItem="Kgv-UW-94X" secondAttribute="bottom" priority="900" constant="100" id="RPc-Ok-6wQ"/>
+                            <constraint firstItem="egn-W0-QNc" firstAttribute="centerX" secondItem="yMC-Po-TMg" secondAttribute="centerX" id="Rx9-m5-qMh"/>
+                            <constraint firstItem="nuW-ul-9nW" firstAttribute="centerX" secondItem="yMC-Po-TMg" secondAttribute="centerX" id="s3e-h8-Rkn"/>
+                            <constraint firstItem="Qva-Bp-KEg" firstAttribute="centerX" secondItem="yMC-Po-TMg" secondAttribute="centerX" id="wBk-3z-agp"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="VXL-EV-g8Q"/>
-                                <exclude reference="Ksy-D3-b3g"/>
-                                <exclude reference="rnc-lP-PK8"/>
-                                <exclude reference="qEo-tQ-1bj"/>
-                            </mask>
-                        </variation>
                     </view>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
+                        <outlet property="bottomLayoutConstraint" destination="HyH-EP-a7B" id="Glw-3B-27c"/>
                         <outlet property="emailAddressField" destination="sWi-Hs-ll5" id="Kas-h7-6Er"/>
                         <outlet property="loginButton" destination="egn-W0-QNc" id="EGh-eT-cOI"/>
                         <outlet property="passwordField" destination="Dkg-Ap-GFT" id="rQj-tI-ecg"/>
