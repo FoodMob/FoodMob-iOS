@@ -54,7 +54,7 @@ class SearchDetailTableViewController: UITableViewController {
             self.phoneLabel.text = restaurant.phoneNumber
             self.addressLabel.text = restaurant.address
             if let url = restaurant.imageURL {
-                heroImageView.af_setImageWithURL(url)
+                heroImageView.af_setImageWithURL(url.yelpHiResURL!)
             }
             heroImageView.image = heroImageView.image?.applyBlurWithRadius(10, tintColor: UIColor(white: 0.10, alpha: 0.73), saturationDeltaFactor: 1.8)
             ratingView.rating = restaurant.stars
