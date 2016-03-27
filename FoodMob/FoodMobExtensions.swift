@@ -21,6 +21,19 @@ extension UIImageView {
     }
 }
 
+extension NSURL {
+    var yelpHiResURL: NSURL? {
+        /* Converts image thumbnail URL to original size image for high def */
+        // imageURL = https://s3-media1.fl.yelpcdn.com/bphoto/q6G7o4bqd3rv6G0MVP2PoA/ms.jpg etc.
+        let originalImageStr: String = self.relativeString!
+        let range = originalImageStr.startIndex..<originalImageStr.endIndex.advancedBy(-6)
+        let newStr = originalImageStr.substringWithRange(range)
+        // originalImageURL = https://s3-media1.fl.yelpcdn.com/bphoto/q6G7o4bqd3rv6G0MVP2PoA/o.jpg
+        let originalImageURL = NSURL(string: newStr + "o.jpg")
+        return originalImageURL
+    }
+}
+
 extension UIViewController {
     /**
      Present a UIAlertController with the specified title, optional message, and a dismiss button.

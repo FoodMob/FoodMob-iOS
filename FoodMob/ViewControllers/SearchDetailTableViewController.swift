@@ -73,8 +73,10 @@ class SearchDetailTableViewController: UITableViewController {
             let geocoder = CLGeocoder()
             var location: CLLocation?
             let annotation = MKPointAnnotation()
-            let myLocation = Session.sharedSession.locationManager.location!
-            let currentRegion = CLCircularRegion(center: myLocation.coordinate, radius: 10_000, identifier: "Near Me")
+            var currentRegion: CLCircularRegion? = nil
+            if let myLocation = Session.sharedSession.locationManager.location {
+                currentRegion = CLCircularRegion(center: myLocation.coordinate, radius: 10_000, identifier: "Near Me")
+            }
             geocoder.geocodeAddressString(restaurant.address, inRegion: currentRegion) { [unowned self] (placemarks, error) in
                 if let placemarks = placemarks, first = placemarks.first {
                     location = first.location

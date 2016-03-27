@@ -94,8 +94,10 @@ class SearchConfigurationTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
         if self.locationField.text != "" {
             search.locationString = self.locationField.text
+        } else if let location = Session.sharedSession.locationManager.location  {
+            search.location = location.coordinate
         } else {
-            search.location = Session.sharedSession.locationManager.location!.coordinate
+            alert("Location Not Available", message: "FoodMob could not get your current location.")
         }
         if let destination = segue.destinationViewController as? SearchTableViewController {
             currentDataProvider.fetchRestaurantsForSearch(self.search, withUser: Session.sharedSession.currentUser!, completion: { (restaurants) in
