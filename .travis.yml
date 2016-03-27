@@ -18,7 +18,7 @@ before_install:
 - brew update
 - brew outdated xctool || brew upgrade xctool
 - brew outdated carthage || brew upgrade carthage
-- carthage bootstrap --verbose --platform iOS
+- carthage bootstrap --platform iOS
 script: xctool -sdk iphonesimulator9.3 -destination "platform=iOS Simulator,name=$NAME,OS=9.3" -project FoodMob.xcodeproj -scheme FoodMob test
 notifications:
   slack:
