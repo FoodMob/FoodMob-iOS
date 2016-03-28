@@ -4,8 +4,8 @@
 Eating out with friends made easy.  This is the iOS portion of the application.  The backend server is in [FoodMob-Node](https://github.com/FoodMob/FoodMob-Node).
 
 # Build Requirements
-* Xcode 7.2 with iOS 9.2 SDK
-    * Current Swift version: 2.1.1
+* Xcode 7.3 with iOS 9.3 SDK
+    * Current Swift version: 2.2
     * Targeted iOS version: 9.1
 * Homebrew ([http://brew.sh](http://brew.sh))
 * Carthage ([GitHub](https://github.com/Carthage/Carthage))
