@@ -1,6 +1,20 @@
 {
   "images" : [
     {
+      "resizing" : {
+        "mode" : "9-part",
+        "center" : {
+          "mode" : "tile",
+          "width" : 1,
+          "height" : 1
+        },
+        "cap-insets" : {
+          "bottom" : 221,
+          "top" : 220,
+          "right" : 645,
+          "left" : 645
+        }
+      },
       "idiom" : "universal",
       "filename" : "Default Restaurant Image.png",
       "scale" : "1x"

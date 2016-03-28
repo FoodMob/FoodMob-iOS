@@ -53,7 +53,9 @@ class SearchTableViewController: UITableViewController {
         cell.name?.text = restaurant.name
         cell.categories?.text = restaurant.categoriesString
         if let imageURL = restaurant.imageURL {
-            cell.img?.af_setImageWithURL(imageURL.yelpHiResURL!)
+            cell.img?.af_setImageWithURL(imageURL.yelpHiResURL!,
+                                         placeholderImage: UIImage(named: "Default Restaurant Image"),
+                                         imageTransition: .CrossDissolve(0.2))
         }
         return cell
     }
