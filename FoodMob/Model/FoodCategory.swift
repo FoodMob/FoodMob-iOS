@@ -36,77 +36,15 @@ public enum Preference: Int {
     }
 }
 
-/**
- Various food categories that the user can search for, like, dislike, and restrict.
- */
-public enum FoodCategory: String, Hashable {
-
-    /**
-     Returns the hash value for the string representation of the food category.
-     */
+public struct FoodCategory: Hashable, Equatable {
+    private(set) public var displayName: String
+    private(set) public var yelpIdentifier: String
+    
     public var hashValue: Int {
-        return self.rawValue.hashValue
+        return yelpIdentifier.hashValue
     }
+}
 
-    /**
-     Provides an easily enumerated way to get all possible categories.
-     */
-    public static let values = [
-        AmericanNew,
-        AmericanTraditional,
-        AsianFusion,
-        Barbeque,
-        Bars,
-        BreakfastAndBrunch,
-        Burgers,
-        ChickenWings,
-        Chinese,
-        Diners,
-        Indian,
-        Italian,
-        Japanese,
-        Korean,
-        Mexican,
-        Pizza,
-        Sandwiches,
-        Seafood,
-        Southern,
-        SportsBars,
-        Steakhouses,
-        SushiBars,
-        TexMex,
-        Thai,
-        Bakery,
-        Dessert,
-        CoffeeAndTea
-        
-    ]
-
-    case Sandwiches = "sandwiches"
-    case Pizza = "pizza"
-    case Mexican = "mexican"
-    case AmericanTraditional = "tradamerican"
-    case Burgers = "burgers"
-    case Bars = "bars"
-    case ChickenWings = "chicken_wings"
-    case Chinese = "chinese"
-    case AmericanNew = "newamerican"
-    case BreakfastAndBrunch = "Breakfast & Brunch"
-    case Italian = "italian"
-    case Seafood = "Seafood"
-    case Barbeque = "Barbeque"
-    case Japanese = "japanese"
-    case SushiBars = "sushibars"
-    case Diners = "diners"
-    case Southern = "southern"
-    case SportsBars = "Sports Bars"
-    case TexMex = "Tex-Mex"
-    case Steakhouses = "Steakhouses"
-    case Thai = "thai"
-    case Korean = "korean"
-    case AsianFusion = "asianfusion"
-    case Indian = "indian"
-    case Bakery = "bakeries"
-    case CoffeeAndTea = "Coffee & Tea"
-    case Dessert = "desserts"
+public func ==(lhs: FoodCategory, rhs: FoodCategory) -> Bool {
+    return lhs.yelpIdentifier == rhs.yelpIdentifier
 }

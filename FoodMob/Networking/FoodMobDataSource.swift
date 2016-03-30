@@ -82,6 +82,8 @@ public protocol FoodMobDataSource {
      - Parameter completion: The completion handler for when the server responds
      */
     func fetchRestaurantsForSearch(search: RestaurantSearch, withUser user: User, completion: (([Restaurant]) -> ())?)
+    
+    func fetchCategoryListing(completion: (([FoodCategory]) -> ())?)
 }
 
 public extension FoodMobDataSource {
@@ -136,5 +138,11 @@ public extension FoodMobDataSource {
     */
     public func validateEmailAddress(emailAddress: String) -> Bool {
         return emailAddress.isEmail
+    }
+    
+    public func fetchCategoryListing(completion: (([FoodCategory]) -> ())?) {
+        var categories = [FoodCategory]()
+        categories.append(FoodCategory(displayName: "American (Traditional)", yelpIdentifier: "tradamerican"))
+        completion?(categories)
     }
 }
