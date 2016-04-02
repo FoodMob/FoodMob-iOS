@@ -12,6 +12,8 @@ class FoodCategoriesTableViewController: UITableViewController {
     
     private var currentUser: User!
     internal var showingPreference = Preference.Like
+    
+    private var categories: [FoodCategory]!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +24,10 @@ class FoodCategoriesTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+        currentDataProvider.fetchCategoryListing { [unowned self] (categories) in
+            self.categories = categories
+        }
     }
     
     override func viewWillDisappear(animated: Bool) {
@@ -36,19 +42,18 @@ class FoodCategoriesTableViewController: UITableViewController {
     }
 
     // MARK: - Table view data source
-
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return FoodCategory.values.count
+        return self.categories.count
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("CategoriesCellReuseIdentifier", forIndexPath: indexPath)
-        cell.textLabel?.text = FoodCategory.values[indexPath.row].rawValue
-        if currentUser.categories[FoodCategory.values[indexPath.row]] == showingPreference {
+        cell.textLabel?.text = categories[indexPath.row].displayName
+        if currentUser.categories[categories[indexPath.row]] == showingPreference {
             cell.accessoryType = .Checkmark
         } else {
             cell.accessoryType = .None
@@ -60,7 +65,7 @@ class FoodCategoriesTableViewController: UITableViewController {
         guard let cell = tableView.cellForRowAtIndexPath(indexPath) else { return }
         let wasSwitchedOn = cell.accessoryType != .Checkmark
         cell.accessoryType = (wasSwitchedOn) ? .Checkmark : .None
-        currentUser.categories[FoodCategory.values[indexPath.row]] = (wasSwitchedOn) ? showingPreference : Preference.None
+        currentUser.categories[categories[indexPath.row]] = (wasSwitchedOn) ? showingPreference : Preference.None
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
 
