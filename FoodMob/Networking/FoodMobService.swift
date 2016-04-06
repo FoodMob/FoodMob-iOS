@@ -110,13 +110,13 @@ public struct FoodMobService: FoodMobDataSource {
         for (cat, pref) in user.categories {
             switch pref {
             case .Like:
-                likes += [cat.rawValue]
+                likes += [cat.yelpIdentifier]
             case .Dislike:
-                dislikes += [cat.rawValue]
+                dislikes += [cat.yelpIdentifier]
             case .Restriction:
-                restrictions += [cat.rawValue]
+                restrictions += [cat.yelpIdentifier]
             default:
-                print("Ignoring pref \(cat.rawValue)")
+                print("Ignoring pref \(cat.yelpIdentifier)")
             }
         }
         

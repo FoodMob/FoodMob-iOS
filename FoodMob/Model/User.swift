@@ -132,7 +132,7 @@ public class User: CreateableSecureStorable, ReadableSecureStorable, DeleteableS
         var str = ""
         for (cat, pref) in categories {
             if pref == preference {
-                str += cat.rawValue + ", "
+                str += cat.displayName + ", "
             }
         }
         if (str.length < 2) {

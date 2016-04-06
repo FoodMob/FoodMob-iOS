@@ -44,7 +44,7 @@ public struct Restaurant {
     public init(name: String, categories: [FoodCategory], stars: Double, numReviews: Int, hours: String, phoneNumber: String, address: String) {
         self.name = name
         self.categories = categories.reduce("", combine: { (str, cat) -> String in
-            return "\(str), \(cat.rawValue)"
+            return "\(str), \(cat.displayName)"
         })
         self.stars = stars
         self.numReviews = numReviews
