@@ -140,9 +140,39 @@ public extension FoodMobDataSource {
         return emailAddress.isEmail
     }
     
-    public func fetchCategoryListing(completion: (([FoodCategory]) -> ())?) {
+    public func fetchCategoryListing(completion: (([String: FoodCategory]) -> ())?) {
         var categories = [FoodCategory]()
+        categories.append(FoodCategory(displayName: "Pizza", yelpIdentifier: "pizza"))
+        categories.append(FoodCategory(displayName: "Mexican", yelpIdentifier: "mexican"))
         categories.append(FoodCategory(displayName: "American (Traditional)", yelpIdentifier: "tradamerican"))
-        completion?(categories)
+        categories.append(FoodCategory(displayName: "Burgers", yelpIdentifier: "burgers"))
+        categories.append(FoodCategory(displayName: "Bars", yelpIdentifier: "bars"))
+        categories.append(FoodCategory(displayName: "Chicken Wings", yelpIdentifier: "chicken_wings"))
+        categories.append(FoodCategory(displayName: "Chinese", yelpIdentifier: "chinese"))
+        categories.append(FoodCategory(displayName: "American (New)", yelpIdentifier: "newamerican"))
+        categories.append(FoodCategory(displayName: "Breakfast and Brunch", yelpIdentifier: "Breakfast & Brunch"))
+        categories.append(FoodCategory(displayName: "Italian", yelpIdentifier: "italian"))
+        categories.append(FoodCategory(displayName: "Seafood", yelpIdentifier: "Seafood"))
+        categories.append(FoodCategory(displayName: "Barbeque", yelpIdentifier: "Barbeque"))
+        categories.append(FoodCategory(displayName: "Japanese", yelpIdentifier: "japanese"))
+        categories.append(FoodCategory(displayName: "SushiBars", yelpIdentifier: "sushibars"))
+        categories.append(FoodCategory(displayName: "Diners", yelpIdentifier: "diners"))
+        categories.append(FoodCategory(displayName: "Southern", yelpIdentifier: "southern"))
+        categories.append(FoodCategory(displayName: "SportsBars", yelpIdentifier: "Sports Bars"))
+        categories.append(FoodCategory(displayName: "TexMex", yelpIdentifier: "Tex-Mex"))
+        categories.append(FoodCategory(displayName: "Steakhouses", yelpIdentifier: "Steakhouses"))
+        categories.append(FoodCategory(displayName: "Thai", yelpIdentifier: "thai"))
+        categories.append(FoodCategory(displayName: "Korean",  yelpIdentifier: "korean"))
+        categories.append(FoodCategory(displayName: "Asian Fusion",  yelpIdentifier: "asianfusion"))
+        categories.append(FoodCategory(displayName: "Indian",  yelpIdentifier: "indian"))
+        categories.append(FoodCategory(displayName: "Bakeries",  yelpIdentifier: "bakeries"))
+        categories.append(FoodCategory(displayName: "Coffee & Tea",  yelpIdentifier: "Coffee & Tea"))
+        categories.append(FoodCategory(displayName: "Desserts",  yelpIdentifier: "desserts"))
+        
+        let hashmap = categories.reduce([String: FoodCategory]()) { (dict, category) -> [String: FoodCategory] in
+            dict[category.yelpIdentifier] = category
+        }
+        
+        completion?(hashmap)
     }
 }
