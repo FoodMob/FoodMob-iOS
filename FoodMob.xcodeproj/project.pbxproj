@@ -43,6 +43,7 @@
 		AB874EBE1C8784E7007E43FF /* RestaurantSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB874EBD1C8784E7007E43FF /* RestaurantSearch.swift */; };
 		AB87B9A21C1358E900CFC95F /* AppearanceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB87B9A11C1358E900CFC95F /* AppearanceManager.swift */; };
 		AB8AEF901C6A98590013293D /* ProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8AEF8F1C6A98590013293D /* ProfileTableViewController.swift */; };
+		AB95E1391CB58FF1004AE9DC /* help.html in Resources */ = {isa = PBXBuildFile; fileRef = AB95E1381CB58FF1004AE9DC /* help.html */; };
 		ABAFB2BD1C86932600FBA18E /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABAFB2BC1C86932600FBA18E /* Restaurant.swift */; };
 		ABCD6A7D1C83C7A30089C740 /* Cosmos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABCD6A7C1C83C7A30089C740 /* Cosmos.framework */; };
 		ABCD6A7E1C83C7A30089C740 /* Cosmos.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = ABCD6A7C1C83C7A30089C740 /* Cosmos.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -115,6 +116,7 @@
 		AB874EBD1C8784E7007E43FF /* RestaurantSearch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantSearch.swift; sourceTree = "<group>"; };
 		AB87B9A11C1358E900CFC95F /* AppearanceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = AppearanceManager.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		AB8AEF8F1C6A98590013293D /* ProfileTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileTableViewController.swift; sourceTree = "<group>"; };
+		AB95E1381CB58FF1004AE9DC /* help.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = help.html; sourceTree = "<group>"; };
 		ABAFB2BC1C86932600FBA18E /* Restaurant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
 		ABCD6A7C1C83C7A30089C740 /* Cosmos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Cosmos.framework; sourceTree = "<group>"; };
 		ABD291491C67995500C31501 /* FoodMobTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FoodMobTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -201,6 +203,7 @@
 		ABD87D0F1C70E49D005EC1A7 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				AB95E1381CB58FF1004AE9DC /* help.html */,
 				ABD87D101C70E4B7005EC1A7 /* legal.html */,
 			);
 			name = Resources;
@@ -394,6 +397,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ABFCB6A71C038F3300ED33BE /* LaunchScreen.storyboard in Resources */,
+				AB95E1391CB58FF1004AE9DC /* help.html in Resources */,
 				ABFCB6A41C038F3300ED33BE /* Assets.xcassets in Resources */,
 				ABD87D111C70E4B7005EC1A7 /* legal.html in Resources */,
 				ABFCB6A21C038F3300ED33BE /* Main.storyboard in Resources */,
