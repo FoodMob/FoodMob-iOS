@@ -147,27 +147,29 @@ public struct FoodMobService: FoodMobDataSource {
                     print(json)
                     let profile = json[UserField.foodProfile].dictionaryValue
                     var categories = [FoodCategory : Preference]()
-                    if let likes = profile[UserField.FoodProfile.likes]?.arrayValue,
-                        dislikes = profile[UserField.FoodProfile.dislikes]?.arrayValue,
-                        restrictions = profile[UserField.FoodProfile.restrictions]?.arrayValue {
-                        for like in likes {
-                            if let cat = FoodCategory(rawValue: like.stringValue) {
-                                categories[cat] = Preference.Like
+                    self.fetchCategoryListing({ (catListing) in
+                        if let likes = profile[UserField.FoodProfile.likes]?.arrayValue,
+                            dislikes = profile[UserField.FoodProfile.dislikes]?.arrayValue,
+                            restrictions = profile[UserField.FoodProfile.restrictions]?.arrayValue {
+                            for like in likes {
+                                if let cat = catListing[like.stringValue] {
+                                    categories[cat] = Preference.Like
+                                }
                             }
-                        }
-                        for dislike in dislikes {
-                            if let cat = FoodCategory(rawValue: dislike.stringValue) {
-                                categories[cat] = Preference.Dislike
+                            for dislike in dislikes {
+                                if let cat = catListing[dislike.stringValue] {
+                                    categories[cat] = Preference.Dislike
+                                }
                             }
-                        }
-                        for restriction in restrictions {
-                            if let coolCat = FoodCategory(rawValue: restriction.stringValue) {
-                                categories[coolCat] = Preference.Restriction
+                            for restriction in restrictions {
+                                if let coolCat = catListing[restriction.stringValue] {
+                                    categories[coolCat] = Preference.Restriction
+                                }
                             }
+                            user.categories = categories
                         }
-                        user.categories = categories
-                    }
-                    completion?(json["success"].boolValue)
+                        completion?(json["success"].boolValue)
+                    })
                 }
             case .Failure(let error):
                 print(error)

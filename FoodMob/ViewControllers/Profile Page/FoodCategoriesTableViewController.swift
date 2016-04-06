@@ -25,8 +25,10 @@ class FoodCategoriesTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
-        currentDataProvider.fetchCategoryListing { [unowned self] (categories) in
-            self.categories = categories
+        currentDataProvider.fetchCategoryListing { [unowned self] (categories: Dictionary<String, FoodCategory>) in
+            self.categories = Array(categories.values).sort({ (cat0, cat1) -> Bool in
+                return cat0.displayName < cat1.displayName
+            })
         }
     }
     
