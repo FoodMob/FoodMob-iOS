@@ -172,6 +172,9 @@ class ProfileTableViewController: UITableViewController {
         case .Legal:
             let url = NSBundle.mainBundle().URLForResource("legal", withExtension: "html")!
             self.performSegueWithIdentifier(ProfileTableViewControllerSegue.ToWebSegue.rawValue, sender: url)
+        case .Help:
+            let url = NSBundle.mainBundle().URLForResource("help", withExtension: "html")!
+            self.performSegueWithIdentifier(ProfileTableViewControllerSegue.ToWebSegue.rawValue, sender: url)
         default:
             print("Not implemented yet")
         }
