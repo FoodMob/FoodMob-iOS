@@ -83,7 +83,7 @@ public protocol FoodMobDataSource {
      */
     func fetchRestaurantsForSearch(search: RestaurantSearch, withUser user: User, completion: (([Restaurant]) -> ())?)
     
-    func fetchCategoryListing(completion: (([FoodCategory]) -> ())?)
+    func fetchCategoryListing(completion: (([String: FoodCategory]) -> ())?)
 }
 
 public extension FoodMobDataSource {
