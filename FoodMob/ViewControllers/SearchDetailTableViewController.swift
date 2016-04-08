@@ -56,7 +56,7 @@ class SearchDetailTableViewController: UITableViewController {
             if let url = restaurant.imageURL {
                 heroImageView.af_setImageWithURL(url.yelpHiResURL!)
             }
-            heroImageView.image = heroImageView.image?.applyBlurWithRadius(10, tintColor: UIColor(white: 0.10, alpha: 0.73), saturationDeltaFactor: 1.8)
+            heroImageView.image = heroImageView.image?.applyBlurWithRadius(3, tintColor: UIColor(white: 0.10, alpha: 0.75), saturationDeltaFactor: 1)
             ratingView.rating = restaurant.stars
             ratingView.text = "\(restaurant.numReviews) reviews "
             ratingView.settings.updateOnTouch = false
