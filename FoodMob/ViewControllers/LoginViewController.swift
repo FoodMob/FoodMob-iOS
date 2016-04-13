@@ -141,8 +141,10 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         super.prepareForSegue(segue, sender: sender)
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if let destination = segue.destinationViewController as? RegistrationViewController {
+            destination.userDictionary = ["username": emailAddressField.text ?? "",
+                                          "password": passwordField.text ?? ""]
+        }
     }
     
     override func preferredStatusBarStyle() -> UIStatusBarStyle {

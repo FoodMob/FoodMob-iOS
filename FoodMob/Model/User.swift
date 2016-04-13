@@ -14,6 +14,7 @@ import Locksmith
  */
 public class User: CreateableSecureStorable, ReadableSecureStorable, DeleteableSecureStorable, GenericPasswordSecureStorable {
     
+    // MARK: - Properties
     /**
      The user's first name (or given name)
      */
@@ -50,6 +51,8 @@ public class User: CreateableSecureStorable, ReadableSecureStorable, DeleteableS
         return nameFormatter.stringFromPersonNameComponents(nameComponents)
     }
     
+    
+    // MARK: - Initializers
     /**
      Initializes a new user, typically when they register.
      
@@ -111,6 +114,8 @@ public class User: CreateableSecureStorable, ReadableSecureStorable, DeleteableS
         return nil
     }
     
+    // MARK: - Instance Methods
+    
     /**
      Removes the user from the device's keychain.
      */
@@ -123,10 +128,24 @@ public class User: CreateableSecureStorable, ReadableSecureStorable, DeleteableS
         }
     }
     
+    /**
+     Returns a user's preference for a food category.
+     
+     - parameter category: The category of interest
+     
+     - returns: Their preference level.
+     */
     public func preferenceForCategory(category: FoodCategory) -> Preference {
         return categories[category] ?? Preference.None
     }
     
+    /**
+     Returns a human-readable string of a user's food categories for a given preference.
+     
+     - parameter preference: Preference to stringify.
+     
+     - returns: Human-readable string of food categories.
+     */
     @warn_unused_result
     func stringForPreference(preference: Preference) -> String {
         var str = ""
@@ -140,7 +159,13 @@ public class User: CreateableSecureStorable, ReadableSecureStorable, DeleteableS
         }
         return str.substringToIndex(str.endIndex.advancedBy(-2))
     }
-
+    
+    /**
+     Sets preference for a category.
+     
+     - parameter preference: A preference to set on a category
+     - parameter category:   The category that is being manipulated
+     */
     public func setPreference(preference: Preference, forCategory category: FoodCategory) {
         if preference == .None {
             categories.removeValueForKey(category)
@@ -149,7 +174,7 @@ public class User: CreateableSecureStorable, ReadableSecureStorable, DeleteableS
         }
     }
     
-    // Locksmith: Keychain services.
+    // MARK: - Locksmith: Keychain services.
     public let service = "FoodMob"
     public var account: String {
         return self.emailAddress
@@ -161,10 +186,13 @@ public class User: CreateableSecureStorable, ReadableSecureStorable, DeleteableS
             UserField.authToken: self.authToken
         ]
     }
-
-    
 }
 
+// MARK: - JSON Serialization
+
+/**
+ User Fields used in JSON responses
+ */
 internal struct UserField {
     static let emailAddress = "email"
     static let password = "password"

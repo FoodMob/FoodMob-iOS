@@ -19,7 +19,6 @@ class RegistrationViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var lastNameField: UITextField!
     @IBOutlet weak var emailAddressField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
-    @IBOutlet weak var verifyPasswordField: UITextField!
     
     @IBOutlet var fields: [UITextField]!
     
@@ -31,6 +30,8 @@ class RegistrationViewController: UIViewController, UITextFieldDelegate {
 
 
     @IBOutlet weak var stackViewToBottomConstraint: NSLayoutConstraint!
+    
+    internal var userDictionary: [String: String]?
 
     // MARK: - View Controller Lifecycle
     override func viewDidLoad() {
@@ -38,7 +39,10 @@ class RegistrationViewController: UIViewController, UITextFieldDelegate {
         fields.forEach { (field) -> () in
             field.delegate = self
         }
-        verifyPasswordField.removeFromSuperview()
+        if let userDictionary = userDictionary {
+            self.emailAddressField.text = userDictionary["username"]
+            self.passwordField.text = userDictionary["password"]
+        }
         tapRecognizer.numberOfTapsRequired = 1
         tapRecognizer.numberOfTouchesRequired = 1
         tapRecognizer.addTarget(self, action: #selector(RegistrationViewController.hideKeyboard))
@@ -60,9 +64,16 @@ class RegistrationViewController: UIViewController, UITextFieldDelegate {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(RegistrationViewController.keyboardWillShow(_:)), name: UIKeyboardWillShowNotification, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(RegistrationViewController.keyboardWillHide(_:)), name: UIKeyboardWillHideNotification, object: nil)
     }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        self.firstNameField.becomeFirstResponder()
+    }
+    
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
         NSNotificationCenter.defaultCenter().removeObserver(self)
+        self.activeTextField?.resignFirstResponder()
     }
     
     override func didReceiveMemoryWarning() {
@@ -140,9 +151,6 @@ class RegistrationViewController: UIViewController, UITextFieldDelegate {
         
     }
     @IBAction func cancelButtonPressed(sender: UIButton) {
-        fields.forEach { (field) -> () in
-            field.text = ""
-        }
     }
     
     override func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject?) -> Bool {

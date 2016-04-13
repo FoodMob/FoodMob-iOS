@@ -36,6 +36,9 @@ public enum Preference: Int {
     }
 }
 
+/*
+ Represents a food category, which is the tuple of the human-readable name and the Yelp identifier.
+ */
 public struct FoodCategory: Hashable, Equatable {
     private(set) public var displayName: String
     private(set) public var yelpIdentifier: String
@@ -45,6 +48,15 @@ public struct FoodCategory: Hashable, Equatable {
     }
 }
 
+/**
+ Equatability for a FoodCategory.  Two food categories are equal iff
+ the Yelp identifiers are equal.
+ 
+ - parameter lhs: Left side of the expression.
+ - parameter rhs: Right side of the expression.
+ 
+ - returns: Whether two food categories are equal.
+ */
 public func ==(lhs: FoodCategory, rhs: FoodCategory) -> Bool {
     return lhs.yelpIdentifier == rhs.yelpIdentifier
 }

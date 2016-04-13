@@ -63,6 +63,9 @@ public struct Restaurant {
     }
 }
 
+/**
+ Struct which holds JSON field name constants for Restaurants
+ */
 internal struct RestaurantField {
     static let objectName = "restaurant"
     static let name = "name"

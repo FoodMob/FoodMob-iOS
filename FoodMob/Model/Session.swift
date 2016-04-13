@@ -23,9 +23,11 @@ public struct Session {
      */
     public var currentUser: User?
     
+    /// Shared location manager for use in the application.
     public var locationManager: CLLocationManager!
 
-    private init() {
-        
-    }
+     /**
+     Prevents another instantiation of this object, as it is a singleton.
+     */
+    private init() {}
 }

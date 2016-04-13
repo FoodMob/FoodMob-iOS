@@ -43,6 +43,10 @@ public struct RestaurantSearch {
         
     }
 }
+
+/**
+ Struct that holds restaurant search JSON field names
+ */
 public struct RestaurantSearchField {
     static let locationField = "location"
     static let latLong = "ll"
