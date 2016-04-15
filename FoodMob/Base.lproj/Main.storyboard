@@ -493,24 +493,24 @@
                                                 </mask>
                                             </variation>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Restaurant Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yka-8f-yQN">
-                                            <rect key="frame" x="13" y="8" width="133" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Categories" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DGb-x3-evu">
-                                            <rect key="frame" x="13" y="29" width="62" height="15"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shade_white" translatesAutoresizingMaskIntoConstraints="NO" id="owU-Kv-GiX">
                                             <rect key="frame" x="0.0" y="147" width="600" height="2"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="2" id="YC7-O0-X6K"/>
                                             </constraints>
                                         </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Restaurant Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yka-8f-yQN">
+                                            <rect key="frame" x="18" y="8" width="131" height="20"/>
+                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Categories" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DGb-x3-evu">
+                                            <rect key="frame" x="18" y="28" width="62" height="15"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="owU-Kv-GiX" firstAttribute="top" secondItem="9YW-ET-RfS" secondAttribute="bottom" constant="98" id="6Ix-dC-WB1"/>
@@ -523,7 +523,7 @@
                                         <constraint firstItem="9YW-ET-RfS" firstAttribute="centerY" secondItem="FsS-87-NtM" secondAttribute="centerY" id="GiB-4J-IMJ"/>
                                         <constraint firstItem="FsS-87-NtM" firstAttribute="centerY" secondItem="vlv-KY-Zfx" secondAttribute="centerY" id="T0G-Ip-Nzx"/>
                                         <constraint firstItem="9YW-ET-RfS" firstAttribute="leading" secondItem="owU-Kv-GiX" secondAttribute="leading" id="YhU-a3-Dtf"/>
-                                        <constraint firstItem="yka-8f-yQN" firstAttribute="leading" secondItem="vlv-KY-Zfx" secondAttribute="leadingMargin" constant="5" id="bkK-Hq-Wlr"/>
+                                        <constraint firstItem="yka-8f-yQN" firstAttribute="leading" secondItem="vlv-KY-Zfx" secondAttribute="leadingMargin" constant="10" id="bkK-Hq-Wlr"/>
                                         <constraint firstItem="FsS-87-NtM" firstAttribute="centerX" secondItem="vlv-KY-Zfx" secondAttribute="centerX" id="cjK-Zs-3rk"/>
                                         <constraint firstItem="9YW-ET-RfS" firstAttribute="leading" secondItem="FsS-87-NtM" secondAttribute="leading" id="gzL-FE-JmQ"/>
                                         <constraint firstAttribute="bottom" secondItem="owU-Kv-GiX" secondAttribute="bottom" id="joS-F6-twy"/>
@@ -573,19 +573,19 @@
                         <sections>
                             <tableViewSection id="bIf-BC-SaR">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="110" id="lgg-t1-d7C">
-                                        <rect key="frame" x="0.0" y="64" width="600" height="110"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="150" id="lgg-t1-d7C">
+                                        <rect key="frame" x="0.0" y="64" width="600" height="150"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lgg-t1-d7C" id="QIm-97-Sgg">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="109"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="149"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SweetHutInfo" translatesAutoresizingMaskIntoConstraints="NO" id="wa1-F1-ngP">
-                                                    <rect key="frame" x="0.0" y="-2" width="600" height="113"/>
+                                                    <rect key="frame" x="0.0" y="-2" width="600" height="153"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sweet Hut Bakery &amp; Cafe" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A0g-XM-CWM">
-                                                    <rect key="frame" x="18" y="18" width="226" height="24"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <rect key="frame" x="18" y="18" width="235" height="24"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                     <size key="shadowOffset" width="-1" height="1"/>
@@ -630,7 +630,7 @@
                                         <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="150" id="mVo-B4-HNx">
-                                        <rect key="frame" x="0.0" y="174" width="600" height="150"/>
+                                        <rect key="frame" x="0.0" y="214" width="600" height="150"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mVo-B4-HNx" id="Ei0-oX-v5e">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="149"/>
@@ -650,7 +650,7 @@
                                         <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="0.0" textLabel="dhV-VH-jwK" detailTextLabel="8RM-L1-pSU" style="IBUITableViewCellStyleValue2" id="8R5-gw-AMh">
-                                        <rect key="frame" x="0.0" y="324" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="364" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8R5-gw-AMh" id="hC9-PA-17T">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
@@ -675,7 +675,7 @@
                                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="0.0" textLabel="rWe-ma-knX" detailTextLabel="pBO-6n-LHw" rowHeight="66" style="IBUITableViewCellStyleValue2" id="Ci0-VH-Xa6">
-                                        <rect key="frame" x="0.0" y="368" width="600" height="66"/>
+                                        <rect key="frame" x="0.0" y="408" width="600" height="66"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ci0-VH-Xa6" id="rzh-Tz-FFi">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="65"/>
@@ -700,7 +700,7 @@
                                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="0.0" textLabel="BPY-4D-Ew8" style="IBUITableViewCellStyleDefault" id="C2B-jz-k4z">
-                                        <rect key="frame" x="0.0" y="434" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="474" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="C2B-jz-k4z" id="BWZ-wf-7l6">
                                             <rect key="frame" x="0.0" y="0.0" width="567" height="43"/>
