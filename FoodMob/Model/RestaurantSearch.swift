@@ -38,6 +38,17 @@ public struct RestaurantSearch {
             }
         }
     }
+
+    public var stars: Int = 0 {
+        willSet {
+            if newValue > 5 {
+                self.stars = 5
+            }
+            if newValue < 0 {
+                self.stars = 0
+            }
+        }
+    }
     
     public init() {
         

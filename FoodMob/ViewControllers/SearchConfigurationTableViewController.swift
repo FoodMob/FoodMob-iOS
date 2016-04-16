@@ -11,6 +11,8 @@ import UIKit
 class SearchConfigurationTableViewController: UITableViewController {
 
     @IBOutlet weak var locationField: UITextField!
+    @IBOutlet weak var priceSelection: UISegmentedControl!
+    @IBOutlet weak var starSearch: UISegmentedControl!
     var search = RestaurantSearch()
     
     override func viewDidLoad() {
@@ -99,6 +101,10 @@ class SearchConfigurationTableViewController: UITableViewController {
         } else {
             alert("Location Not Available", message: "FoodMob could not get your current location.")
         }
+
+        search.priceRange = PriceRange(rawValue: priceSelection.selectedSegmentIndex) ?? .Any
+        search.stars = starSearch.selectedSegmentIndex + 1
+
         if let destination = segue.destinationViewController as? SearchTableViewController {
             currentDataProvider.fetchRestaurantsForSearch(self.search, withUser: Session.sharedSession.currentUser!, completion: { (restaurants) in
                 destination.restaurants = restaurants

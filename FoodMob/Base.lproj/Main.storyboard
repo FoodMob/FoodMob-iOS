@@ -214,7 +214,7 @@
                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="qZy-ri-8Lq">
+                                                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="qZy-ri-8Lq">
                                                     <rect key="frame" x="18" y="36" width="564" height="29"/>
                                                     <segments>
                                                         <segment title="Any"/>
@@ -260,7 +260,7 @@
                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="B31-3Z-tdp">
+                                                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" apportionsSegmentWidthsByContent="YES" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="B31-3Z-tdp">
                                                     <rect key="frame" x="18" y="36" width="564" height="29"/>
                                                     <segments>
                                                         <segment title="★"/>
@@ -373,6 +373,8 @@
                     </navigationItem>
                     <connections>
                         <outlet property="locationField" destination="5c4-cj-R9k" id="t94-GH-ZmH"/>
+                        <outlet property="priceSelection" destination="qZy-ri-8Lq" id="aN8-MW-Eg9"/>
+                        <outlet property="starSearch" destination="B31-3Z-tdp" id="X0a-Xc-kcy"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eBl-1g-JXl" userLabel="First Responder" sceneMemberID="firstResponder"/>
