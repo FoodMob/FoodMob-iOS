@@ -84,6 +84,10 @@ public protocol FoodMobDataSource {
     func fetchRestaurantsForSearch(search: RestaurantSearch, withUser user: User, completion: (([Restaurant]) -> ())?)
     
     func fetchCategoryListing(completion: (([String: FoodCategory]) -> ())?)
+
+    func fetchFriendsListing(forUser user: User, completion: (([User])->())?)
+
+    func addFriendWithEmail(emailAddress: String, forUser user: User, completion: ((Bool, String)->())?)
 }
 
 public extension FoodMobDataSource {

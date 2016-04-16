@@ -63,4 +63,7 @@ public struct MockDataSource : FoodMobDataSource {
 //        completion?([sweetHut, tinDrum])
         completion?([])
     }
+
+    public func fetchFriendsListing(forUser user: User, completion: (([User])->())? = nil) {}
+    public func addFriendWithEmail(emailAddress: String, forUser user: User, completion: ((Bool, String)->())? = nil) {}
 }

@@ -10,111 +10,48 @@
         <!--Friends-->
         <scene sceneID="A4m-XC-wxS">
             <objects>
-                <tableViewController id="k2U-1L-IyI" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="pJY-gu-Cke">
+                <tableViewController id="k2U-1L-IyI" customClass="FriendTableViewController" customModule="FoodMob" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="28" sectionFooterHeight="28" id="pJY-gu-Cke">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <searchBar key="tableHeaderView" contentMode="redraw" searchBarStyle="minimal" placeholder="Search Friends" showsScopeBar="YES" id="pvc-lG-Rvp">
-                            <rect key="frame" x="0.0" y="64" width="600" height="88"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            <textInputTraits key="textInputTraits"/>
-                            <scopeButtonTitles>
-                                <string>My Friends</string>
-                                <string>Everyone</string>
-                            </scopeButtonTitles>
-                        </searchBar>
-                        <sections>
-                            <tableViewSection id="ghd-y7-Jyc">
-                                <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="Hc1-r4-KWp" imageView="lyA-OX-I0i" rowHeight="60" style="IBUITableViewCellStyleDefault" id="ABM-dJ-8lv">
-                                        <rect key="frame" x="0.0" y="108" width="600" height="60"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ABM-dJ-8lv" id="wuY-HK-XH7">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="59.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Albert Shaw" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Hc1-r4-KWp">
-                                                    <rect key="frame" x="90" y="0.0" width="495" height="59.5"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="AlbertShaw" id="lyA-OX-I0i">
-                                                    <rect key="frame" x="15" y="0.0" width="60" height="59.5"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                </imageView>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" textLabel="5OX-Ou-Qvy" imageView="hNX-rY-fdi" rowHeight="60" style="IBUITableViewCellStyleDefault" id="zom-GX-DNc">
-                                        <rect key="frame" x="0.0" y="168" width="600" height="60"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zom-GX-DNc" id="a2o-UW-jV2">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="59.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Emily Ritter" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="5OX-Ou-Qvy">
-                                                    <rect key="frame" x="90" y="0.0" width="495" height="59.5"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="EmilyRitter" id="hNX-rY-fdi">
-                                                    <rect key="frame" x="15" y="0.0" width="60" height="59.5"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                </imageView>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" textLabel="lGL-z3-YRj" imageView="CeH-cj-1Aj" rowHeight="60" style="IBUITableViewCellStyleDefault" id="INj-K2-Mn6">
-                                        <rect key="frame" x="0.0" y="228" width="600" height="60"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="INj-K2-Mn6" id="vIZ-Mg-lia">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="59.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Evan Neenan" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="lGL-z3-YRj">
-                                                    <rect key="frame" x="90" y="0.0" width="495" height="59.5"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="NoFriendImage" id="CeH-cj-1Aj">
-                                                    <rect key="frame" x="15" y="0.0" width="60" height="59.5"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                </imageView>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" textLabel="P7B-zj-TKP" imageView="Chn-XX-pCf" rowHeight="60" style="IBUITableViewCellStyleDefault" id="FbX-9k-FFU">
-                                        <rect key="frame" x="0.0" y="288" width="600" height="60"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="FbX-9k-FFU" id="deL-yW-lrk">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="59.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="James Park" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="P7B-zj-TKP">
-                                                    <rect key="frame" x="89" y="0.0" width="496" height="59.5"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="JamesPark" id="Chn-XX-pCf">
-                                                    <rect key="frame" x="15" y="0.0" width="59" height="59.5"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                </imageView>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
-                        </sections>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="FriendCell" id="B1y-66-2DK" customClass="FriendTableViewCell" customModule="FoodMob" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="92" width="600" height="80"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="B1y-66-2DK" id="2ha-xT-kjC">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="79.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="NoFriendImage" translatesAutoresizingMaskIntoConstraints="NO" id="tjf-Uu-b1z" customClass="RoundedImageView" customModule="FoodMob" customModuleProvider="target">
+                                            <rect key="frame" x="8" y="8" width="64" height="64"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="64" id="3TG-qG-WVE"/>
+                                                <constraint firstAttribute="width" secondItem="tjf-Uu-b1z" secondAttribute="height" multiplier="1:1" id="yQP-U5-zeu"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jonathan Jemson" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dmt-f5-KX4">
+                                            <rect key="frame" x="80" y="29" width="143.5" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="Dmt-f5-KX4" secondAttribute="trailing" constant="10" id="AmC-ax-IwM"/>
+                                        <constraint firstItem="Dmt-f5-KX4" firstAttribute="centerY" secondItem="tjf-Uu-b1z" secondAttribute="centerY" id="X7f-H9-IRz"/>
+                                        <constraint firstAttribute="topMargin" secondItem="tjf-Uu-b1z" secondAttribute="top" id="ZZM-gM-wPM"/>
+                                        <constraint firstItem="Dmt-f5-KX4" firstAttribute="leading" secondItem="tjf-Uu-b1z" secondAttribute="trailing" constant="8" id="bmY-JA-fyh"/>
+                                        <constraint firstAttribute="leadingMargin" secondItem="tjf-Uu-b1z" secondAttribute="leading" id="s4O-m9-2qM"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="userImageView" destination="tjf-Uu-b1z" id="SuK-84-tuj"/>
+                                    <outlet property="userNameField" destination="Dmt-f5-KX4" id="v3Y-Xs-ce1"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <sections/>
                         <connections>
                             <outlet property="dataSource" destination="k2U-1L-IyI" id="jyP-f4-KjQ"/>
                             <outlet property="delegate" destination="k2U-1L-IyI" id="eSH-HE-RAx"/>
@@ -1344,14 +1281,11 @@
         </scene>
     </scenes>
     <resources>
-        <image name="AlbertShaw" width="373" height="373"/>
         <image name="BurgerLogo" width="260" height="203"/>
         <image name="Default Restaurant Image" width="1291" height="442"/>
-        <image name="EmilyRitter" width="75" height="75"/>
         <image name="FoodMobLogo" width="247" height="41"/>
         <image name="Friends" width="32" height="32"/>
         <image name="Friends Selected" width="32" height="32"/>
-        <image name="JamesPark" width="444" height="444"/>
         <image name="NoFriendImage" width="198" height="198"/>
         <image name="Profile" width="32" height="32"/>
         <image name="Profile Selected" width="32" height="32"/>

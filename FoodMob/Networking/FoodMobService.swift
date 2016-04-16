@@ -216,5 +216,53 @@ public struct FoodMobService: FoodMobDataSource {
             
         }
     }
+
+    public func fetchFriendsListing(forUser user: User, completion: (([User])->())? = nil) {
+        let parameters: [String: AnyObject] = [
+            UserField.authToken: user.authToken
+        ]
+        var friendList: [User] = []
+        Alamofire.request(ServiceEndpoint.getFriendsMethod, ServiceEndpoint.friends(user), parameters: parameters, encoding: .URL).validate().responseJSON { response in
+            switch response.result {
+            case .Success:
+                if let value = response.result.value {
+                    let json = JSON(value)
+                    print(json)
+                    for friend in json["friends"].arrayValue {
+                        if let firstName = friend[UserField.firstName].string, lastName = friend[UserField.lastName].string, email = friend[UserField.emailAddress].string {
+                            friendList.append(User(firstName: firstName, lastName: lastName, emailAddress: email))
+                        }
+                    }
+                }
+            case .Failure(let error):
+                print(response.result.value)
+                print(error)
+            }
+            completion?(friendList)
+        }
+    }
+
+    public func addFriendWithEmail(emailAddress: String, forUser user: User, completion: ((Bool, String)->())? = nil) {
+        let parameters: [String: AnyObject] = [
+            UserField.authToken: user.authToken,
+            UserField.friendEmail: emailAddress
+        ]
+        Alamofire.request(ServiceEndpoint.setFriendsMethod, ServiceEndpoint.friends(user), parameters: parameters, encoding: .JSON).validate().responseJSON {
+            response in
+            switch response.result {
+            case .Success:
+                if let value = response.result.value {
+                    let json = JSON(value)
+                    if json["success"].boolValue {
+                        completion?(true, "")
+                    } else {
+                        completion?(false, json["error"].stringValue)
+                    }
+                }
+            case .Failure(_):
+                completion?(false, "Network Error")
+            }
+        }
+    }
     
 }

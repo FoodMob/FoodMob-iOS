@@ -74,19 +74,25 @@ public class User: CreateableSecureStorable, ReadableSecureStorable, DeleteableS
             } catch {
                 print(error)
             }
+
+            do {
+                try self.deleteFromSecureStore()
+            } catch {
+                print(error)
+            }
+
+            do {
+                try self.createInSecureStore()
+            } catch {
+                print(error)
+            }
+
         }
 
-        do {
-            try self.deleteFromSecureStore()
-        } catch {
-            print(error)
-        }
-        
-        do {
-            try self.createInSecureStore()
-        } catch {
-            print(error)
-        }
+    }
+
+    public convenience init(firstName: String, lastName: String, emailAddress: String) {
+        self.init(firstName: firstName, lastName: lastName, emailAddress: emailAddress, authToken: "FRIEND\(emailAddress.md5())", saveToKeychain: false)
     }
     
     /**
@@ -195,6 +201,7 @@ public class User: CreateableSecureStorable, ReadableSecureStorable, DeleteableS
  */
 internal struct UserField {
     static let emailAddress = "email"
+    static let friendEmail = "friend_email"
     static let password = "password"
     static let firstName = "first_name"
     static let lastName = "last_name"

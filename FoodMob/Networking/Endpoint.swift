@@ -68,6 +68,23 @@ public extension Endpoint {
     public static var getFoodProfileMethod: Alamofire.Method {
         return .GET
     }
+
+    /// Endpoint for the food profile (category) information
+    /// Parameter user: The user whose information we're looking up or updating
+    public static func friends(user: User) -> String {
+        return "\(self.root)/users/\(user.emailAddress)/friends"
+    }
+
+    /// Method to update food profile for a user.
+    public static var setFriendsMethod: Alamofire.Method {
+        return .PUT
+    }
+
+    /// Method to get food profile for a user.
+    public static var getFriendsMethod: Alamofire.Method {
+        return .GET
+    }
+
     /// Search API
     public static var search: String {
         return "\(self.root)/search"
