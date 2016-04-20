@@ -14,7 +14,7 @@
     <a title="User Class Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html"> Docs</a> (52% documented)</p>
+        <p><a href="../index.html"> Docs</a> (77% documented)</p>
       </div>
     </header>
     <div class="content-wrapper">
@@ -39,10 +39,26 @@
             <a href="../Enums.html">Enums</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="../Enums/FoodCategory.html">FoodCategory</a>
+                <a href="../Enums/Preference.html">Preference</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Enums/Preference.html">Preference</a>
+                <a href="../Enums/PriceRange.html">PriceRange</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Extensions/UIImage.html">UIImage</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Functions.html">Functions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:ZF7FoodMoboi2eeFTVS_12FoodCategoryS0__Sb">==(_:_:)</a>
               </li>
             </ul>
           </li>
@@ -61,10 +77,22 @@
             <a href="../Structs.html">Structs</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
+                <a href="../Structs/FoodCategory.html">FoodCategory</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Structs/FoodMobService.html">FoodMobService</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Structs/MockDataSource.html">MockDataSource</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Restaurant.html">Restaurant</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/RestaurantSearch.html">RestaurantSearch</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs.html#/s:V7FoodMob21RestaurantSearchField">RestaurantSearchField</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Structs/Session.html">Session</a>
@@ -88,6 +116,13 @@
           </section>
           <section class="section task-group-section">
             <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Properties"></a>
+                <a name="//apple_ref/swift/Section/Properties" class="dashAnchor"></a>
+                <a href="#/Properties">
+                  <h3 class="section-name">Properties</h3>
+                </a>
+              </div>
               <ul>
                 <li class="item">
                   <div>
@@ -173,9 +208,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:vC7FoodMob4User10categoriesGVSs10DictionaryOS_12FoodCategoryOS_10Preference_"></a>
+                    <a name="/s:vC7FoodMob4User10categoriesGVs10DictionaryVS_12FoodCategoryOS_10Preference_"></a>
                     <a name="//apple_ref/swift/Property/categories" class="dashAnchor"></a>
-                    <a class="token" href="#/s:vC7FoodMob4User10categoriesGVSs10DictionaryOS_12FoodCategoryOS_10Preference_">categories</a>
+                    <a class="token" href="#/s:vC7FoodMob4User10categoriesGVs10DictionaryVS_12FoodCategoryOS_10Preference_">categories</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -224,12 +259,23 @@
                     </section>
                   </div>
                 </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Initializers"></a>
+                <a name="//apple_ref/swift/Section/Initializers" class="dashAnchor"></a>
+                <a href="#/Initializers">
+                  <h3 class="section-name">Initializers</h3>
+                </a>
+              </div>
+              <ul>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FC7FoodMob4UsercFMS0_FT9firstNameSS8lastNameSS12emailAddressSS9authTokenSS14saveToKeychainSb_S0_"></a>
+                    <a name="/s:FC7FoodMob4UsercFT9firstNameSS8lastNameSS12emailAddressSS9authTokenSS14saveToKeychainSb_S0_"></a>
                     <a name="//apple_ref/swift/Method/init(firstName:lastName:emailAddress:authToken:saveToKeychain:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FC7FoodMob4UsercFMS0_FT9firstNameSS8lastNameSS12emailAddressSS9authTokenSS14saveToKeychainSb_S0_">init(firstName:lastName:emailAddress:authToken:saveToKeychain:)</a>
+                    <a class="token" href="#/s:FC7FoodMob4UsercFT9firstNameSS8lastNameSS12emailAddressSS9authTokenSS14saveToKeychainSb_S0_">init(firstName:lastName:emailAddress:authToken:saveToKeychain:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -246,7 +292,8 @@
 <li>firstName: User&rsquo;s first name/given name.</li>
 <li>lastName: User&rsquo;s last name/family name.</li>
 <li>emailAddress: User&rsquo;s email address</li>
-<li>authToken: Optionally provide the</li>
+<li>authToken: Authorization token for use with the API</li>
+<li>saveToKeychain: Whether or not the credentials should be stored in the keychain.</li>
 </ul></li>
 </ul>
 
@@ -310,7 +357,20 @@
                               </td>
                               <td>
                                 <div>
-                                  <p>Optionally provide the</p>
+                                  <p>Authorization token for use with the API</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>saveToKeychain</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Whether or not the credentials should be stored in the keychain.</p>
 
                                 </div>
                               </td>
@@ -324,9 +384,89 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FC7FoodMob4UsercFMS0_FT12emailAddressGSqSS__GSqS0__"></a>
+                    <a name="/s:FC7FoodMob4UsercFT9firstNameSS8lastNameSS12emailAddressSS_S0_"></a>
+                    <a name="//apple_ref/swift/Method/init(firstName:lastName:emailAddress:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC7FoodMob4UsercFT9firstNameSS8lastNameSS12emailAddressSS_S0_">init(firstName:lastName:emailAddress:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Convenience initializer, used for initializing friends.</p>
+
+<p>This object is NOT eligible for communicating with the server as an authenticated user.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="n">convenience</span> <span class="nf">init</span><span class="p">(</span><span class="nv">firstName</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">lastName</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">emailAddress</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>firstName</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>User&rsquo;s given name/first name.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>lastName</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>User&rsquo;s last name/family name</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>emailAddress</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>User&rsquo;s email address</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>&lt;#return value description#&gt;</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC7FoodMob4UsercFT12emailAddressGSqSS__GSqS0__"></a>
                     <a name="//apple_ref/swift/Method/init(emailAddress:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FC7FoodMob4UsercFMS0_FT12emailAddressGSqSS__GSqS0__">init(emailAddress:)</a>
+                    <a class="token" href="#/s:FC7FoodMob4UsercFT12emailAddressGSqSS__GSqS0__">init(emailAddress:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -351,12 +491,23 @@ and that the <code>eraseUser</code> method has not been called.</p>
                     </section>
                   </div>
                 </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Instance%20Methods"></a>
+                <a name="//apple_ref/swift/Section/Instance Methods" class="dashAnchor"></a>
+                <a href="#/Instance%20Methods">
+                  <h3 class="section-name">Instance Methods</h3>
+                </a>
+              </div>
+              <ul>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FC7FoodMob4User9eraseUserFS0_FT_T_"></a>
+                    <a name="/s:FC7FoodMob4User9eraseUserFT_T_"></a>
                     <a name="//apple_ref/swift/Method/eraseUser()" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FC7FoodMob4User9eraseUserFS0_FT_T_">eraseUser()</a>
+                    <a class="token" href="#/s:FC7FoodMob4User9eraseUserFT_T_">eraseUser()</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -381,9 +532,9 @@ and that the <code>eraseUser</code> method has not been called.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FC7FoodMob4User21preferenceForCategoryFS0_FOS_12FoodCategoryOS_10Preference"></a>
+                    <a name="/s:FC7FoodMob4User21preferenceForCategoryFVS_12FoodCategoryOS_10Preference"></a>
                     <a name="//apple_ref/swift/Method/preferenceForCategory(_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FC7FoodMob4User21preferenceForCategoryFS0_FOS_12FoodCategoryOS_10Preference">preferenceForCategory(_:)</a>
+                    <a class="token" href="#/s:FC7FoodMob4User21preferenceForCategoryFVS_12FoodCategoryOS_10Preference">preferenceForCategory(_:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -391,16 +542,41 @@ and that the <code>eraseUser</code> method has not been called.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Returns a user&rsquo;s preference for a food category.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">User</span><span class="p">:</span> <span class="kt">CreateableSecureStorable</span><span class="p">,</span> <span class="kt">ReadableSecureStorable</span><span class="p">,</span> <span class="kt">DeleteableSecureStorable</span><span class="p">,</span> <span class="kt">GenericPasswordSecureStorable</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">preferenceForCategory</span><span class="p">(</span><span class="nv">category</span><span class="p">:</span> <span class="kt">FoodCategory</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Preference</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>category</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The category of interest</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>Their preference level.</p>
+
                       </div>
                     </section>
                   </div>
@@ -408,9 +584,9 @@ and that the <code>eraseUser</code> method has not been called.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FC7FoodMob4User13setPreferenceFS0_FTOS_10Preference11forCategoryOS_12FoodCategory_T_"></a>
+                    <a name="/s:FC7FoodMob4User13setPreferenceFTOS_10Preference11forCategoryVS_12FoodCategory_T_"></a>
                     <a name="//apple_ref/swift/Method/setPreference(_:forCategory:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FC7FoodMob4User13setPreferenceFS0_FTOS_10Preference11forCategoryOS_12FoodCategory_T_">setPreference(_:forCategory:)</a>
+                    <a class="token" href="#/s:FC7FoodMob4User13setPreferenceFTOS_10Preference11forCategoryVS_12FoodCategory_T_">setPreference(_:forCategory:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -418,20 +594,64 @@ and that the <code>eraseUser</code> method has not been called.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Sets preference for a category.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">User</span><span class="p">:</span> <span class="kt">CreateableSecureStorable</span><span class="p">,</span> <span class="kt">ReadableSecureStorable</span><span class="p">,</span> <span class="kt">DeleteableSecureStorable</span><span class="p">,</span> <span class="kt">GenericPasswordSecureStorable</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">setPreference</span><span class="p">(</span><span class="nv">preference</span><span class="p">:</span> <span class="kt">Preference</span><span class="p">,</span> <span class="n">forCategory</span> <span class="nv">category</span><span class="p">:</span> <span class="kt">FoodCategory</span><span class="p">)</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>preference</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A preference to set on a category</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>category</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The category that is being manipulated</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
                     </section>
                   </div>
                 </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Locksmith:%20Keychain%20services."></a>
+                <a name="//apple_ref/swift/Section/Locksmith: Keychain services." class="dashAnchor"></a>
+                <a href="#/Locksmith:%20Keychain%20services.">
+                  <h3 class="section-name">Locksmith: Keychain services.</h3>
+                </a>
+              </div>
+              <ul>
                 <li class="item">
                   <div>
                     <code>
@@ -489,9 +709,9 @@ and that the <code>eraseUser</code> method has not been called.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:vC7FoodMob4User4dataGVSs10DictionarySSPSs9AnyObject__"></a>
+                    <a name="/s:vC7FoodMob4User4dataGVs10DictionarySSPs9AnyObject__"></a>
                     <a name="//apple_ref/swift/Property/data" class="dashAnchor"></a>
-                    <a class="token" href="#/s:vC7FoodMob4User4dataGVSs10DictionarySSPSs9AnyObject__">data</a>
+                    <a class="token" href="#/s:vC7FoodMob4User4dataGVs10DictionarySSPs9AnyObject__">data</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -518,8 +738,8 @@ and that the <code>eraseUser</code> method has not been called.</p>
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2016 <a class="link" href="" target="_blank" rel="external"></a>. All rights reserved. (Last updated: 2016-02-13)</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.5.0</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+          <p>&copy; 2016 <a class="link" href="" target="_blank" rel="external"></a>. All rights reserved. (Last updated: 2016-04-20)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.6.0</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
     </div>

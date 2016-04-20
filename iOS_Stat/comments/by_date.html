@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>GitStats - FoodMob</title>
+    <meta charset='utf-8'>
+    <link href='../assets/bootstrap/css/bootstrap.min.css' rel='stylesheet' type='text/css'>
+    <style>
+      body { padding-top: 60px; }
+    </style>
+    <link href='../assets/bootstrap/css/bootstrap-responsive.min.css' rel='stylesheet' type='text/css'>
+    <script src='../assets/jquery.min.js' type='text/javascript'></script>
+    <script src='../assets/bootstrap/js/bootstrap.min.js' type='text/javascript'></script>
+    <script src='../assets/highstock.js' type='text/javascript'></script>
+  </head>
+  <body>
+    <div class='navbar navbar-fixed-top'>
+      <div class='navbar-inner'>
+        <div class='container'>
+          <a class='btn btn-navbar' data-target='.nav-collapse' data-toggle='collapse'>
+            <span class='icon-bar'></span>
+            <span class='icon-bar'></span>
+            <span class='icon-bar'></span>
+          </a>
+          <a class='brand' href='../index.html'>GitStats - FoodMob</a>
+          <div class='nav-collapse collapse'>
+            <ul class='nav'>
+              <li class=''>
+                <a href='../general.html'>General</a>
+              </li>
+              <li class=''>
+                <a href='../activity/by_date.html'>Activity</a>
+              </li>
+              <li class=''>
+                <a href='../authors/best_authors.html'>Authors</a>
+              </li>
+              <li class=''>
+                <a href='../files/by_date.html'>Files</a>
+              </li>
+              <li class=''>
+                <a href='../lines/by_date.html'>Lines</a>
+              </li>
+              <li class='active'>
+                <a href='by_date.html'>Comments</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class='container'>
+      <div class='tabbable tabs-left'>
+        <ul class='nav nav-tabs'>
+          <li class='active'>
+            <a href='by_date.html'>Comments by date</a>
+          </li>
+        </ul>
+        <div class='tab-content'>
+          <div class='tab-pane active'>
+            <div class='page-header'>
+              <h1 class='pagination-centered'>Comments by date</h1>
+            </div>
+                            <script type="text/javascript">
+                    (function() {
+            
+                      var onload = window.onload;
+                      window.onload = function(){
+                        if (typeof onload == "function") onload();
+                                var options = { "title": { "text": "" },"legend": { "enabled": false },"xAxis": { "title": { "text": null } },"yAxis": { "title": { "text": "Comments" },"labels": {  } },"tooltip": { "enabled": true },"credits": { "enabled": false },"plotOptions": { "areaspline": {  } },"chart": { "defaultSeriesType": "line","renderTo": "comments_by_date" },"subtitle": {  },"series": [{ "name": "Comments by date","type": "spline","data": [ [ 1448236800000,22 ],[ 1448323200000,22 ],[ 1448409600000,22 ],[ 1448496000000,22 ],[ 1448582400000,22 ],[ 1448668800000,22 ],[ 1448755200000,22 ],[ 1448841600000,22 ],[ 1448928000000,22 ],[ 1449014400000,22 ],[ 1449100800000,22 ],[ 1449187200000,22 ],[ 1449273600000,30 ],[ 1449360000000,30 ],[ 1449446400000,30 ],[ 1449532800000,30 ],[ 1449619200000,30 ],[ 1449705600000,30 ],[ 1449792000000,30 ],[ 1449878400000,30 ],[ 1449964800000,30 ],[ 1450051200000,30 ],[ 1450137600000,30 ],[ 1450224000000,30 ],[ 1450310400000,30 ],[ 1450396800000,30 ],[ 1450483200000,30 ],[ 1450569600000,30 ],[ 1450656000000,30 ],[ 1450742400000,30 ],[ 1450828800000,30 ],[ 1450915200000,30 ],[ 1451001600000,30 ],[ 1451088000000,30 ],[ 1451174400000,30 ],[ 1451260800000,30 ],[ 1451347200000,30 ],[ 1451433600000,30 ],[ 1451520000000,30 ],[ 1451606400000,30 ],[ 1451692800000,30 ],[ 1451779200000,30 ],[ 1451865600000,30 ],[ 1451952000000,30 ],[ 1452038400000,30 ],[ 1452124800000,30 ],[ 1452211200000,30 ],[ 1452297600000,30 ],[ 1452384000000,30 ],[ 1452470400000,30 ],[ 1452556800000,30 ],[ 1452643200000,30 ],[ 1452729600000,30 ],[ 1452816000000,30 ],[ 1452902400000,30 ],[ 1452988800000,30 ],[ 1453075200000,30 ],[ 1453161600000,30 ],[ 1453248000000,30 ],[ 1453334400000,30 ],[ 1453420800000,30 ],[ 1453507200000,30 ],[ 1453593600000,30 ],[ 1453680000000,30 ],[ 1453766400000,30 ],[ 1453852800000,30 ],[ 1453939200000,30 ],[ 1454025600000,30 ],[ 1454112000000,30 ],[ 1454198400000,30 ],[ 1454284800000,30 ],[ 1454371200000,30 ],[ 1454457600000,30 ],[ 1454544000000,30 ],[ 1454630400000,30 ],[ 1454716800000,85 ],[ 1454803200000,101 ],[ 1454889600000,101 ],[ 1454976000000,101 ],[ 1455062400000,136 ],[ 1455148800000,136 ],[ 1455235200000,136 ],[ 1455321600000,140 ],[ 1455408000000,140 ],[ 1455494400000,147 ],[ 1455580800000,147 ],[ 1455667200000,147 ],[ 1455753600000,147 ],[ 1455840000000,147 ],[ 1455926400000,180 ],[ 1456012800000,180 ],[ 1456099200000,180 ],[ 1456185600000,180 ],[ 1456272000000,180 ],[ 1456358400000,180 ],[ 1456444800000,180 ],[ 1456531200000,180 ],[ 1456617600000,180 ],[ 1456704000000,180 ],[ 1456790400000,180 ],[ 1456876800000,180 ],[ 1456963200000,180 ],[ 1457049600000,180 ],[ 1457136000000,180 ],[ 1457222400000,180 ],[ 1457308800000,217 ],[ 1457395200000,217 ],[ 1457481600000,217 ],[ 1457568000000,217 ],[ 1457654400000,217 ],[ 1457740800000,217 ],[ 1457827200000,217 ],[ 1457913600000,226 ],[ 1458000000000,226 ],[ 1458086400000,226 ],[ 1458172800000,226 ],[ 1458259200000,226 ],[ 1458345600000,226 ],[ 1458432000000,233 ],[ 1458518400000,233 ],[ 1458604800000,233 ],[ 1458691200000,233 ],[ 1458777600000,233 ],[ 1458864000000,233 ],[ 1458950400000,233 ],[ 1459036800000,233 ],[ 1459123200000,233 ],[ 1459209600000,233 ],[ 1459296000000,233 ],[ 1459382400000,233 ],[ 1459468800000,233 ],[ 1459555200000,236 ],[ 1459641600000,236 ],[ 1459728000000,236 ],[ 1459814400000,236 ],[ 1459900800000,236 ],[ 1459987200000,236 ],[ 1460073600000,236 ],[ 1460160000000,236 ],[ 1460246400000,236 ],[ 1460332800000,236 ],[ 1460419200000,236 ],[ 1460505600000,237 ],[ 1460592000000,237 ],[ 1460678400000,237 ],[ 1460764800000,251 ] ] }] };
+                    
+                    window.chart_comments_by_date = new Highcharts.StockChart(options);
+            
+                      };
+                            })()
+                    </script>
+            
+            <div id="comments_by_date"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

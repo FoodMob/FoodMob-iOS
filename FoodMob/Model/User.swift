@@ -60,7 +60,8 @@ public class User: CreateableSecureStorable, ReadableSecureStorable, DeleteableS
         - firstName: User's first name/given name.
         - lastName: User's last name/family name.
         - emailAddress: User's email address
-        - authToken: Optionally provide the
+        - authToken: Authorization token for use with the API
+        - saveToKeychain: Whether or not the credentials should be stored in the keychain.
      */
     public init(firstName: String, lastName: String, emailAddress: String, authToken: String, saveToKeychain: Bool = true) {
         self.firstName = firstName
@@ -91,6 +92,17 @@ public class User: CreateableSecureStorable, ReadableSecureStorable, DeleteableS
 
     }
 
+    /**
+     Convenience initializer, used for initializing friends.
+     
+     This object is NOT eligible for communicating with the server as an authenticated user.
+
+     - parameter firstName:    User's given name/first name.
+     - parameter lastName:     User's last name/family name
+     - parameter emailAddress: User's email address
+
+     - returns: <#return value description#>
+     */
     public convenience init(firstName: String, lastName: String, emailAddress: String) {
         self.init(firstName: firstName, lastName: lastName, emailAddress: emailAddress, authToken: "FRIEND\(emailAddress.md5())", saveToKeychain: false)
     }

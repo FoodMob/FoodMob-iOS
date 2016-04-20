@@ -102,7 +102,6 @@ class SearchConfigurationTableViewController: UITableViewController {
             alert("Location Not Available", message: "FoodMob could not get your current location.")
         }
 
-        search.priceRange = PriceRange(rawValue: priceSelection.selectedSegmentIndex) ?? .Any
         search.stars = starSearch.selectedSegmentIndex + 1
 
         if let destination = segue.destinationViewController as? SearchTableViewController {

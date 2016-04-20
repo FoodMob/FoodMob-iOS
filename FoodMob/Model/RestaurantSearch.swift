@@ -18,6 +18,7 @@ public struct RestaurantSearch {
     /// Categories included/excluded in the search.
     public var categories = [FoodCategory: Preference]()
     /// Price range to search for.
+    @available(*, deprecated, message="Yelp API doesn't work with dollar signs")
     public var priceRange: PriceRange = .Any
     /// Radius to search near `location`.
     public var radius: CLLocationDistance = 10_000
@@ -39,6 +40,7 @@ public struct RestaurantSearch {
         }
     }
 
+    /// Number of stars to include
     public var stars: Int = 0 {
         willSet {
             if newValue > 5 {
@@ -49,10 +51,21 @@ public struct RestaurantSearch {
             }
         }
     }
-    
-    public init() {
-        
+
+    /// JSON serialization for use with Alamofire.
+    public var jsonDictionary: [String: AnyObject] {
+        var parameters: [String: AnyObject] = [
+            RestaurantSearchField.nearby: [self.nearbyLocation?.latitude ?? 0, self.nearbyLocation?.longitude ?? 0]
+        ]
+        if let location = self.locationString where location != "" {
+            parameters[RestaurantSearchField.locationField] = location
+        } else if let location = self.location {
+            parameters[RestaurantSearchField.latLong] = [location.latitude, location.longitude]
+        }
+        return parameters
     }
+    
+    public init() {}
 }
 
 /**
@@ -73,6 +86,7 @@ public struct RestaurantSearchField {
  - Three:                     Three dollar signs 💰💰💰
  - ImSoLoadedItsNotEvenFunny: Four dollar signs 💰💰💰💰
  */
+@available(*, deprecated, message="Yelp API doesn't work with dollar signs")
 public enum PriceRange: Int {
     /**
      For when you just don't care. 💸🤑
