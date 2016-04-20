@@ -102,7 +102,7 @@ class SearchConfigurationTableViewController: UITableViewController {
             alert("Location Not Available", message: "FoodMob could not get your current location.")
         }
 
-        search.priceRange = PriceRange(rawValue: priceSelection.selectedSegmentIndex) ?? .Any
+        // search.priceRange = PriceRange(rawValue: priceSelection.selectedSegmentIndex) ?? .Any
         search.stars = starSearch.selectedSegmentIndex + 1
 
         if let destination = segue.destinationViewController as? SearchTableViewController {
@@ -112,5 +112,17 @@ class SearchConfigurationTableViewController: UITableViewController {
         }
     }
     
+    /**
+     Called when the user scrolled the tableView. Updates the headerView and checks to change the navigation bar's backgroundColor to solid or not.
+     
+     - parameter scrollView: ScrollView
+     */
+    /*override func scrollViewDidScroll(scrollView: UIScrollView) {
+        if scrollView.contentOffset.y >= -CGRectGetHeight(customNavigationBarView.frame) {
+            customNavigationBarView.adjustBackground(false)
+        } else {
+            customNavigationBarView.adjustBackground(true)
+        }
+    }*/
 
 }

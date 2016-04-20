@@ -22,6 +22,7 @@
 
 /* Begin PBXBuildFile section */
 		1A8936E01C9B82490079EEF1 /* SearchResultsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A8936DF1C9B82490079EEF1 /* SearchResultsTableViewCell.swift */; };
+		1ACF499F1CC81C6700B90A37 /* GradientHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACF499E1CC81C6700B90A37 /* GradientHeaderView.swift */; };
 		AB12184F1C96241B006DCB7E /* SearchConfigurationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB12184E1C96241B006DCB7E /* SearchConfigurationTableViewController.swift */; };
 		AB2194A81C6C2F6B00A7323A /* FoodCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2194A71C6C2F6B00A7323A /* FoodCategory.swift */; };
 		AB2194AA1C6C359400A7323A /* FoodCategoriesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2194A91C6C359400A7323A /* FoodCategoriesTableViewController.swift */; };
@@ -100,6 +101,7 @@
 
 /* Begin PBXFileReference section */
 		1A8936DF1C9B82490079EEF1 /* SearchResultsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultsTableViewCell.swift; sourceTree = "<group>"; };
+		1ACF499E1CC81C6700B90A37 /* GradientHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientHeaderView.swift; sourceTree = "<group>"; };
 		AB12184E1C96241B006DCB7E /* SearchConfigurationTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchConfigurationTableViewController.swift; sourceTree = "<group>"; };
 		AB2194A71C6C2F6B00A7323A /* FoodCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodCategory.swift; sourceTree = "<group>"; };
 		AB2194A91C6C359400A7323A /* FoodCategoriesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodCategoriesTableViewController.swift; sourceTree = "<group>"; };
@@ -191,6 +193,7 @@
 				ABD4BA5E1C7D71BE006894F5 /* FoodMob-Bridging-Header.h */,
 				1A8936DF1C9B82490079EEF1 /* SearchResultsTableViewCell.swift */,
 				AB713B291CC2D75500E4D749 /* FriendTableViewCell.swift */,
+				1ACF499E1CC81C6700B90A37 /* GradientHeaderView.swift */,
 			);
 			path = "Custom Views";
 			sourceTree = "<group>";
@@ -458,6 +461,7 @@
 				AB8AEF901C6A98590013293D /* ProfileTableViewController.swift in Sources */,
 				AB87B9A21C1358E900CFC95F /* AppearanceManager.swift in Sources */,
 				ABD4BA631C7D72C1006894F5 /* UIImage+Effects.swift in Sources */,
+				1ACF499F1CC81C6700B90A37 /* GradientHeaderView.swift in Sources */,
 				AB40B5DA1C8E000100073F01 /* FMWebViewController.swift in Sources */,
 				AB713B2A1CC2D75500E4D749 /* FriendTableViewCell.swift in Sources */,
 				ABAFB2BD1C86932600FBA18E /* Restaurant.swift in Sources */,
