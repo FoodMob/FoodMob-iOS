@@ -89,7 +89,8 @@ public extension Endpoint {
     public static var search: String {
         return "\(self.root)/search"
     }
-    
+
+    /// Method to perform a search
     public static var searchMethod: Alamofire.Method {
         return .POST
     }

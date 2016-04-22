@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>FoodMobService Struct Reference</title>
+    <title>RestaurantSearch Struct Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset='utf-8'>
@@ -10,8 +10,8 @@
     
   </head>
   <body>
-    <a name="//apple_ref/swift/Struct/FoodMobService" class="dashAnchor"></a>
-    <a title="FoodMobService Struct Reference"></a>
+    <a name="//apple_ref/swift/Struct/RestaurantSearch" class="dashAnchor"></a>
+    <a title="RestaurantSearch Struct Reference"></a>
     <header>
       <div class="content-wrapper">
         <p><a href="../index.html"> Docs</a> (77% documented)</p>
@@ -21,7 +21,7 @@
       <p id="breadcrumbs">
         <a href="../index.html"> Reference</a>
         <img id="carat" src="../img/carat.png" />
-        FoodMobService Struct Reference
+        RestaurantSearch Struct Reference
       </p>
     </div>
     <div class="content-wrapper">
@@ -104,14 +104,14 @@
       <article class="main-content">
         <section>
           <section class="section">
-            <h1>FoodMobService</h1>
+            <h1>RestaurantSearch</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">FoodMobService</span><span class="p">:</span> <span class="kt">FoodMobDataSource</span></code></pre>
+                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">RestaurantSearch</span></code></pre>
 
                 </div>
               </div>
-            <p>The actual FoodMob service data source.   Requires network access in order to function properly.</p>
+            <p>Encapuslates the search for a restaurant.</p>
 
           </section>
           <section class="section task-group-section">
@@ -120,9 +120,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FV7FoodMob14FoodMobService5loginFTSS8passwordSS10completionGSqFGSqCS_4User_T___T_"></a>
-                    <a name="//apple_ref/swift/Method/login(_:password:completion:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FV7FoodMob14FoodMobService5loginFTSS8passwordSS10completionGSqFGSqCS_4User_T___T_">login(_:password:completion:)</a>
+                    <a name="/s:vV7FoodMob16RestaurantSearch5usersGSaCS_4User_"></a>
+                    <a name="//apple_ref/swift/Property/users" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vV7FoodMob16RestaurantSearch5usersGSaCS_4User_">users</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -130,14 +130,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Users included in the search.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">FoodMobService</span><span class="p">:</span> <span class="kt">FoodMobDataSource</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">users</span><span class="p">:</span> <span class="p">[</span><span class="kt">User</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span></code></pre>
 
                         </div>
                       </div>
@@ -147,9 +147,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FV7FoodMob14FoodMobService8registerFT9firstNameSS8lastNameSS12emailAddressSS8passwordSS10completionGSqFSbT___T_"></a>
-                    <a name="//apple_ref/swift/Method/register(firstName:lastName:emailAddress:password:completion:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FV7FoodMob14FoodMobService8registerFT9firstNameSS8lastNameSS12emailAddressSS8passwordSS10completionGSqFSbT___T_">register(firstName:lastName:emailAddress:password:completion:)</a>
+                    <a name="/s:vV7FoodMob16RestaurantSearch10categoriesGVs10DictionaryVS_12FoodCategoryOS_10Preference_"></a>
+                    <a name="//apple_ref/swift/Property/categories" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vV7FoodMob16RestaurantSearch10categoriesGVs10DictionaryVS_12FoodCategoryOS_10Preference_">categories</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -157,14 +157,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Categories included/excluded in the search.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">FoodMobService</span><span class="p">:</span> <span class="kt">FoodMobDataSource</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">categories</span> <span class="o">=</span> <span class="p">[</span><span class="kt">FoodCategory</span><span class="p">:</span> <span class="kt">Preference</span><span class="p">]()</span></code></pre>
 
                         </div>
                       </div>
@@ -174,9 +174,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FV7FoodMob14FoodMobService6logoutFTCS_4User10completionGSqFSbT___T_"></a>
-                    <a name="//apple_ref/swift/Method/logout(_:completion:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FV7FoodMob14FoodMobService6logoutFTCS_4User10completionGSqFSbT___T_">logout(_:completion:)</a>
+                    <a name="/s:vV7FoodMob16RestaurantSearch10priceRangeOS_10PriceRange"></a>
+                    <a name="//apple_ref/swift/Property/priceRange" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vV7FoodMob16RestaurantSearch10priceRangeOS_10PriceRange">priceRange</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -184,14 +184,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Price range to search for.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">FoodMobService</span><span class="p">:</span> <span class="kt">FoodMobDataSource</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">priceRange</span><span class="p">:</span> <span class="kt">PriceRange</span> <span class="o">=</span> <span class="o">.</span><span class="kt">Any</span></code></pre>
 
                         </div>
                       </div>
@@ -201,9 +201,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FV7FoodMob14FoodMobService23updateCategoriesForUserFCS_4UserT_"></a>
-                    <a name="//apple_ref/swift/Method/updateCategoriesForUser(_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FV7FoodMob14FoodMobService23updateCategoriesForUserFCS_4UserT_">updateCategoriesForUser(_:)</a>
+                    <a name="/s:vV7FoodMob16RestaurantSearch6radiusSd"></a>
+                    <a name="//apple_ref/swift/Property/radius" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vV7FoodMob16RestaurantSearch6radiusSd">radius</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -211,14 +211,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Radius to search near <code><a href="../Structs/RestaurantSearch.html#/s:vV7FoodMob16RestaurantSearch8locationGSqVSC22CLLocationCoordinate2D_">location</a></code>.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">FoodMobService</span><span class="p">:</span> <span class="kt">FoodMobDataSource</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">radius</span><span class="p">:</span> <span class="kt">CLLocationDistance</span> <span class="o">=</span> <span class="mi">10_000</span></code></pre>
 
                         </div>
                       </div>
@@ -228,9 +228,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FV7FoodMob14FoodMobService22fetchCategoriesForUserFTCS_4User10completionGSqFSbT___T_"></a>
-                    <a name="//apple_ref/swift/Method/fetchCategoriesForUser(_:completion:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FV7FoodMob14FoodMobService22fetchCategoriesForUserFTCS_4User10completionGSqFSbT___T_">fetchCategoriesForUser(_:completion:)</a>
+                    <a name="/s:vV7FoodMob16RestaurantSearch8locationGSqVSC22CLLocationCoordinate2D_"></a>
+                    <a name="//apple_ref/swift/Property/location" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vV7FoodMob16RestaurantSearch8locationGSqVSC22CLLocationCoordinate2D_">location</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -238,14 +238,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Location to search around.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">FoodMobService</span><span class="p">:</span> <span class="kt">FoodMobDataSource</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">location</span><span class="p">:</span> <span class="kt">CLLocationCoordinate2D</span><span class="p">?</span> <span class="o">=</span> <span class="kt">Session</span><span class="o">.</span><span class="n">sharedSession</span><span class="o">.</span><span class="n">locationManager</span><span class="o">.</span><span class="n">location</span><span class="p">?</span><span class="o">.</span><span class="n">coordinate</span></code></pre>
 
                         </div>
                       </div>
@@ -255,9 +255,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FV7FoodMob14FoodMobService25fetchRestaurantsForSearchFTVS_16RestaurantSearch8withUserCS_4User10completionGSqFGSaVS_10Restaurant_T___T_"></a>
-                    <a name="//apple_ref/swift/Method/fetchRestaurantsForSearch(_:withUser:completion:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FV7FoodMob14FoodMobService25fetchRestaurantsForSearchFTVS_16RestaurantSearch8withUserCS_4User10completionGSqFGSaVS_10Restaurant_T___T_">fetchRestaurantsForSearch(_:withUser:completion:)</a>
+                    <a name="/s:vV7FoodMob16RestaurantSearch14nearbyLocationGSqVSC22CLLocationCoordinate2D_"></a>
+                    <a name="//apple_ref/swift/Property/nearbyLocation" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vV7FoodMob16RestaurantSearch14nearbyLocationGSqVSC22CLLocationCoordinate2D_">nearbyLocation</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -272,7 +272,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">FoodMobService</span><span class="p">:</span> <span class="kt">FoodMobDataSource</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">RestaurantSearch</span></code></pre>
 
                         </div>
                       </div>
@@ -282,9 +282,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FV7FoodMob14FoodMobService19fetchFriendsListingFT7forUserCS_4User10completionGSqFGSaS1__T___T_"></a>
-                    <a name="//apple_ref/swift/Method/fetchFriendsListing(forUser:completion:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FV7FoodMob14FoodMobService19fetchFriendsListingFT7forUserCS_4User10completionGSqFGSaS1__T___T_">fetchFriendsListing(forUser:completion:)</a>
+                    <a name="/s:vV7FoodMob16RestaurantSearch14locationStringGSqSS_"></a>
+                    <a name="//apple_ref/swift/Property/locationString" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vV7FoodMob16RestaurantSearch14locationStringGSqSS_">locationString</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -292,14 +292,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Location to search around.  When set, the coordinate is ignored.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">FoodMobService</span><span class="p">:</span> <span class="kt">FoodMobDataSource</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">locationString</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span></code></pre>
 
                         </div>
                       </div>
@@ -309,9 +309,63 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FV7FoodMob14FoodMobService18addFriendWithEmailFTSS7forUserCS_4User10completionGSqFTSbSS_T___T_"></a>
-                    <a name="//apple_ref/swift/Method/addFriendWithEmail(_:forUser:completion:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FV7FoodMob14FoodMobService18addFriendWithEmailFTSS7forUserCS_4User10completionGSqFTSbSS_T___T_">addFriendWithEmail(_:forUser:completion:)</a>
+                    <a name="/s:vV7FoodMob16RestaurantSearch5starsSi"></a>
+                    <a name="//apple_ref/swift/Property/stars" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vV7FoodMob16RestaurantSearch5starsSi">stars</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Number of stars to include</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">stars</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vV7FoodMob16RestaurantSearch14jsonDictionaryGVs10DictionarySSPs9AnyObject__"></a>
+                    <a name="//apple_ref/swift/Property/jsonDictionary" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vV7FoodMob16RestaurantSearch14jsonDictionaryGVs10DictionarySSPs9AnyObject__">jsonDictionary</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>JSON serialization for use with Alamofire.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">jsonDictionary</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">:</span> <span class="kt">AnyObject</span><span class="p">]</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FV7FoodMob16RestaurantSearchcFT_S0_"></a>
+                    <a name="//apple_ref/swift/Method/init()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FV7FoodMob16RestaurantSearchcFT_S0_">init()</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -326,7 +380,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">FoodMobService</span><span class="p">:</span> <span class="kt">FoodMobDataSource</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">RestaurantSearch</span></code></pre>
 
                         </div>
                       </div>

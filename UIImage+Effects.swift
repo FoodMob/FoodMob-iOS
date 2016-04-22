@@ -91,18 +91,41 @@ import UIKit
 import Accelerate
 
 public extension UIImage {
+
+    /**
+     Apply a light-colored blur to the image
+
+     - returns: Light color blurred image
+     */
     public func applyLightEffect() -> UIImage? {
         return applyBlurWithRadius(30, tintColor: UIColor(white: 1.0, alpha: 0.3), saturationDeltaFactor: 1.8)
     }
-    
+
+    /**
+     Apply a really light-colored blur to the image
+
+     - returns: Extra light color blurred image
+     */
     public func applyExtraLightEffect() -> UIImage? {
         return applyBlurWithRadius(20, tintColor: UIColor(white: 0.97, alpha: 0.82), saturationDeltaFactor: 1.8)
     }
-    
+
+    /**
+     Apply a dark-colored blur to the image
+
+     - returns: Dark color blurred image
+     */
     public func applyDarkEffect() -> UIImage? {
         return applyBlurWithRadius(20, tintColor: UIColor(white: 0.11, alpha: 0.73), saturationDeltaFactor: 1.8)
     }
-    
+
+    /**
+     Tints the image with a color
+
+     - parameter tintColor: UIColor to tint with
+
+     - returns: a tinted image
+     */
     public func applyTintEffectWithColor(tintColor: UIColor) -> UIImage? {
         let effectColorAlpha: CGFloat = 0.6
         var effectColor = tintColor
@@ -126,7 +149,17 @@ public extension UIImage {
         
         return applyBlurWithRadius(10, tintColor: effectColor, saturationDeltaFactor: -1.0, maskImage: nil)
     }
-    
+
+    /**
+     Apply a blur to the image
+
+     - parameter blurRadius:            Radius for gaussian blur
+     - parameter tintColor:             Color to tint with
+     - parameter saturationDeltaFactor: Saturation delta factor
+     - parameter maskImage:             Image to mask with
+
+     - returns: A gaussian-blurred image with given parameters
+     */
     public func applyBlurWithRadius(blurRadius: CGFloat, tintColor: UIColor?, saturationDeltaFactor: CGFloat, maskImage: UIImage? = nil) -> UIImage? {
         // Check pre-conditions.
         if (size.width < 1 || size.height < 1) {

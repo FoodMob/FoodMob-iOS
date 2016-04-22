@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>FoodMobService Struct Reference</title>
+    <title>UIImage Extension Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset='utf-8'>
@@ -10,8 +10,8 @@
     
   </head>
   <body>
-    <a name="//apple_ref/swift/Struct/FoodMobService" class="dashAnchor"></a>
-    <a title="FoodMobService Struct Reference"></a>
+    <a name="//apple_ref/swift/Extension/UIImage" class="dashAnchor"></a>
+    <a title="UIImage Extension Reference"></a>
     <header>
       <div class="content-wrapper">
         <p><a href="../index.html"> Docs</a> (77% documented)</p>
@@ -21,7 +21,7 @@
       <p id="breadcrumbs">
         <a href="../index.html"> Reference</a>
         <img id="carat" src="../img/carat.png" />
-        FoodMobService Struct Reference
+        UIImage Extension Reference
       </p>
     </div>
     <div class="content-wrapper">
@@ -104,15 +104,14 @@
       <article class="main-content">
         <section>
           <section class="section">
-            <h1>FoodMobService</h1>
+            <h1>UIImage</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">FoodMobService</span><span class="p">:</span> <span class="kt">FoodMobDataSource</span></code></pre>
+                  <pre class="highlight"><code><span class="kd">class</span> <span class="kt">UIImage</span> <span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">NSSecureCoding</span></code></pre>
 
                 </div>
               </div>
-            <p>The actual FoodMob service data source.   Requires network access in order to function properly.</p>
-
+            
           </section>
           <section class="section task-group-section">
             <div class="task-group">
@@ -120,9 +119,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FV7FoodMob14FoodMobService5loginFTSS8passwordSS10completionGSqFGSqCS_4User_T___T_"></a>
-                    <a name="//apple_ref/swift/Method/login(_:password:completion:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FV7FoodMob14FoodMobService5loginFTSS8passwordSS10completionGSqFGSqCS_4User_T___T_">login(_:password:completion:)</a>
+                    <a name="/s:FE7FoodMobCSo7UIImage16applyLightEffectFT_GSqS0__"></a>
+                    <a name="//apple_ref/swift/Method/applyLightEffect()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FE7FoodMobCSo7UIImage16applyLightEffectFT_GSqS0__">applyLightEffect()</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -130,16 +129,21 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Apply a light-colored blur to the image</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">FoodMobService</span><span class="p">:</span> <span class="kt">FoodMobDataSource</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">applyLightEffect</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">UIImage</span><span class="p">?</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>Light color blurred image</p>
+
                       </div>
                     </section>
                   </div>
@@ -147,9 +151,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FV7FoodMob14FoodMobService8registerFT9firstNameSS8lastNameSS12emailAddressSS8passwordSS10completionGSqFSbT___T_"></a>
-                    <a name="//apple_ref/swift/Method/register(firstName:lastName:emailAddress:password:completion:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FV7FoodMob14FoodMobService8registerFT9firstNameSS8lastNameSS12emailAddressSS8passwordSS10completionGSqFSbT___T_">register(firstName:lastName:emailAddress:password:completion:)</a>
+                    <a name="/s:FE7FoodMobCSo7UIImage21applyExtraLightEffectFT_GSqS0__"></a>
+                    <a name="//apple_ref/swift/Method/applyExtraLightEffect()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FE7FoodMobCSo7UIImage21applyExtraLightEffectFT_GSqS0__">applyExtraLightEffect()</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -157,16 +161,21 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Apply a really light-colored blur to the image</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">FoodMobService</span><span class="p">:</span> <span class="kt">FoodMobDataSource</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">applyExtraLightEffect</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">UIImage</span><span class="p">?</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>Extra light color blurred image</p>
+
                       </div>
                     </section>
                   </div>
@@ -174,9 +183,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FV7FoodMob14FoodMobService6logoutFTCS_4User10completionGSqFSbT___T_"></a>
-                    <a name="//apple_ref/swift/Method/logout(_:completion:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FV7FoodMob14FoodMobService6logoutFTCS_4User10completionGSqFSbT___T_">logout(_:completion:)</a>
+                    <a name="/s:FE7FoodMobCSo7UIImage15applyDarkEffectFT_GSqS0__"></a>
+                    <a name="//apple_ref/swift/Method/applyDarkEffect()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FE7FoodMobCSo7UIImage15applyDarkEffectFT_GSqS0__">applyDarkEffect()</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -184,16 +193,21 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Apply a dark-colored blur to the image</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">FoodMobService</span><span class="p">:</span> <span class="kt">FoodMobDataSource</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">applyDarkEffect</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">UIImage</span><span class="p">?</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>Dark color blurred image</p>
+
                       </div>
                     </section>
                   </div>
@@ -201,9 +215,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FV7FoodMob14FoodMobService23updateCategoriesForUserFCS_4UserT_"></a>
-                    <a name="//apple_ref/swift/Method/updateCategoriesForUser(_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FV7FoodMob14FoodMobService23updateCategoriesForUserFCS_4UserT_">updateCategoriesForUser(_:)</a>
+                    <a name="/s:FE7FoodMobCSo7UIImage24applyTintEffectWithColorFCSo7UIColorGSqS0__"></a>
+                    <a name="//apple_ref/swift/Method/applyTintEffectWithColor(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FE7FoodMobCSo7UIImage24applyTintEffectWithColorFCSo7UIColorGSqS0__">applyTintEffectWithColor(_:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -211,16 +225,41 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Tints the image with a color</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">FoodMobService</span><span class="p">:</span> <span class="kt">FoodMobDataSource</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">applyTintEffectWithColor</span><span class="p">(</span><span class="nv">tintColor</span><span class="p">:</span> <span class="kt">UIColor</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">UIImage</span><span class="p">?</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>tintColor</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>UIColor to tint with</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>a tinted image</p>
+
                       </div>
                     </section>
                   </div>
@@ -228,9 +267,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FV7FoodMob14FoodMobService22fetchCategoriesForUserFTCS_4User10completionGSqFSbT___T_"></a>
-                    <a name="//apple_ref/swift/Method/fetchCategoriesForUser(_:completion:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FV7FoodMob14FoodMobService22fetchCategoriesForUserFTCS_4User10completionGSqFSbT___T_">fetchCategoriesForUser(_:completion:)</a>
+                    <a name="/s:FE7FoodMobCSo7UIImage19applyBlurWithRadiusFTV12CoreGraphics7CGFloat9tintColorGSqCSo7UIColor_21saturationDeltaFactorS2_9maskImageGSqS0___GSqS0__"></a>
+                    <a name="//apple_ref/swift/Method/applyBlurWithRadius(_:tintColor:saturationDeltaFactor:maskImage:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FE7FoodMobCSo7UIImage19applyBlurWithRadiusFTV12CoreGraphics7CGFloat9tintColorGSqCSo7UIColor_21saturationDeltaFactorS2_9maskImageGSqS0___GSqS0__">applyBlurWithRadius(_:tintColor:saturationDeltaFactor:maskImage:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -238,97 +277,80 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Apply a blur to the image</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">FoodMobService</span><span class="p">:</span> <span class="kt">FoodMobDataSource</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">applyBlurWithRadius</span><span class="p">(</span><span class="nv">blurRadius</span><span class="p">:</span> <span class="kt">CGFloat</span><span class="p">,</span> <span class="nv">tintColor</span><span class="p">:</span> <span class="kt">UIColor</span><span class="p">?,</span> <span class="nv">saturationDeltaFactor</span><span class="p">:</span> <span class="kt">CGFloat</span><span class="p">,</span> <span class="nv">maskImage</span><span class="p">:</span> <span class="kt">UIImage</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">UIImage</span><span class="p">?</span></code></pre>
 
                         </div>
                       </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:FV7FoodMob14FoodMobService25fetchRestaurantsForSearchFTVS_16RestaurantSearch8withUserCS_4User10completionGSqFGSaVS_10Restaurant_T___T_"></a>
-                    <a name="//apple_ref/swift/Method/fetchRestaurantsForSearch(_:withUser:completion:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FV7FoodMob14FoodMobService25fetchRestaurantsForSearchFTVS_16RestaurantSearch8withUserCS_4User10completionGSqFGSaVS_10Restaurant_T___T_">fetchRestaurantsForSearch(_:withUser:completion:)</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Undocumented</p>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>blurRadius</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Radius for gaussian blur</p>
 
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>tintColor</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Color to tint with</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>saturationDeltaFactor</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Saturation delta factor</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>maskImage</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Image to mask with</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">FoodMobService</span><span class="p">:</span> <span class="kt">FoodMobDataSource</span></code></pre>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A gaussian-blurred image with given parameters</p>
 
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:FV7FoodMob14FoodMobService19fetchFriendsListingFT7forUserCS_4User10completionGSqFGSaS1__T___T_"></a>
-                    <a name="//apple_ref/swift/Method/fetchFriendsListing(forUser:completion:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FV7FoodMob14FoodMobService19fetchFriendsListingFT7forUserCS_4User10completionGSqFGSaS1__T___T_">fetchFriendsListing(forUser:completion:)</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Undocumented</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">FoodMobService</span><span class="p">:</span> <span class="kt">FoodMobDataSource</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:FV7FoodMob14FoodMobService18addFriendWithEmailFTSS7forUserCS_4User10completionGSqFTSbSS_T___T_"></a>
-                    <a name="//apple_ref/swift/Method/addFriendWithEmail(_:forUser:completion:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FV7FoodMob14FoodMobService18addFriendWithEmailFTSS7forUserCS_4User10completionGSqFTSbSS_T___T_">addFriendWithEmail(_:forUser:completion:)</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Undocumented</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">FoodMobService</span><span class="p">:</span> <span class="kt">FoodMobDataSource</span></code></pre>
-
-                        </div>
                       </div>
                     </section>
                   </div>

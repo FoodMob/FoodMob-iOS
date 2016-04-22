@@ -82,11 +82,29 @@ public protocol FoodMobDataSource {
      - Parameter completion: The completion handler for when the server responds
      */
     func fetchRestaurantsForSearch(search: RestaurantSearch, withUser user: User, completion: (([Restaurant]) -> ())?)
-    
+
+    /**
+     Fetch the category listing from the server
+
+     - parameter completion: A map of yelp identifiers to food categories
+     */
     func fetchCategoryListing(completion: (([String: FoodCategory]) -> ())?)
 
+    /**
+     Fetch the user's friends
+
+     - parameter user:       Current user
+     - parameter completion: A list of users, representing the current user's friends
+     */
     func fetchFriendsListing(forUser user: User, completion: (([User])->())?)
 
+    /**
+     Add a friend by email address for the current user
+
+     - parameter emailAddress: Friend's email address
+     - parameter user:         Current user
+     - parameter completion:   A success boolean and a string indicating the error if the boolean is false.
+     */
     func addFriendWithEmail(emailAddress: String, forUser user: User, completion: ((Bool, String)->())?)
 }
 
@@ -143,7 +161,12 @@ public extension FoodMobDataSource {
     public func validateEmailAddress(emailAddress: String) -> Bool {
         return emailAddress.isEmail
     }
-    
+
+    /**
+     Category listing, hardcoded in the application
+
+     - parameter completion: Returns the list of categories as a map of yelp identifier to food category objects
+     */
     public func fetchCategoryListing(completion: (([String: FoodCategory]) -> ())?) {
         var categories = [FoodCategory]()
         categories.append(FoodCategory(displayName: "Pizza", yelpIdentifier: "pizza"))

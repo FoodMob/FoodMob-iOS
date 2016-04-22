@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Preference Enum Reference</title>
+    <title>PriceRange Enum Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset='utf-8'>
@@ -10,8 +10,8 @@
     
   </head>
   <body>
-    <a name="//apple_ref/swift/Enum/Preference" class="dashAnchor"></a>
-    <a title="Preference Enum Reference"></a>
+    <a name="//apple_ref/swift/Enum/PriceRange" class="dashAnchor"></a>
+    <a title="PriceRange Enum Reference"></a>
     <header>
       <div class="content-wrapper">
         <p><a href="../index.html"> Docs</a> (77% documented)</p>
@@ -21,7 +21,7 @@
       <p id="breadcrumbs">
         <a href="../index.html"> Reference</a>
         <img id="carat" src="../img/carat.png" />
-        Preference Enum Reference
+        PriceRange Enum Reference
       </p>
     </div>
     <div class="content-wrapper">
@@ -104,14 +104,22 @@
       <article class="main-content">
         <section>
           <section class="section">
-            <h1>Preference</h1>
+            <h1>PriceRange</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">Preference</span><span class="p">:</span> <span class="kt">Int</span></code></pre>
+                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">PriceRange</span><span class="p">:</span> <span class="kt">Int</span></code></pre>
 
                 </div>
               </div>
-            <p>Preference indicates whether a user likes, dislikes, or cannot have a certain food category.</p>
+            <p>A price range to search for</p>
+
+<ul>
+<li>Any:                       For when you just don&rsquo;t care. 💸🤑</li>
+<li>One:                       One dollar sign 💰</li>
+<li>Two:                       Two dollar signs 💰💰</li>
+<li>Three:                     Three dollar signs 💰💰💰</li>
+<li>ImSoLoadedItsNotEvenFunny: Four dollar signs 💰💰💰💰</li>
+</ul>
 
           </section>
           <section class="section task-group-section">
@@ -120,9 +128,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FO7FoodMob10Preference4NoneFMS0_S0_"></a>
-                    <a name="//apple_ref/swift/Element/None" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FO7FoodMob10Preference4NoneFMS0_S0_">None</a>
+                    <a name="/s:FO7FoodMob10PriceRange3AnyFMS0_S0_"></a>
+                    <a name="//apple_ref/swift/Element/Any" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FO7FoodMob10PriceRange3AnyFMS0_S0_">Any</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -130,14 +138,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>No preference.  Usuaslly a sign of an error.</p>
+                        <p>For when you just don&rsquo;t care. 💸🤑</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">case</span> <span class="kt">None</span> <span class="o">=</span> <span class="mi">0</span></code></pre>
+                          <pre class="highlight"><code><span class="k">case</span> <span class="kt">Any</span> <span class="o">=</span> <span class="mi">0</span></code></pre>
 
                         </div>
                       </div>
@@ -151,9 +159,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FO7FoodMob10Preference4LikeFMS0_S0_"></a>
-                    <a name="//apple_ref/swift/Element/Like" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FO7FoodMob10Preference4LikeFMS0_S0_">Like</a>
+                    <a name="/s:FO7FoodMob10PriceRange3OneFMS0_S0_"></a>
+                    <a name="//apple_ref/swift/Element/One" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FO7FoodMob10PriceRange3OneFMS0_S0_">One</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -161,14 +169,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Indicates that a user likes this category.</p>
+                        <p>One dollar sign 💰</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">case</span> <span class="kt">Like</span> <span class="o">=</span> <span class="mi">1</span></code></pre>
+                          <pre class="highlight"><code><span class="k">case</span> <span class="kt">One</span> <span class="o">=</span> <span class="mi">1</span></code></pre>
 
                         </div>
                       </div>
@@ -182,9 +190,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FO7FoodMob10Preference7DislikeFMS0_S0_"></a>
-                    <a name="//apple_ref/swift/Element/Dislike" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FO7FoodMob10Preference7DislikeFMS0_S0_">Dislike</a>
+                    <a name="/s:FO7FoodMob10PriceRange3TwoFMS0_S0_"></a>
+                    <a name="//apple_ref/swift/Element/Two" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FO7FoodMob10PriceRange3TwoFMS0_S0_">Two</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -192,14 +200,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Indicates that a user dislikes this category.</p>
+                        <p>Two dollar signs 💰💰</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">case</span> <span class="kt">Dislike</span> <span class="o">=</span> <span class="mi">2</span></code></pre>
+                          <pre class="highlight"><code><span class="k">case</span> <span class="kt">Two</span> <span class="o">=</span> <span class="mi">2</span></code></pre>
 
                         </div>
                       </div>
@@ -213,9 +221,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FO7FoodMob10Preference11RestrictionFMS0_S0_"></a>
-                    <a name="//apple_ref/swift/Element/Restriction" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FO7FoodMob10Preference11RestrictionFMS0_S0_">Restriction</a>
+                    <a name="/s:FO7FoodMob10PriceRange5ThreeFMS0_S0_"></a>
+                    <a name="//apple_ref/swift/Element/Three" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FO7FoodMob10PriceRange5ThreeFMS0_S0_">Three</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -223,14 +231,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Indicates that a user cannot have this category.</p>
+                        <p>Three dollar signs 💰💰💰</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">case</span> <span class="kt">Restriction</span> <span class="o">=</span> <span class="mi">3</span></code></pre>
+                          <pre class="highlight"><code><span class="k">case</span> <span class="kt">Three</span> <span class="o">=</span> <span class="mi">3</span></code></pre>
 
                         </div>
                       </div>
@@ -244,9 +252,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:vO7FoodMob10Preference17showingTypeStringSS"></a>
-                    <a name="//apple_ref/swift/Property/showingTypeString" class="dashAnchor"></a>
-                    <a class="token" href="#/s:vO7FoodMob10Preference17showingTypeStringSS">showingTypeString</a>
+                    <a name="/s:FO7FoodMob10PriceRange25ImSoLoadedItsNotEvenFunnyFMS0_S0_"></a>
+                    <a name="//apple_ref/swift/Element/ImSoLoadedItsNotEvenFunny" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FO7FoodMob10PriceRange25ImSoLoadedItsNotEvenFunnyFMS0_S0_">ImSoLoadedItsNotEvenFunny</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -254,14 +262,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>A string representation of this enum.</p>
+                        <p>Four dollar signs 💰💰💰💰</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">showingTypeString</span><span class="p">:</span> <span class="kt">String</span></code></pre>
+                          <pre class="highlight"><code><span class="k">case</span> <span class="kt">ImSoLoadedItsNotEvenFunny</span> <span class="o">=</span> <span class="mi">4</span></code></pre>
 
                         </div>
                       </div>
