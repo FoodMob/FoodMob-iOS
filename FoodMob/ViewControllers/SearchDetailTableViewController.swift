@@ -22,12 +22,12 @@ class SearchDetailTableViewController: UITableViewController {
     
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var categoriesLabel: UILabel!
-    @IBOutlet weak var phoneLabel: UILabel!
-    @IBOutlet weak var addressLabel: UILabel!
     @IBOutlet weak var map: MKMapView!
     @IBOutlet weak var heroImageView: UIImageView!
     @IBOutlet weak var openLabel: UILabel!
     @IBOutlet weak var ratingView: CosmosView!
+    @IBOutlet weak var addressLabel: UILabel!
+    @IBOutlet weak var phoneLabel: UILabel!
     
     var restaurant: Restaurant! {
         didSet {
@@ -37,7 +37,7 @@ class SearchDetailTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
