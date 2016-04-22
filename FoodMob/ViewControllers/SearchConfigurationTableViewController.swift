@@ -24,6 +24,19 @@ class SearchConfigurationTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         self.tableView.contentInset.top = -20
+        let notificationCenter = NSNotificationCenter.defaultCenter()
+        notificationCenter.addObserver(self, selector: #selector(SearchConfigurationTableViewController.keyboardDidShow(_:)), name: UIKeyboardDidShowNotification, object: nil)
+        notificationCenter.addObserver(self, selector: #selector(SearchConfigurationTableViewController.keyboardWillHide(_:)), name: UIKeyboardWillHideNotification, object: nil)
+    }
+
+    func keyboardDidShow(notification: NSNotification) {
+        if let userInfo = notification.userInfo, keyboardSize = (userInfo[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue() {
+            self.tableView.contentInset.bottom = keyboardSize.height + 5
+        }
+    }
+
+    func keyboardWillHide(notification: NSNotification) {
+        self.tableView.contentInset.bottom = 0
     }
 
     override func didReceiveMemoryWarning() {
