@@ -128,8 +128,8 @@
                             </constraints>
                             <variation key="default">
                                 <mask key="constraints">
-                                    <exclude reference="J0z-qs-bfV"/>
                                     <exclude reference="6LP-AT-hb6"/>
+                                    <exclude reference="J0z-qs-bfV"/>
                                     <exclude reference="S65-xG-bJG"/>
                                 </mask>
                             </variation>
@@ -138,7 +138,7 @@
                             <rect key="frame" x="0.0" y="633" width="600" height="50"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shade_global_orange" translatesAutoresizingMaskIntoConstraints="NO" id="YMo-FX-i47">
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="main-tint" translatesAutoresizingMaskIntoConstraints="NO" id="YMo-FX-i47">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="50"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="50" id="oG6-ch-Hpg"/>
@@ -1357,8 +1357,8 @@
         <image name="icon-Cell Phone" width="50" height="50"/>
         <image name="icon-Map" width="50" height="50"/>
         <image name="icon-Yelp" width="50" height="50"/>
+        <image name="main-tint" width="10" height="10"/>
         <image name="shade_30pct" width="10" height="10"/>
-        <image name="shade_global_orange" width="10" height="10"/>
         <image name="shade_white" width="10" height="10"/>
     </resources>
     <color key="tintColor" red="0.96470588235294119" green="0.44705882352941179" blue="0.17647058823529413" alpha="1" colorSpace="calibratedRGB"/>

@@ -112,6 +112,14 @@ class SearchConfigurationTableViewController: UITableViewController {
         }
     }
     
+    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        // Custom Navigation Bar
+        let bar:UINavigationBar! = self.navigationController?.navigationBar
+        bar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
+        bar.shadowImage = UIImage()
+        bar.backgroundColor = UIColor(hue: 0.5, saturation: 0.851, brightness: 0.959, alpha: 0.0)
+        return true
+    }
     /**
      Called when the user scrolled the tableView. Updates the headerView and checks to change the navigation bar's backgroundColor to solid or not.
      
