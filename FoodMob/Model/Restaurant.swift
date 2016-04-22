@@ -26,6 +26,8 @@ public struct Restaurant {
     private(set) public var phoneNumber: String
     /// Restaurant address
     private(set) public var address: String
+    /// Yelp URL to open in Yelp application.
+    public var yelpURL: NSURL? = nil
     /// Restaurant location, coordinate
     private(set) public var location: CLLocationCoordinate2D?
     /// Image URL for the restaurant's cover photo
@@ -48,6 +50,7 @@ public struct Restaurant {
         hours = json[RestaurantField.hoursOpen].stringValue
         phoneNumber = json[RestaurantField.phoneNumber].stringValue
         address = json[RestaurantField.address].stringValue
+        yelpURL = json[RestaurantField.yelpURL].URL
     }
 
     /**
@@ -61,8 +64,8 @@ public struct Restaurant {
      - parameter phoneNumber: The phone number of the restaurant
      - parameter address:     Restaurant address
      */
-    public init(name: String, categories: [FoodCategory], stars: Double, numReviews: Int, hours: String, phoneNumber: String, address: String) {
-        self.init(name: name, categories: categories.reduce("", combine: { (str, cat) -> String in return "\(str), \(cat.displayName)" }), stars: stars, numReviews: numReviews, hours: hours, phoneNumber: phoneNumber, address: address)
+    public init(name: String, categories: [FoodCategory], stars: Double, numReviews: Int, hours: String, phoneNumber: String, address: String, yelpURL: NSURL? = nil) {
+        self.init(name: name, categories: categories.reduce("", combine: { (str, cat) -> String in return "\(str), \(cat.displayName)" }), stars: stars, numReviews: numReviews, hours: hours, phoneNumber: phoneNumber, address: address, yelpURL: yelpURL)
     }
     /**
      Designated initializer for a restaurant.
@@ -74,8 +77,9 @@ public struct Restaurant {
      - parameter hours:       Hours the restaurant is opened
      - parameter phoneNumber: The phone number of the restaurant
      - parameter address:     Restaurant address
+     - parameter yelpURL:     URL to Yelp page for restaurant.
      */
-    public init(name: String, categories: String, stars: Double, numReviews: Int, hours: String, phoneNumber: String, address: String) {
+    public init(name: String, categories: String, stars: Double, numReviews: Int, hours: String, phoneNumber: String, address: String, yelpURL: NSURL? = nil) {
         self.name = name
         self.categories = categories
         self.stars = stars
@@ -83,6 +87,7 @@ public struct Restaurant {
         self.hours = hours
         self.phoneNumber = phoneNumber
         self.address = address
+        self.yelpURL = yelpURL
     }
 }
 
@@ -98,4 +103,5 @@ internal struct RestaurantField {
     static let hoursOpen = "hoursOpen"
     static let phoneNumber = "phone"
     static let address = "address"
+    static let yelpURL = "mobile_url"
 }

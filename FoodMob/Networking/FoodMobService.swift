@@ -204,6 +204,7 @@ public struct FoodMobService: FoodMobDataSource {
                             return "\(s)\(json.stringValue)\n"
                         }).stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
                         var rst = Restaurant(name: restaurant["name"].stringValue, categories: cats, stars: restaurant["rating"].doubleValue, numReviews: restaurant["review_count"].intValue, hours: "", phoneNumber: restaurant["display_phone"].stringValue, address: address ?? "")
+                        rst.yelpURL = restaurant["mobile_url"].URL
                         rst.imageURL = restaurant["image_url"].URL
                         restaurants.append(rst)
                     }
