@@ -12,7 +12,7 @@ import Locksmith
 /**
  Represents a FoodMob user.
  */
-public class User: CreateableSecureStorable, ReadableSecureStorable, DeleteableSecureStorable, GenericPasswordSecureStorable {
+public class User: CreateableSecureStorable, ReadableSecureStorable, DeleteableSecureStorable, GenericPasswordSecureStorable, Hashable {
     
     // MARK: - Properties
     /**
@@ -49,6 +49,11 @@ public class User: CreateableSecureStorable, ReadableSecureStorable, DeleteableS
         nameComponents.givenName = firstName
         nameComponents.familyName = lastName
         return nameFormatter.stringFromPersonNameComponents(nameComponents)
+    }
+
+    /// Conformance to Hashable protocol
+    public var hashValue: Int {
+        return emailAddress.hashValue
     }
     
     
@@ -204,6 +209,18 @@ public class User: CreateableSecureStorable, ReadableSecureStorable, DeleteableS
             UserField.authToken: self.authToken
         ]
     }
+}
+
+/**
+ Conformance to Equatable for user
+
+ - parameter user1: User on LHS of expression
+ - parameter user2: User on RHS of expression
+
+ - returns: User's friends
+ */
+public func ==(user1: User, user2: User) -> Bool {
+    return user1.emailAddress == user2.emailAddress
 }
 
 // MARK: - JSON Serialization

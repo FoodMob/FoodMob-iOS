@@ -17,7 +17,7 @@ public struct RestaurantSearch {
     static let METERS_PER_MILE = 1_609.344
 
     /// Users included in the search.
-    public var users: [User] = []
+    public var users = Set<User>()
     /// Categories included/excluded in the search.
     public var categories = [FoodCategory: Preference]()
     /// Price range to search for.
@@ -66,7 +66,8 @@ public struct RestaurantSearch {
         var parameters: [String: AnyObject] = [
             RestaurantSearchField.nearby: [self.nearbyLocation?.latitude ?? 0, self.nearbyLocation?.longitude ?? 0],
             RestaurantSearchField.rating: Double(stars),
-            RestaurantSearchField.options: Dictionary<String, AnyObject>(dictionaryLiteral: (RestaurantSearchField.radius, radius))
+            RestaurantSearchField.options: Dictionary<String, AnyObject>(dictionaryLiteral: (RestaurantSearchField.radius, radius)),
+            RestaurantSearchField.friends: users.map { $0.emailAddress }
         ]
         if let location = self.locationString where location != "" {
             parameters[RestaurantSearchField.locationField] = location
@@ -89,6 +90,7 @@ struct RestaurantSearchField {
     static let options = "options"
     static let radius = "radius_filter"
     static let rating = "min_rating"
+    static let friends = "friends"
 }
 
 /**
