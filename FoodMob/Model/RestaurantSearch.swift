@@ -13,6 +13,9 @@ import CoreLocation
  Encapuslates the search for a restaurant.
  */
 public struct RestaurantSearch {
+
+    static let METERS_PER_MILE = 1_609.344
+
     /// Users included in the search.
     public var users: [User] = []
     /// Categories included/excluded in the search.
@@ -21,7 +24,13 @@ public struct RestaurantSearch {
     @available(*, deprecated, message="Yelp API doesn't work with dollar signs")
     public var priceRange: PriceRange = .Any
     /// Radius to search near `location`.
-    public var radius: CLLocationDistance = 10_000
+    public var radius: CLLocationDistance = 40_000 {
+        willSet {
+            if newValue > 40_000 {
+                return
+            }
+        }
+    }
     /// Location to search around.
     public var location: CLLocationCoordinate2D? = Session.sharedSession.locationManager.location?.coordinate {
         willSet {
@@ -55,7 +64,9 @@ public struct RestaurantSearch {
     /// JSON serialization for use with Alamofire.
     public var jsonDictionary: [String: AnyObject] {
         var parameters: [String: AnyObject] = [
-            RestaurantSearchField.nearby: [self.nearbyLocation?.latitude ?? 0, self.nearbyLocation?.longitude ?? 0]
+            RestaurantSearchField.nearby: [self.nearbyLocation?.latitude ?? 0, self.nearbyLocation?.longitude ?? 0],
+            RestaurantSearchField.rating: Double(stars),
+            RestaurantSearchField.options: Dictionary<String, AnyObject>(dictionaryLiteral: (RestaurantSearchField.radius, radius))
         ]
         if let location = self.locationString where location != "" {
             parameters[RestaurantSearchField.locationField] = location
@@ -71,10 +82,13 @@ public struct RestaurantSearch {
 /**
  Struct that holds restaurant search JSON field names
  */
-public struct RestaurantSearchField {
+struct RestaurantSearchField {
     static let locationField = "location"
     static let latLong = "ll"
     static let nearby = "cll"
+    static let options = "options"
+    static let radius = "radius_filter"
+    static let rating = "min_rating"
 }
 
 /**

@@ -140,7 +140,7 @@
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BeW-iu-fjn">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="50"/>
-                                    <color key="backgroundColor" red="0.94117647059999998" green="0.40000000000000002" blue="0.1843137255" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="backgroundColor" red="0.95294117647058818" green="0.54117647058823526" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                     <state key="normal" title="SEARCH">
                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -236,26 +236,37 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="74.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price Range" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U0j-nI-d1x">
-                                                    <rect key="frame" x="18" y="12" width="91" height="20"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="Radius" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U0j-nI-d1x">
+                                                    <rect key="frame" x="18" y="12" width="52" height="20"/>
                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="MOK-iP-yAc">
+                                                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="25" minValue="1" maxValue="25" translatesAutoresizingMaskIntoConstraints="NO" id="MOK-iP-yAc">
                                                     <rect key="frame" x="16" y="36" width="568" height="31"/>
+                                                    <connections>
+                                                        <action selector="sliderValueUpdated:" destination="gze-Cw-Mei" eventType="valueChanged" id="urX-lX-QpM"/>
+                                                    </connections>
                                                 </slider>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="25 miles" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zeR-G5-Qek">
+                                                    <rect key="frame" x="527" y="12" width="54.5" height="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="U0j-nI-d1x" firstAttribute="centerY" secondItem="kZ3-zb-bCT" secondAttribute="centerY" id="3u8-4O-WQK"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="zeR-G5-Qek" secondAttribute="trailing" constant="10" id="9VS-Hp-dNb"/>
                                                 <constraint firstItem="MOK-iP-yAc" firstAttribute="leading" secondItem="kZ3-zb-bCT" secondAttribute="leadingMargin" constant="10" id="BRd-sy-TVl"/>
                                                 <constraint firstItem="U0j-nI-d1x" firstAttribute="top" secondItem="kZ3-zb-bCT" secondAttribute="topMargin" constant="4" id="G2Y-O5-J9r"/>
-                                                <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="U0j-nI-d1x" secondAttribute="trailing" constant="10" id="HcH-Lb-fE8"/>
                                                 <constraint firstItem="MOK-iP-yAc" firstAttribute="top" secondItem="U0j-nI-d1x" secondAttribute="bottom" constant="4" id="O2V-7N-dGM"/>
                                                 <constraint firstItem="MOK-iP-yAc" firstAttribute="centerX" secondItem="kZ3-zb-bCT" secondAttribute="centerX" id="PlH-gX-Wtz"/>
                                                 <constraint firstItem="U0j-nI-d1x" firstAttribute="leading" secondItem="kZ3-zb-bCT" secondAttribute="leadingMargin" constant="10" id="bus-Na-6CX"/>
                                                 <constraint firstItem="MOK-iP-yAc" firstAttribute="bottom" secondItem="kZ3-zb-bCT" secondAttribute="bottomMargin" id="bwy-e3-cf7"/>
+                                                <constraint firstItem="zeR-G5-Qek" firstAttribute="top" secondItem="U0j-nI-d1x" secondAttribute="top" id="pNl-p8-b9w"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="MOK-iP-yAc" secondAttribute="trailing" constant="10" id="pi3-XB-4OY"/>
                                                 <constraint firstItem="MOK-iP-yAc" firstAttribute="leading" secondItem="U0j-nI-d1x" secondAttribute="leading" id="vSg-9c-FCO"/>
+                                                <constraint firstItem="zeR-G5-Qek" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="U0j-nI-d1x" secondAttribute="trailing" constant="10" id="wp1-8s-gVj"/>
                                             </constraints>
                                             <variation key="default">
                                                 <mask key="constraints">
@@ -391,6 +402,8 @@
                     </navigationItem>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
+                        <outlet property="distanceLabel" destination="zeR-G5-Qek" id="Jxk-Ld-PDH"/>
+                        <outlet property="distanceSlider" destination="MOK-iP-yAc" id="du1-g3-Aup"/>
                         <outlet property="locationField" destination="5c4-cj-R9k" id="t94-GH-ZmH"/>
                         <outlet property="starSearch" destination="B31-3Z-tdp" id="X0a-Xc-kcy"/>
                     </connections>

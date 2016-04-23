@@ -11,8 +11,9 @@ import UIKit
 class SearchConfigurationTableViewController: UITableViewController {
 
     @IBOutlet weak var locationField: UITextField!
-    @IBOutlet weak var priceSelection: UISegmentedControl!
     @IBOutlet weak var starSearch: UISegmentedControl!
+    @IBOutlet weak var distanceLabel: UILabel!
+    @IBOutlet weak var distanceSlider: UISlider!
     var search = RestaurantSearch()
     
     override func viewDidLoad() {
@@ -52,6 +53,11 @@ class SearchConfigurationTableViewController: UITableViewController {
         self.navigationController?.setNavigationBarHidden(false, animated: true)
     }
 
+    @IBAction func sliderValueUpdated(sender: UISlider) {
+        let formattedString = String(format: "%.0f miles", arguments: [distanceSlider.value])
+        distanceLabel.text = formattedString
+        search.radius = Double(distanceSlider.value) * RestaurantSearch.METERS_PER_MILE
+    }
     
     // MARK: - Navigation
 

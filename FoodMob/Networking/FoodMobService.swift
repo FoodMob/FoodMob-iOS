@@ -181,12 +181,9 @@ public struct FoodMobService: FoodMobDataSource {
         var parameters: [String: AnyObject] = [
             UserField.authToken: user.authToken,
             UserField.emailAddress: user.emailAddress,
-            RestaurantSearchField.nearby: [search.nearbyLocation?.latitude ?? 0, search.nearbyLocation?.longitude ?? 0]
         ]
-        if let location = search.locationString where location != "" {
-            parameters[RestaurantSearchField.locationField] = location
-        } else if let location = search.location {
-            parameters[RestaurantSearchField.latLong] = [location.latitude, location.longitude]
+        search.jsonDictionary.forEach { (tuple) in
+            parameters[tuple.0] = tuple.1
         }
         Alamofire.request(ServiceEndpoint.searchMethod, ServiceEndpoint.search, parameters: parameters, encoding: .JSON).validate().responseJSON { response in
             switch response.result {
