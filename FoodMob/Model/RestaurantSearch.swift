@@ -67,7 +67,9 @@ public struct RestaurantSearch {
             RestaurantSearchField.nearby: [self.nearbyLocation?.latitude ?? 0, self.nearbyLocation?.longitude ?? 0],
             RestaurantSearchField.rating: Double(stars),
             RestaurantSearchField.options: Dictionary<String, AnyObject>(dictionaryLiteral: (RestaurantSearchField.radius, radius)),
-            RestaurantSearchField.friends: users.map { $0.emailAddress }
+            RestaurantSearchField.friends: users.map { $0.emailAddress },
+            RestaurantSearchField.goodCats: categories.filter({ $0.1 == .Like }).map { $0.0.yelpIdentifier },
+            RestaurantSearchField.badCats: categories.filter({ $0.1 == .Dislike }).map { $0.0.yelpIdentifier }
         ]
         if let location = self.locationString where location != "" {
             parameters[RestaurantSearchField.locationField] = location
@@ -91,6 +93,8 @@ struct RestaurantSearchField {
     static let radius = "radius_filter"
     static let rating = "min_rating"
     static let friends = "friends"
+    static let goodCats = "good_categories"
+    static let badCats = "bad_categories"
 }
 
 /**

@@ -15,7 +15,7 @@ enum ProfileTableViewControllerSegue: String {
     case ToWebSegue = "profileToWebSegue"
 }
 
-class ProfileTableViewController: UITableViewController {
+class ProfileTableViewController: UITableViewController, CategoryDelegate {
 
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
@@ -41,11 +41,6 @@ class ProfileTableViewController: UITableViewController {
         }
         nameLabel.text = currentUser.fullName
         emailLabel.text = currentUser.emailAddress
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
     }
     
@@ -61,61 +56,6 @@ class ProfileTableViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    // MARK: - Table view data source
-
-//    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-//        return 2
-//    }
-
-//    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        // #warning Incomplete implementation, return the number of rows
-//        return 0
-//    }
-
-    /*
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
-
-        // Configure the cell...
-
-        return cell
-    }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
 
     
     // MARK: - Navigation
@@ -124,6 +64,8 @@ class ProfileTableViewController: UITableViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if let dest = segue.destinationViewController as? FoodCategoriesTableViewController, sender = sender as? Int, pref = Preference(rawValue: sender) {
             dest.showingPreference = pref
+            dest.delegate = self
+            dest.selectedCategories = Set<FoodCategory>(currentUser.categoriesForPreference(pref))
         }
         if let dest = segue.destinationViewController as? FMWebViewController, sender = sender as? NSURL {
             dest.url = sender
@@ -185,6 +127,17 @@ class ProfileTableViewController: UITableViewController {
     
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
         return .LightContent
+    }
+
+    func didFinishSelectingCategories(categories: Set<FoodCategory>, forPreference preference: Preference) {
+        let removedCats = Set<FoodCategory>(currentUser.categoriesForPreference(preference)).subtract(categories)
+        for category in categories {
+            currentUser.setPreference(preference, forCategory: category)
+        }
+        for category in removedCats {
+            currentUser.setPreference(.None, forCategory: category)
+        }
+        currentDataProvider.updateCategoriesForUser(currentUser)
     }
 }
 

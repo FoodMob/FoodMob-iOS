@@ -105,8 +105,6 @@ public class User: CreateableSecureStorable, ReadableSecureStorable, DeleteableS
      - parameter firstName:    User's given name/first name.
      - parameter lastName:     User's last name/family name
      - parameter emailAddress: User's email address
-
-     - returns: <#return value description#>
      */
     public convenience init(firstName: String, lastName: String, emailAddress: String) {
         self.init(firstName: firstName, lastName: lastName, emailAddress: emailAddress, authToken: "FRIEND\(emailAddress.md5())", saveToKeychain: false)
@@ -160,6 +158,12 @@ public class User: CreateableSecureStorable, ReadableSecureStorable, DeleteableS
      */
     public func preferenceForCategory(category: FoodCategory) -> Preference {
         return categories[category] ?? Preference.None
+    }
+
+    public func categoriesForPreference(preference: Preference) -> [FoodCategory] {
+        return categories.filter({ (tuple) -> Bool in
+            return tuple.1 == preference
+        }).map { $0.0 }
     }
     
     /**

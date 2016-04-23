@@ -8,18 +8,20 @@
 
 import UIKit
 
-class SearchConfigurationTableViewController: UITableViewController, FriendTableViewControllerDelegate {
+class SearchConfigurationTableViewController: UITableViewController, FriendTableViewControllerDelegate, CategoryDelegate, UITextFieldDelegate {
 
     @IBOutlet weak var locationField: UITextField!
     @IBOutlet weak var starSearch: UISegmentedControl!
     @IBOutlet weak var distanceLabel: UILabel!
     @IBOutlet weak var distanceSlider: UISlider!
     @IBOutlet weak var friendsCell: UITableViewCell!
+    @IBOutlet weak var likesCell: UITableViewCell!
+    @IBOutlet weak var dislikesCell: UITableViewCell!
     var search = RestaurantSearch()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        locationField.delegate = self
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -39,6 +41,13 @@ class SearchConfigurationTableViewController: UITableViewController, FriendTable
 
     func keyboardWillHide(notification: NSNotification) {
         self.tableView.contentInset.bottom = 0
+    }
+
+    func textFieldDidEndEditing(textField: UITextField) {
+        textField.textAlignment = .Right
+    }
+    func textFieldDidBeginEditing(textField: UITextField) {
+        textField.textAlignment = .Left
     }
 
     override func didReceiveMemoryWarning() {
@@ -85,6 +94,16 @@ class SearchConfigurationTableViewController: UITableViewController, FriendTable
             let friendsController = segue.destinationViewController as! FriendTableViewController
             friendsController.delegate = self
             friendsController.selectedFriends = self.search.users
+        } else if identifier == "searchToLikesSegue" {
+            let categoriesController = segue.destinationViewController as! FoodCategoriesTableViewController
+            categoriesController.delegate = self
+            categoriesController.showingPreference = .Like
+            categoriesController.selectedCategories = Set<FoodCategory>(self.search.categories.filter { $0.1 == .Like }.map { $0.0 })
+        } else if identifier == "searchToDislikesSegue" {
+            let categoriesController = segue.destinationViewController as! FoodCategoriesTableViewController
+            categoriesController.delegate = self
+            categoriesController.showingPreference = .Dislike
+            categoriesController.selectedCategories = Set<FoodCategory>(self.search.categories.filter { $0.1 == .Dislike }.map { $0.0 })
         }
     }
 
@@ -97,5 +116,30 @@ class SearchConfigurationTableViewController: UITableViewController, FriendTable
             self.friendsCell.detailTextLabel?.text = friends.map { $0.firstName }.joinWithSeparator(", ")
         }
         
+    }
+
+    func didFinishSelectingCategories(categories: Set<FoodCategory>, forPreference preference: Preference) {
+        let removedCats = Set<FoodCategory>(search.categories.filter { $0.1 == preference }.map { $0.0 }).subtract(categories)
+        for category in categories {
+            search.categories[category] = preference
+        }
+
+        for category in removedCats {
+            search.categories.removeValueForKey(category)
+        }
+        let likes = search.categories.filter{ $0.1 == .Like }
+        if likes.count == 0 {
+            likesCell.detailTextLabel?.text = "None"
+        } else {
+            likesCell.detailTextLabel?.text = likes.map { $0.0.displayName }.joinWithSeparator(", ")
+        }
+        let dislikes = search.categories.filter{ $0.1 == .Dislike }
+        if dislikes.count == 0 {
+            dislikesCell.detailTextLabel?.text = "None"
+        } else {
+            dislikesCell.detailTextLabel?.text = dislikes.map { $0.0.displayName }.joinWithSeparator(", ")
+        }
+        likesCell.selected = false
+        dislikesCell.selected = false
     }
 }
