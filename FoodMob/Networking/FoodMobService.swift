@@ -191,18 +191,18 @@ public struct FoodMobService: FoodMobDataSource {
                 var restaurants = [Restaurant]()
                 if let value = response.result.value {
                     let json = JSON(value)
-                    for restaurant in json["businesses"].arrayValue {
-                        var cats = restaurant["categories"].arrayValue.reduce("", combine: { (str, json) -> String in
+                    for restaurant in json[RestaurantField.root].arrayValue {
+                        var cats = restaurant[RestaurantField.categories].arrayValue.reduce("", combine: { (str, json) -> String in
                             return "\(str), \(json.arrayValue[0].stringValue)"
                         })
                         cats = cats.substringFromIndex(cats.startIndex.advancedBy(2))
-                        let location = restaurant["location"].dictionaryValue
-                        let address = location["display_address"]?.arrayValue.reduce("", combine: { (s, json) -> String in
+                        let location = restaurant[RestaurantField.location].dictionaryValue
+                        let address = location[RestaurantField.address]?.arrayValue.reduce("", combine: { (s, json) -> String in
                             return "\(s)\(json.stringValue)\n"
                         }).stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
-                        var rst = Restaurant(name: restaurant["name"].stringValue, categories: cats, stars: restaurant["rating"].doubleValue, numReviews: restaurant["review_count"].intValue, hours: "", phoneNumber: restaurant["display_phone"].stringValue, address: address ?? "")
-                        rst.yelpURL = restaurant["mobile_url"].URL
-                        rst.imageURL = restaurant["image_url"].URL
+                        var rst = Restaurant(name: restaurant[RestaurantField.name].stringValue, categories: cats, stars: restaurant[RestaurantField.stars].doubleValue, numReviews: restaurant[RestaurantField.reviewCount].intValue, hours: "", phoneNumber: restaurant[RestaurantField.phoneNumber].stringValue, address: address ?? "")
+                        rst.yelpURL = restaurant[RestaurantField.yelpURL].URL
+                        rst.imageURL = restaurant[RestaurantField.imageURL].URL
                         restaurants.append(rst)
                     }
                 }
@@ -226,7 +226,7 @@ public struct FoodMobService: FoodMobDataSource {
                 if let value = response.result.value {
                     let json = JSON(value)
                     print(json)
-                    for friend in json["friends"].arrayValue {
+                    for friend in json[UserField.friends].arrayValue {
                         if let firstName = friend[UserField.firstName].string, lastName = friend[UserField.lastName].string, email = friend[UserField.emailAddress].string {
                             friendList.append(User(firstName: firstName, lastName: lastName, emailAddress: email))
                         }

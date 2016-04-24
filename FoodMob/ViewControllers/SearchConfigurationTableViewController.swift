@@ -8,6 +8,13 @@
 
 import UIKit
 
+enum SearchConfigurationSegue: String {
+    case ToResults = "searchToResultsSegue"
+    case ToFriends = "searchToFriendsSegue"
+    case ToLikes = "searchToLikesSegue"
+    case ToDislikes = "searchToDislikesSegue"
+}
+
 class SearchConfigurationTableViewController: UITableViewController, FriendTableViewControllerDelegate, CategoryDelegate, UITextFieldDelegate {
 
     @IBOutlet weak var locationField: UITextField!
@@ -78,7 +85,7 @@ class SearchConfigurationTableViewController: UITableViewController, FriendTable
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         guard let identifier = segue.identifier else { return }
 
-        if identifier == "searchToResultsSegue" {
+        if identifier == SearchConfigurationSegue.ToResults.rawValue {
             if self.locationField.text != "" {
                 search.locationString = self.locationField.text
             } else if let location = Session.sharedSession.locationManager.location  {
@@ -95,16 +102,16 @@ class SearchConfigurationTableViewController: UITableViewController, FriendTable
                     destination.restaurants = restaurants
                 })
             }
-        } else if identifier == "searchToFriendsSegue" {
+        } else if identifier == SearchConfigurationSegue.ToFriends.rawValue {
             let friendsController = segue.destinationViewController as! FriendTableViewController
             friendsController.delegate = self
             friendsController.selectedFriends = self.search.users
-        } else if identifier == "searchToLikesSegue" {
+        } else if identifier == SearchConfigurationSegue.ToLikes.rawValue {
             let categoriesController = segue.destinationViewController as! FoodCategoriesTableViewController
             categoriesController.delegate = self
             categoriesController.showingPreference = .Like
             categoriesController.selectedCategories = Set<FoodCategory>(self.search.categories.filter { $0.1 == .Like }.map { $0.0 })
-        } else if identifier == "searchToDislikesSegue" {
+        } else if identifier == SearchConfigurationSegue.ToDislikes.rawValue {
             let categoriesController = segue.destinationViewController as! FoodCategoriesTableViewController
             categoriesController.delegate = self
             categoriesController.showingPreference = .Dislike

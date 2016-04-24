@@ -39,21 +39,6 @@ public struct Restaurant {
     }
 
     /**
-     Initialize restaurant from a JSON object
-
-     - parameter json: JSON object representing the restaurant
-     */
-    public init(json: JSON) {
-        name = json[RestaurantField.name].stringValue
-        stars = json[RestaurantField.stars].doubleValue
-        numReviews = json[RestaurantField.reviewCount].intValue
-        hours = json[RestaurantField.hoursOpen].stringValue
-        phoneNumber = json[RestaurantField.phoneNumber].stringValue
-        address = json[RestaurantField.address].stringValue
-        yelpURL = json[RestaurantField.yelpURL].URL
-    }
-
-    /**
      Convenience initializer for a restaurant.
 
      - parameter name:        Restaurant name
@@ -95,13 +80,16 @@ public struct Restaurant {
  Struct which holds JSON field name constants for Restaurants
  */
 internal struct RestaurantField {
+    static let root = "businesses"
     static let objectName = "restaurant"
     static let name = "name"
     static let categories = "categories"
-    static let stars = "stars"
-    static let reviewCount = "reviewCount"
+    static let stars = "rating"
+    static let reviewCount = "review_count"
     static let hoursOpen = "hoursOpen"
-    static let phoneNumber = "phone"
-    static let address = "address"
+    static let phoneNumber = "display_phone"
+    static let address = "display_address"
     static let yelpURL = "mobile_url"
+    static let imageURL = "image_url"
+    static let location = "location"
 }

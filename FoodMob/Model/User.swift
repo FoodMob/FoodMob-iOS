@@ -241,6 +241,7 @@ internal struct UserField {
     static let profile = "profile"
     static let foodProfile = "food_profile"
     static let authToken = "auth_token"
+    static let friends = "friends"
     struct FoodProfile {
         static let restrictions = "allergies"
         static let likes = "likes"
