@@ -124,15 +124,15 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             control.enabled = false
         }
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true
-        FoodMob.currentDataProvider.login(emailAddressField.safeText, password: passwordField.safeText) { [unowned self] (user) -> () in
+        FoodMob.currentDataProvider.login(emailAddressField.safeText, password: passwordField.safeText) { [weak self] (user) -> () in
             if let user = user {
-                self.currentUser = user
+                self?.currentUser = user
                 Session.sharedSession.currentUser = user
-                self.performSegueWithIdentifier(LoginViewControllerSegue.ToMainSegue.rawValue, sender: nil)
+                self?.performSegueWithIdentifier(LoginViewControllerSegue.ToMainSegue.rawValue, sender: nil)
             } else {
-                self.alert("Log In Failed", message: "Check your email address and password, and try again.")
+                self?.alert("Log In Failed", message: "Check your email address and password, and try again.")
             }
-            self.controls.forEach({ (control) in
+            self?.controls.forEach({ (control) in
                 control.enabled = true
             })
             UIApplication.sharedApplication().networkActivityIndicatorVisible = false

@@ -182,7 +182,7 @@ public extension FoodMobDataSource {
         categories.append(FoodCategory(displayName: "Seafood", yelpIdentifier: "seafood"))
         categories.append(FoodCategory(displayName: "Barbeque", yelpIdentifier: "barbeque"))
         categories.append(FoodCategory(displayName: "Japanese", yelpIdentifier: "japanese"))
-        categories.append(FoodCategory(displayName: "Sushi Bars", yelpIdentifier: "sushibars"))
+        categories.append(FoodCategory(displayName: "Sushi Bars", yelpIdentifier: "sushi"))
         categories.append(FoodCategory(displayName: "Diners", yelpIdentifier: "diners"))
         categories.append(FoodCategory(displayName: "Southern", yelpIdentifier: "southern"))
         categories.append(FoodCategory(displayName: "Sports Bars", yelpIdentifier: "sportsbars"))

@@ -3,14 +3,21 @@
 
 Eating out with friends made easy.  This is the iOS portion of the application.  The backend server is in [FoodMob-Node](https://github.com/FoodMob/FoodMob-Node).
 
-# Build Requirements
+# iOS Application
+## Known Issues
+* **Registration Page**: When rotating to landscape, the application does not lay out the views properly.
+* **Crash**: A slow network may cause the application to crash if many views 
+
+
+# Development
+## Build Requirements
 * Xcode 7.3 with iOS 9.3 SDK
     * Current Swift version: 2.2
     * Targeted iOS version: 9.1
 * Homebrew ([http://brew.sh](http://brew.sh))
 * Carthage ([GitHub](https://github.com/Carthage/Carthage))
 
-# Getting Started
+## Getting Started
 1. Install the two command line tools you will need if you don't have them:
 
     * [Homebrew](http://brew.sh)
@@ -32,7 +39,7 @@ Eating out with friends made easy.  This is the iOS portion of the application. 
 4. In the top bar, the scheme should be set to FoodMob, and the destination should be a simulator or device (i.e, not "Generic iOS Device").
 5. Click the ▶️ Run button in Xcode.
 
-# Adding new libraries
+## Adding new libraries
 Please follow these procedures for adding new libraries.
 
 1. Libraries must be licensed permissively.  No GPL/LGPL crap.  MIT and Apache are good ones.

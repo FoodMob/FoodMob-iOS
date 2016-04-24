@@ -70,7 +70,7 @@ class SearchDetailTableViewController: UITableViewController {
             if let myLocation = Session.sharedSession.locationManager.location {
                 currentRegion = CLCircularRegion(center: myLocation.coordinate, radius: 10_000, identifier: "Near Me")
             }
-            geocoder.geocodeAddressString(restaurant.address, inRegion: currentRegion) { [unowned self] (placemarks, error) in
+            geocoder.geocodeAddressString(restaurant.address, inRegion: currentRegion) { [weak self] (placemarks, error) in
                 if let placemarks = placemarks, first = placemarks.first {
                     location = first.location
                 }
@@ -80,9 +80,9 @@ class SearchDetailTableViewController: UITableViewController {
                 }
                 let regionRadius: Double = 100
                 annotation.coordinate = coordinate
-                self.map.addAnnotation(annotation)
+                self?.map.addAnnotation(annotation)
                 let coordinateRegion = MKCoordinateRegionMakeWithDistance(coordinate, regionRadius * 1.5, regionRadius * 1.5)
-                self.map.setRegion(coordinateRegion, animated: true)
+                self?.map.setRegion(coordinateRegion, animated: true)
             }
         }
     }

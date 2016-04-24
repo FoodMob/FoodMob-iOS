@@ -22,8 +22,8 @@ class FoodCategoriesTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = showingPreference.showingTypeString
-        currentDataProvider.fetchCategoryListing { [unowned self] (categories: Dictionary<String, FoodCategory>) in
-            self.categories = Array(categories.values).sort({ (cat0, cat1) -> Bool in
+        currentDataProvider.fetchCategoryListing { [weak self] (categories: Dictionary<String, FoodCategory>) in
+            self?.categories = Array(categories.values).sort({ (cat0, cat1) -> Bool in
                 return cat0.displayName < cat1.displayName
             })
         }

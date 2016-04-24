@@ -42,13 +42,13 @@ class FriendTableViewController: UITableViewController {
             emailField.placeholder = "Email address"
         }
         let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel) { (_) in }
-        let addAction = UIAlertAction(title: "Add", style: .Default) { [unowned self] (_) in
+        let addAction = UIAlertAction(title: "Add", style: .Default) { [weak self] (_) in
             if let emailAddress = popup.textFields?.first?.text {
-                currentDataProvider.addFriendWithEmail(emailAddress, forUser: Session.sharedSession.currentUser!, completion: { [unowned self] (success, reason) in
+                currentDataProvider.addFriendWithEmail(emailAddress, forUser: Session.sharedSession.currentUser!, completion: { [weak self] (success, reason) in
                     if success {
-                        self.reloadDataFromServer()
+                        self?.reloadDataFromServer()
                     } else {
-                        self.alert("Could not add friend", message: reason)
+                        self?.alert("Could not add friend", message: reason)
                     }
                 })
             }
@@ -59,10 +59,10 @@ class FriendTableViewController: UITableViewController {
     }
 
     func reloadDataFromServer() {
-        currentDataProvider.fetchFriendsListing(forUser: Session.sharedSession.currentUser!) { [unowned self] (users) in
-            self.friends = users
-            self.tableView.reloadData()
-            self.refreshControl?.endRefreshing()
+        currentDataProvider.fetchFriendsListing(forUser: Session.sharedSession.currentUser!) { [weak self] (users) in
+            self?.friends = users
+            self?.tableView.reloadData()
+            self?.refreshControl?.endRefreshing()
         }
     }
 

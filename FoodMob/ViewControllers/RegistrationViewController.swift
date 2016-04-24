@@ -135,15 +135,15 @@ class RegistrationViewController: UIViewController, UITextFieldDelegate {
             emailAddress: emailAddressField.safeText,
             password: passwordField.safeText,
             completion:  {
-                [unowned self] (success) -> () in
+                [weak self] (success) -> () in
                 if success {
-                    self.performSegueWithIdentifier(RegistrationViewControllerSegue.ToLoginSegueSignedUp.rawValue, sender: nil)
+                    self?.performSegueWithIdentifier(RegistrationViewControllerSegue.ToLoginSegueSignedUp.rawValue, sender: nil)
                 } else {
-                    self.fields.forEach({ (field) in
+                    self?.fields.forEach({ (field) in
                         field.enabled = true
                     })
                     sender.enabled = true
-                    self.alert("Sign Up Failed", message: "Please make sure you entered a valid email address and password.")
+                    self?.alert("Sign Up Failed", message: "Please make sure you entered a valid email address and password.")
                 }
                 UIApplication.sharedApplication().networkActivityIndicatorVisible = false
             }

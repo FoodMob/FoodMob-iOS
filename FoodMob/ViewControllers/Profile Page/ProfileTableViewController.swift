@@ -31,12 +31,12 @@ class ProfileTableViewController: UITableViewController, CategoryDelegate {
         currentUser = Session.sharedSession.currentUser!
         userImage.setImageForUser(currentUser)
         FoodMob.currentDataProvider.fetchCategoriesForUser(currentUser) {
-            [unowned self] success in
+            [weak self] success in
             if success {
-                self.likesLabel.text = self.currentUser.stringForPreference(.Like)
-                self.dislikesLabel.text = self.currentUser.stringForPreference(.Dislike)
-                self.restrictionsLabel.text = self.currentUser.stringForPreference(.Restriction)
-                self.tableView.reloadData()
+                self?.likesLabel.text = self?.currentUser.stringForPreference(.Like)
+                self?.dislikesLabel.text = self?.currentUser.stringForPreference(.Dislike)
+                self?.restrictionsLabel.text = self?.currentUser.stringForPreference(.Restriction)
+                self?.tableView.reloadData()
             }
         }
         nameLabel.text = currentUser.fullName
