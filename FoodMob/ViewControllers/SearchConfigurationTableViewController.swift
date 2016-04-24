@@ -43,6 +43,11 @@ class SearchConfigurationTableViewController: UITableViewController, FriendTable
         self.tableView.contentInset.bottom = 0
     }
 
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+
     func textFieldDidEndEditing(textField: UITextField) {
         textField.textAlignment = .Right
     }
