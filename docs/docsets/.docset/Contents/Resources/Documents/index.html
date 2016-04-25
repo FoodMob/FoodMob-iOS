@@ -13,7 +13,7 @@
     <a title="  Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="index.html"> Docs</a> (77% documented)</p>
+        <p><a href="index.html"> Docs</a> (81% documented)</p>
       </div>
     </header>
     <div class="content-wrapper">
@@ -59,6 +59,9 @@
               <li class="nav-group-task">
                 <a href="Functions.html#/s:ZF7FoodMoboi2eeFTVS_12FoodCategoryS0__Sb">==(_:_:)</a>
               </li>
+              <li class="nav-group-task">
+                <a href="Functions.html#/s:ZF7FoodMoboi2eeFTCS_4UserS0__Sb">==(_:_:)</a>
+              </li>
             </ul>
           </li>
           <li class="nav-group-name">
@@ -91,9 +94,6 @@
                 <a href="Structs/RestaurantSearch.html">RestaurantSearch</a>
               </li>
               <li class="nav-group-task">
-                <a href="Structs.html#/s:V7FoodMob21RestaurantSearchField">RestaurantSearchField</a>
-              </li>
-              <li class="nav-group-task">
                 <a href="Structs/Session.html">Session</a>
               </li>
             </ul>
@@ -106,10 +106,28 @@
             
             <a href='#foodmob' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h1 id='foodmob'>FoodMob</h1>
 
-<p><a href="https://travis-ci.org/FoodMob/FoodMob-iOS"><img src="https://travis-ci.org/FoodMob/FoodMob-iOS.svg?branch=master" alt="Build Status"></a></p>
-
 <p>Eating out with friends made easy.  This is the iOS portion of the application.  The backend server is in <a href="https://github.com/FoodMob/FoodMob-Node">FoodMob-Node</a>.</p>
-<a href='#build_requirements' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h1 id='build_requirements'>Build Requirements</h1>
+
+<p>HTML documentation of the functions and API can be found in the <code>docs</code> folder.</p>
+<a href='#ios_application' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h1 id='ios_application'>iOS Application</h1>
+<a href='#features' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='features'>Features</h2>
+
+<ul>
+<li>Find nearby restaurants with fine-grained criteria.</li>
+<li>Set up your profile including your likes and dislikes.</li>
+<li>Add friends to a search, which takes into account their likes and dislikes.</li>
+<li>Add parameters to a search to further filter restaurants.</li>
+</ul>
+
+<p>Assistance for using the application can be found in Profile -&gt; Help in the application, or in the <code>FoodMob/Resources/help.html</code> file.</p>
+<a href='#known_issues_in_version_1_0' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='known_issues_in_version_1_0'>Known Issues in Version 1.0</h2>
+
+<ul>
+<li><strong>Login/Registration</strong>: When rotating to landscape, the application does not lay out the views properly.</li>
+<li><strong>Network</strong>: A slow network may cause the application to crash if many views are loaded at once.</li>
+</ul>
+<a href='#development' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h1 id='development'>Development</h1>
+<a href='#build_requirements' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='build_requirements'>Build Requirements</h2>
 
 <ul>
 <li>Xcode 7.3 with iOS 9.3 SDK
@@ -121,31 +139,28 @@
 <li>Homebrew (<a href="http://brew.sh">http://brew.sh</a>)</li>
 <li>Carthage (<a href="https://github.com/Carthage/Carthage">GitHub</a>)</li>
 </ul>
-<a href='#getting_started' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h1 id='getting_started'>Getting Started</h1>
+<a href='#getting_started' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='getting_started'>Getting Started</h2>
 
 <ol>
-<li>Install the two command line tools you will need if you don&rsquo;t have them:</li>
-</ol>
-<pre class="highlight plaintext"><code>* [Homebrew](http://brew.sh)
-* Carthage using Homebrew:
+<li><p>Install the two command line tools you will need if you don&rsquo;t have them:</p>
 
-    ```
-    brew update
-    brew install carthage
-    ```
-</code></pre>
-
-<ol>
+<ul>
+<li><a href="http://brew.sh">Homebrew</a></li>
+<li><p>Carthage using Homebrew:</p>
+<pre class="highlight plaintext"><code>brew update
+brew install carthage
+</code></pre></li>
+</ul></li>
 <li><p>In this project directory, run</p>
 <pre class="highlight plaintext"><code>carthage bootstrap --platform iOS
 </code></pre>
 
 <p>This installs the library dependencies needed for this application.</p></li>
-<li><p>Open the <code>FoodMob.xcproject</code> file using Xcode.</p></li>
+<li><p>Open the <code>FoodMob.xcodeproj</code> file using Xcode.</p></li>
 <li><p>In the top bar, the scheme should be set to FoodMob, and the destination should be a simulator or device (i.e, not <q>Generic iOS Device</q>).</p></li>
-<li><p>Click the ▶️ Run button in Xcode.</p></li>
+<li><p>Click the ▶️ Run button in Xcode to install to your connected iPhone or Simulator.</p></li>
 </ol>
-<a href='#adding_new_libraries' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h1 id='adding_new_libraries'>Adding new libraries</h1>
+<a href='#adding_new_libraries' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='adding_new_libraries'>Adding new libraries</h2>
 
 <p>Please follow these procedures for adding new libraries.</p>
 
@@ -160,7 +175,7 @@
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2016 <a class="link" href="" target="_blank" rel="external"></a>. All rights reserved. (Last updated: 2016-04-20)</p>
+          <p>&copy; 2016 <a class="link" href="" target="_blank" rel="external"></a>. All rights reserved. (Last updated: 2016-04-24)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.6.0</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>

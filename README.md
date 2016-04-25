@@ -1,7 +1,8 @@
 # FoodMob
-[![Build Status](https://travis-ci.org/FoodMob/FoodMob-iOS.svg?branch=master)](https://travis-ci.org/FoodMob/FoodMob-iOS)
 
 Eating out with friends made easy.  This is the iOS portion of the application.  The backend server is in [FoodMob-Node](https://github.com/FoodMob/FoodMob-Node).
+
+HTML documentation of the functions and API can be found in the `docs` folder.
 
 # iOS Application
 ## Features
@@ -9,6 +10,8 @@ Eating out with friends made easy.  This is the iOS portion of the application. 
 * Set up your profile including your likes and dislikes.
 * Add friends to a search, which takes into account their likes and dislikes.
 * Add parameters to a search to further filter restaurants.
+
+Assistance for using the application can be found in Profile -> Help in the application, or in the `FoodMob/Resources/help.html` file.
 
 ## Known Issues in Version 1.0
 * **Login/Registration**: When rotating to landscape, the application does not lay out the views properly.
@@ -25,7 +28,6 @@ Eating out with friends made easy.  This is the iOS portion of the application. 
 
 ## Getting Started
 1. Install the two command line tools you will need if you don't have them:
-
     * [Homebrew](http://brew.sh)
     * Carthage using Homebrew:
 
@@ -41,9 +43,9 @@ Eating out with friends made easy.  This is the iOS portion of the application. 
     ```
     
     This installs the library dependencies needed for this application.
-3. Open the `FoodMob.xcproject` file using Xcode.
+3. Open the `FoodMob.xcodeproj` file using Xcode.
 4. In the top bar, the scheme should be set to FoodMob, and the destination should be a simulator or device (i.e, not "Generic iOS Device").
-5. Click the ▶️ Run button in Xcode.
+5. Click the ▶️ Run button in Xcode to install to your connected iPhone or Simulator.
 
 ## Adding new libraries
 Please follow these procedures for adding new libraries.

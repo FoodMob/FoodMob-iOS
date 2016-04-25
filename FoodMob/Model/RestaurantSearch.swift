@@ -39,6 +39,7 @@ public struct RestaurantSearch {
             }
         }
     }
+    /// Denotes the location to use in the search, as a coordinate.
     public let nearbyLocation = Session.sharedSession.locationManager.location?.coordinate
     /// Location to search around.  When set, the coordinate is ignored.
     public var locationString: String? {
@@ -98,7 +99,9 @@ struct RestaurantSearchField {
 }
 
 /**
- A price range to search for
+ A price range to search for.
+ 
+ **Deprecated** - The Yelp API does not respond with or support searching with price ranges.
  
  - Any:                       For when you just don't care. 💸🤑
  - One:                       One dollar sign 💰
@@ -106,7 +109,7 @@ struct RestaurantSearchField {
  - Three:                     Three dollar signs 💰💰💰
  - ImSoLoadedItsNotEvenFunny: Four dollar signs 💰💰💰💰
  */
-@available(*, deprecated, message="Yelp API doesn't work with dollar signs")
+@available(*, deprecated, message="Yelp API doesn't work respond with price ranges.")
 public enum PriceRange: Int {
     /**
      For when you just don't care. 💸🤑

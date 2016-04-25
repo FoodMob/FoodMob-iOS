@@ -36,20 +36,23 @@ public enum Preference: Int {
     }
 }
 
-/*
+/**
  Represents a food category, which is the tuple of the human-readable name and the Yelp identifier.
  */
-public struct FoodCategory: Hashable, Equatable {
+public struct FoodCategory: Hashable {
+    /// Human-readable name of the category
     private(set) public var displayName: String
+    /// Yelp identifier for the category
     private(set) public var yelpIdentifier: String
-    
+
+    /// Conformance to Hashable for FoodCategory
     public var hashValue: Int {
         return yelpIdentifier.hashValue
     }
 }
 
 /**
- Equatability for a FoodCategory.  Two food categories are equal iff
+ Conformance to Equatable for a FoodCategory.  Two food categories are equal iff
  the Yelp identifiers are equal.
  
  - parameter lhs: Left side of the expression.

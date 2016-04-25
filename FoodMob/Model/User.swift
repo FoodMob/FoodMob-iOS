@@ -216,12 +216,12 @@ public class User: CreateableSecureStorable, ReadableSecureStorable, DeleteableS
 }
 
 /**
- Conformance to Equatable for user
+ Conformance to Equatable for the User class
 
  - parameter user1: User on LHS of expression
  - parameter user2: User on RHS of expression
 
- - returns: User's friends
+ - returns: Whether the email addresses are the same for the user.
  */
 public func ==(user1: User, user2: User) -> Bool {
     return user1.emailAddress == user2.emailAddress
