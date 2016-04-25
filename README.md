@@ -4,9 +4,15 @@
 Eating out with friends made easy.  This is the iOS portion of the application.  The backend server is in [FoodMob-Node](https://github.com/FoodMob/FoodMob-Node).
 
 # iOS Application
-## Known Issues
-* **Registration Page**: When rotating to landscape, the application does not lay out the views properly.
-* **Crash**: A slow network may cause the application to crash if many views 
+## Features
+* Find nearby restaurants with fine-grained criteria.
+* Set up your profile including your likes and dislikes.
+* Add friends to a search, which takes into account their likes and dislikes.
+* Add parameters to a search to further filter restaurants.
+
+## Known Issues in Version 1.0
+* **Login/Registration**: When rotating to landscape, the application does not lay out the views properly.
+* **Network**: A slow network may cause the application to crash if many views are loaded at once.
 
 
 # Development
