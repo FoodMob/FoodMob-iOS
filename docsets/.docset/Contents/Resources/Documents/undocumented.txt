@@ -1,0 +1,45 @@
+FoodMobService.swift
+	public func login(emailAddress: String, password: String, completion: ((User?) -> ())? = nil)
+	public func register(firstName firstName: String, lastName: String, emailAddress: String, password: String, completion: ((Bool) -> ())? = nil)
+	public func logout(user: User, completion: ((Bool) -> ())? = nil)
+	public func updateCategoriesForUser(user: User)
+	public func fetchCategoriesForUser(user: User, completion: ((Bool)->())? = nil)
+MockDataSource.swift
+	public func login(emailAddress: String, password: String, completion: ((User?)->())? = nil)
+	public func register(firstName firstName: String, lastName: String, emailAddress: String, password: String, completion: ((Bool)->())? = nil)
+	public func fetchCategoriesForUser(user: User, completion: ((Bool)->())? = nil)
+	public func updateCategoriesForUser(user: User)
+	public func logout(user: User, completion: ((Bool) -> ())? = nil)
+FoodCategory.swift
+	case Sandwiches = "Sandwiches"
+	case Pizza = "Pizza"
+	case Mexican = "Mexican"
+	case AmericanTraditional = "American (Traditional)"
+	case Nightlife = "Nightlife"
+	case Burgers = "Burgers"
+	case Bars = "Bars"
+	case ChickenWings = "Chicken Wings"
+	case Chinese = "Chinese"
+	case AmericanNew = "American (New)"
+	case Food = "Food"
+	case BreakfastAndBrunch = "Breakfast & Brunch"
+	case Italian = "Italian"
+	case Seafood = "Seafood"
+	case Barbeque = "Barbeque"
+	case Japanese = "Japanese"
+	case SushiBars = "Sushi Bars"
+	case Diners = "Diners"
+	case Southern = "Southern"
+	case SportsBars = "Sports Bars"
+	case TexMex = "Tex-Mex"
+	case Steakhouses = "Steakhouses"
+	case Thai = "Thai"
+	case Korean = "Korean"
+	case AsianFusion = "Asian Fusion"
+	case Indian = "Indian"
+User.swift
+	public func preferenceForCategory(category: FoodCategory) -> Preference
+	public func setPreference(preference: Preference, forCategory category: FoodCategory)
+	public let service = "FoodMob"
+	public var account: String
+	public var data: [String : AnyObject]
