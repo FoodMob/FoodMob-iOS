@@ -1,5 +1,4 @@
 # FoodMob
-
 Eating out with friends made easy.  This is the iOS portion of the application.  The backend server is in [FoodMob-Node](https://github.com/FoodMob/FoodMob-Node).
 
 HTML documentation of the functions and API can be found in the `docs` folder.
@@ -16,7 +15,6 @@ Assistance for using the application can be found in Profile -> Help in the appl
 ## Known Issues in Version 1.0
 * **Login/Registration**: When rotating to landscape, the application does not lay out the views properly.
 * **Network**: A slow network may cause the application to crash if many views are loaded at once.
-
 
 # Development
 ## Build Requirements
@@ -55,3 +53,6 @@ Please follow these procedures for adding new libraries.
 4. Libraries should be approved by Jonathan (@jonjesbuzz).  Open a GitHub issue or contact him on Slack.
 5. Libraries should be available to download using [Carthage](https://github.com/Carthage/Carthage).
 5. It would be nice if the library is written in Swift. (This effectively requires #2 for technical reasons.)  Objective-C libraries are allowed, but Swift libraries tend to be nicer to work with in Swift (obviously) and tend to be more modern.
+
+# Images
+![image](http://i.imgur.com/Jy3bg0p.png)
